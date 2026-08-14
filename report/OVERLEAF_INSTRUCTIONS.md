@@ -35,19 +35,18 @@ compiled PDF: main content runs from page 1 to wherever `References` begins.
 
 **If it exceeds 10 pages,** apply these in order — each is a small, self-contained edit:
 
-1. **Delete the CiteSeer block from Table 2** (the three `\multirow{3}{*}{\rotatebox{90}{CiteS.}}`
-   rows). The CiteSeer numbers are already stated in the §5.1 text, so no evidence is lost.
-   *Saves ~0.15 page.*
-2. **Move Figure 5** (`fig5_sensitivity.pdf`) to the appendix: cut the `figure` environment and
-   paste it after `\subsection{Additional material}`. The text keeps its `\ref`.
-   *Saves ~0.28 page.*
-3. **Delete the `\subsubsection*{Reproducibility}` block** — the same information is in the
-   appendix amendments section. *Saves ~0.1 page.*
-4. **Shorten §2 Background** to the first two paragraphs. *Saves ~0.15 page.*
+1. **Delete the `\subsubsection*{Reproducibility}` block** — the same information appears in the
+   appendix. *Saves ~0.1 page.*
+2. **Shorten §2 Background** to the first paragraph plus the related-work paragraph.
+   *Saves ~0.12 page.*
+3. **Move Table 3** (the full metric suite) to the appendix, keeping the two sentences that cite
+   it. *Saves ~0.25 page.*
+4. **Move Figure 4** (`fig4_crossover_beta.pdf`) to the appendix. *Saves ~0.3 page.*
 
-**If you have room to spare,** the reverse move is worthwhile: bring
-`fig6_fidelity.pdf` back from the appendix into §5.6 (it is currently in the appendix purely for
-space). It is the figure that most directly demonstrates the exact-inference / BP / MCMC work.
+**If you have room to spare,** bring `fig5_sensitivity.pdf` and then `fig6_fidelity.pdf` back
+from the appendix into §5.4 and §5.5 — both are in the appendix purely for space, and
+`fig6_fidelity.pdf` is the figure that most directly demonstrates the exact-inference / BP / MCMC
+work.
 
 You can re-check the estimate at any time with:
 ```bash
@@ -61,10 +60,16 @@ You can re-check the estimate at any time with:
 | §1 Introduction | where the project started, why the question was sharpened, **Table 1: course concepts → what we implemented → source followed** | Table 1 |
 | §2 Background | setting, why a GCN already assumes homophily, relation to prior work | — |
 | §3 Methods | the 5-step pipeline, the three impositions, Proposition 1, the four inference algorithms, the synthetic generator, the two prior regimes, correctness gates | Figure 1 |
-| §4 Setup | datasets, pre-registered protocol, statistics | Table 2 |
-| §5 Results | Q1 scarcity, Q2 homophily, Q3 mechanism, consistency/calibration, inference validation, robustness | Figures 2–5, Table 3 |
+| §4 Setup | datasets, pre-registered protocol, **metrics** (accuracy, macro-F1, NLL, Brier, ECE, rule satisfaction, edge agreement), statistics | Table 2 |
+| §5 Results | Q1 scarcity, Q2 homophily, Q3 mechanism, consistency/calibration, inference validation, robustness | Figures 2–4, **Table 3 (full metric suite)** |
 | §6 Discussion | what we learned, limitations, future work (EM-learned compatibility) | — |
-| Appendix | the three pre-registered comparisons, protocol amendments, Figures 6–7 | Figures 6–7 |
+| Appendix | the three pre-registered comparisons, protocol amendments, sensitivity and inference-validation figures | Figures 5–7 |
+
+**Evaluation metrics.** The proposal promised accuracy and macro-F1; the report delivers both
+plus three measures of probability quality (NLL, Brier, ECE) and two prior diagnostics (rule
+satisfaction, argmax edge agreement). All seven are computed for every one of the 7,744 runs and
+are in `results/raw/runs_*.csv`; Table 3 reports the five predictive ones for every model at two
+label budgets.
 
 Every number in the text and tables is already filled in from the experiments — nothing is a
 placeholder.
