@@ -1,0 +1,40 @@
+# Contextual SBM — centerpiece (PROTOCOL.md §C.2, §C.3)
+dataset: sbm
+n: 2800
+classes: 7
+expected_degree: 8.0
+h_grid: [0.05, 0.15, 0.30, 0.50, 0.70, 0.90]
+labels_per_class: [1, 5, 20]
+feature_dim: 32
+mu_seed: 7                    # class-mean construction seed (frozen)
+sigma_x: null                 # frozen by CHANGELOG addendum M1 after the quarantined pilot
+pilot:
+  seeds: [100, 101, 102, 103, 104, 105, 106, 107, 108, 109]
+  oracle_acc_band: [0.70, 0.80]   # Oracle-F acceptance band, fixed in advance
+val_size: 500
+test_size: 1000
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+confirmatory_seeds: 30        # C2/C3 cells: h in {0.05, 0.5, 0.9}, m=5, dogmatic regime
+confirmatory_h: [0.05, 0.50, 0.90]
+confirmatory_m: 5
+
+# per-graph acceptance checks (logged per generated graph)
+checks:
+  degree_tol: 0.5
+  homophily_tol: 0.02
+
+# dogmatic regime: beta^dog / lambda^dog = median tuned value at (h=0.9, m=5) — addendum M4
+dogmatic_source: {h: 0.90, m: 5}
+
+backbone:
+  hidden: 64
+  dropout: 0.5
+  layers: 2
+  max_epochs: 500
+  patience: 50
+  lr_grid: [0.01, 0.005]
+  wd_grid: [0.0005, 0.001]
+
+stage2:
+  lambda_grid: [0.001, 0.01, 0.1, 0.5, 1.0, 5.0]
+  beta_grid: [0.05, 0.1, 0.25, 0.5, 1.0, 2.0]

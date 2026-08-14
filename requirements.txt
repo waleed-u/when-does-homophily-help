@@ -1,0 +1,11 @@
+# torch installed separately from the CPU index:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch_geometric>=2.6
+numpy>=1.26
+scipy>=1.13
+pandas>=2.2
+matplotlib>=3.9
+networkx>=3.3
+arviz>=0.18
+pytest>=8.0
+pyyaml>=6.0

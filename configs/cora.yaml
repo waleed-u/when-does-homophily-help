@@ -1,0 +1,24 @@
+# Cora — primary dataset (PROTOCOL.md §C.1)
+dataset: cora
+loader: planetoid            # torch_geometric.datasets.Planetoid
+root: data/
+val_size: 500
+test_size: 1000
+labels_per_class: [1, 2, 5, 10, 20]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+confirmatory_seeds: 30       # C1 cells only: m in {2, 20}
+confirmatory_m: [2, 20]
+
+backbone:
+  hidden: 64
+  dropout: 0.5
+  layers: 2
+  max_epochs: 500
+  patience: 50
+  # Stage-1 grids (per architecture; selected values recorded in CHANGELOG addendum M3)
+  lr_grid: [0.01, 0.005]
+  wd_grid: [0.0005, 0.001]
+
+stage2:
+  lambda_grid: [0.001, 0.01, 0.1, 0.5, 1.0, 5.0]
+  beta_grid: [0.05, 0.1, 0.25, 0.5, 1.0, 2.0]
