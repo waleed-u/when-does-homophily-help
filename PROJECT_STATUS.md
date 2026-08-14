@@ -28,10 +28,14 @@ Frozen in `PROTOCOL.md` §B. Confirmatory (the only hypothesis tests): **C1** H1
 
 Both match the playbook's expected values, confirming the loader path is correct.
 
-## 5. Datasets still required
+## 5. Datasets generated (complete)
 
-- **Contextual SBM** (generated, not downloaded): generator not yet implemented; σ_x still to be frozen by the quarantined pilot (PROTOCOL §C.3, CHANGELOG addendum M1).
-- **Fidelity-suite small graphs** (generated): builders not yet implemented.
+- **Contextual SBM** (`src/synthetic/sbm.py`): 6 homophily levels × 10 fresh graphs per level;
+  σ_x **frozen at 0.50** by the quarantined pilot (CHANGELOG M1). Every generated graph passed
+  its acceptance checks — mean degree 7.93–7.98 against a target of 8.0, empirical homophily
+  within 0.003 of target, classes exactly balanced.
+- **Fidelity-suite small graphs** (`src/synthetic/small_graphs.py`): chain(20), binary tree(15),
+  star(16), cycle(16), 4×4 grid (C=3 and C=7), dense 2-block SBM(14).
 - Roman-empire: **cut to future work** by the approved design (not required).
 
 ## 6. Methods implemented (all complete)

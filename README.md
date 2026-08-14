@@ -41,3 +41,38 @@ tests/          the pre-registered gates (λ=0≡GCN, β=0≡softmax, BP≡exact
 results/        runs.csv, fidelity.csv, logits/, final_eval_audit.log
 figures/ paper/ generated figures; ICLR-style LaTeX
 ```
+
+## Reproducing the study
+
+```bash
+.venv/bin/pytest tests/ -q                          # 14 pre-registered gates
+.venv/bin/python -m experiments.run_e0              # sanity gate (no rows written)
+.venv/bin/python -m experiments.run_sigma_pilot     # freezes sigma_x (quarantined seeds)
+.venv/bin/python -m experiments.tune_stage1         # freezes backbone hyperparameters
+
+# main blocks — shard by writing to separate CSVs, then analysis merges them
+for m in 1 2 5 10 20; do RUNS_CSV=results/raw/runs_cora_m$m.csv \
+  .venv/bin/python -m experiments.run_real --dataset cora --seeds 0-9 --m $m & done; wait
+for m in 2 20; do RUNS_CSV=results/raw/runs_cora_conf_m$m.csv \
+  .venv/bin/python -m experiments.run_real --dataset cora --seeds 10-29 --m $m \
+  --models mlp,mrf_mlp & done; wait                 # 30-seed confirmatory cells
+for h in 0.05 0.15 0.30 0.50 0.70 0.90; do RUNS_CSV=results/raw/runs_sbm_h$h.csv \
+  .venv/bin/python -m experiments.run_sbm --h $h --seeds 0-9 & done; wait
+for s in chain tree star cycle grid grid7 dense budget; do \
+  .venv/bin/python -m experiments.run_fidelity --structure $s --draws 20 & done; wait
+for c in rewired deeper floor smallval checksum simcheck; do RUNS_CSV=results/raw/runs_ctrl_$c.csv \
+  .venv/bin/python -m experiments.run_controls --control $c & done; wait
+
+.venv/bin/python -m experiments.analyze             # tables + confirmatory verdicts
+.venv/bin/python -m experiments.make_figures        # figures/*.pdf
+.venv/bin/python -m experiments.audit               # 13 automated validity checks
+```
+
+Total: ~7.7k model runs and ~11.3k exact-inference comparisons; CPU only, a few hours wall-clock
+with the parallel sharding above.
+
+## Where the results live
+
+`SCIENTIFIC_FINDINGS.md` (conclusions and evidence) · `PAPER_BLUEPRINT.md` (report structure and
+claim→figure map) · `RESULTS_MANIFEST.md` (traceability) · `PROJECT_STATUS.md` (current state) ·
+`figures/`, `tables/`, `results/processed/{analysis,audit}.json`.
