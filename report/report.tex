@@ -12,8 +12,9 @@
 \usepackage{amssymb}
 
 \title{
-When Does Logic Help? \\
-Probabilistic Relational Priors for Low-Label Graph Neural Networks
+When Does an Explicit Homophily Prior Help? \\
+Markov Random Fields, Variational Inference and MCMC \\
+for Low-Label Node Classification
 }
 
 \author{Waleed Ahmed \\
@@ -31,247 +32,325 @@ Student ID: 301663286 \\
 \lhead{CMPT 727 Final Project -- Spring 2026}
 
 \begin{abstract}
-Graph neural networks are usually justified by a homophily assumption -- linked nodes tend to
-share labels -- but the assumption is left implicit inside the architecture, so the value of
-stating it explicitly is rarely measured. We hold one backbone fixed and impose the same
-assumption three ways of increasing probabilistic seriousness: a Laplacian penalty on the
-outputs, an expected rule-violation (semantic) loss, and an explicit Potts Markov random field
-over labels whose unary potentials are the frozen network's logits, solved by convergent
-mean-field inference. Under a pre-registered protocol (7{,}744 runs, 10--30 paired seeds) we
-cross label scarcity, prior correctness on a contextual stochastic block model, and the
-mechanism of imposition. Three findings emerge, two of which contradict the standard framing.
-First, our pre-registered scarcity hypothesis is \emph{refuted and significantly reversed}: the
-prior's benefit grows with supervision ($-7.07$ points, 95\% CI $[-10.26,-3.91]$), because
-relational inference propagates label information rather than creating it. Second, the harm
-from a misspecified prior appears \emph{only} when its strength is fixed in advance: a dogmatic
-prior loses up to 45 points through posterior collapse, while a validation-tuned prior never
-loses more than 0.5. Third, a degree-preserving rewiring control shows the popular Laplacian
-penalty retains most of its benefit on a graph with no label structure, whereas the MRF's
-benefit vanishes -- the former is largely generic regularization, not relational reasoning.
-All inference is validated against exact marginals on 11{,}280 comparisons; at the couplings
-the models actually use on Cora, Gibbs sampling fails to mix, which we report rather than
-conceal.
+Graph neural networks are justified by a \emph{homophily} assumption: nodes joined by an edge
+tend to share a label. In a graph convolutional network (GCN) that assumption is buried inside
+the architecture, so we never see what it is worth on its own. This project takes the assumption
+out of the architecture, writes it down as an explicit pairwise Markov random field (MRF) over
+the labels, and measures under controlled conditions when stating it explicitly actually helps.
+We compare three ways of imposing it: a Laplacian smoothness penalty added to the training loss
+(the model in our proposal), an expected rule-violation penalty, and a Potts MRF whose unary
+potentials are the frozen network's logits and whose posterior we compute with mean-field
+variational inference, loopy belief propagation and Gibbs sampling -- all validated against
+\emph{exact} marginals from variable elimination. We ran 7{,}744 model runs and 11{,}280
+exact-inference comparisons under a protocol fixed in advance. First,
+our pre-registered hypothesis that the prior helps most when labels are scarcest is
+\emph{refuted and reversed}: the benefit grows with supervision ($-7.07$ accuracy points, 95\%
+CI $[-10.26,-3.91]$), because an MRF propagates label information rather than creating it.
+Second, on synthetic graphs where we control how true the assumption is, a prior whose strength
+is fixed in advance loses up to 45 points through posterior collapse, while the same prior tuned
+on validation data never loses more than 0.5 -- misspecification is dangerous only when the
+model is committed to it. Third, a rewiring control shows the Laplacian penalty keeps most of
+its benefit on a graph with no label structure at all, so it works largely as a generic
+regularizer rather than as relational reasoning.
 \end{abstract}
 
 \section{Introduction}
 
-Node classification is the canonical setting in which observations are not independent: a
-paper's topic is predictable from the topics of the papers it cites. Graph neural networks
-exploit this by smoothing representations over edges, and they are typically motivated by
-\emph{homophily} -- the assumption that an edge signals a shared label. Labels are also
-expensive, so the practically interesting regime is one where only a handful of nodes per class
-are annotated, and prior knowledge should matter most.
+\subsection{Where this project started, and why the question needed sharpening}
 
-This motivates a natural proposal, and the one this project began from: write the homophily
-assumption down explicitly as a differentiable penalty and add it to the training objective.
-The difficulty is that the comparison is confounded. A graph convolution \emph{is} Laplacian
-smoothing \citep{li2018deeper}, so a GCN baseline already contains the assumption; measuring
-whether an explicit penalty raises its accuracy conflates ``does the prior help?'' with ``does
-this backbone already exploit it?''. Worse, a null result would be uninterpretable, and a
-positive one would not tell us whether the prior worked \emph{because} it is relational.
+In node classification the observations are not independent: whether a paper belongs to
+``neural networks'' or ``genetic algorithms'' is predictable from the topics of the papers it
+cites. The assumption encoding that dependence is \emph{homophily} -- an edge is evidence that
+two nodes share a label.
 
-We therefore ask a sharper question with three axes: \textbf{when} does an explicit homophily
-prior help, as a function of label scarcity and of how well the prior matches the graph, and
-does it matter \textbf{how} the prior is imposed -- at training time on the parameters, or at
-inference time on the posterior of an explicit graphical model? A fourth, methodological
-question runs underneath: is the approximate inference faithful enough that the answers are
-about the model rather than the algorithm?
+Our proposal began from a natural idea. A GCN \citep{kipf2017semi} uses homophily implicitly, by
+averaging each node's representation with its neighbours'. Why not state the assumption
+explicitly, as a penalty added to the training objective that pushes connected nodes towards
+similar predicted label distributions? The proposal called this a ``logic regularizer'' -- a
+differentiable version of the rule $\textsc{Edge}(i,j)\Rightarrow\textsc{SameClass}(i,j)$ -- and
+asked whether it helps when labelled nodes are scarce.
 
-\paragraph{Contributions.}
-\begin{itemize}\itemsep2pt
-\item A pre-registered, matched-budget factorial study crossing label scarcity, prior
-correctness, and imposition mechanism on a fixed backbone, with three confirmatory endpoints
-fixed before any experiment ran. One is refuted in the direction opposite to the prediction,
-and we report it as such.
-\item A separation of \emph{relational reasoning} from \emph{generic regularization} using a
-degree-preserving rewiring control, explained by an algebraic identity (Proposition~1) showing
-what the Laplacian penalty optimizes beyond edgewise agreement.
-\item An inference-validation layer: mean-field, loopy belief propagation and chromatic Gibbs
-scored against exact marginals on 11{,}280 controlled comparisons, including the honest
-negative that no trustworthy MCMC reference exists at the couplings the models select.
-\end{itemize}
+Two problems make that comparison hard to interpret, and both shaped our final design.
 
-We claim none of the ingredients as new. Homophily as a probabilistic prior with clamped labels
-is \citet{zhu2003semi}; logic rules as differentiable regularizers are \citet{hu2016harnessing}
-and the semantic loss of \citet{xu2018semantic}; GNN--CRF hybrids trained with EM are GMNN
-\citep{qu2019gmnn}; post-hoc propagation on a base predictor is APPNP
-\citep{gasteiger2019predict} and Correct \& Smooth \citep{huang2021combining}; heterophily as a
-failure regime is \citet{zhu2020beyond} and \citet{ma2022homophily}. The contribution is the
-controlled \emph{measurement} under matched conditions.
+\textbf{The baseline already contains the assumption.} A graph convolution is provably a form of
+Laplacian smoothing \citep{li2018deeper}. Adding a smoothness penalty to a GCN therefore asks
+``does more of the same help?'', not ``does the prior help?''. Whatever we measured, we could not
+attribute it. Our fix is to always measure the prior's effect twice: once on top of a GCN, where
+it is a marginal addition, and once on top of a plain MLP that ignores the graph entirely, where
+it is the \emph{only} source of relational information.
 
-\section{Background and related work}
+\textbf{The penalty is not actually a probabilistic model.} The proposal described it as imposing
+an MRF on the labels, but no MRF was written down and no posterior computed -- it is a heuristic
+on the network's output vectors. Since CMPT 727 provides the tools to write the real model and
+do real inference in it, we did that; the distinction turned out not to be cosmetic
+(\S\ref{sec:mech}).
 
-\paragraph{Graph convolution as smoothing.} A two-layer GCN \citep{kipf2017semi} propagates
-$H^{(\ell+1)}=\sigma(\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}H^{(\ell)}W^{(\ell)})$. This is
-Laplacian smoothing of features \citep{li2018deeper}: the homophily prior is already present,
-implicitly, in the architecture. Any measured benefit of an explicit prior is therefore a
-\emph{marginal} effect over that implicit one -- which is why we also apply the explicit prior
-to a graph-blind MLP, where no such double counting occurs.
+\subsection{What we did, and what the course contributed}
 
-\paragraph{Graph-based semi-supervised learning.} Treating labels as a random field with
-observed labels clamped and the rest inferred is the harmonic-function method of
-\citet{zhu2003semi}. Modern decoupled methods revisit it: APPNP \citep{gasteiger2019predict}
-diffuses a base predictor's outputs, and Correct \& Smooth \citep{huang2021combining} shows
-post-hoc propagation on a simple predictor rivals end-to-end GNNs. Analytically, label
-propagation and graph convolution can be derived as conditional expectations under one Gaussian
-MRF \citep{jia2022unifying, wang2020unifying}, and GNN message passing itself mimics mean-field
-and BP updates \citep{dai2016discriminative}.
+We hold the network fixed and vary only how the assumption enters (Figure~\ref{fig:schematic}):
+as a \textbf{training-time penalty} on the parameters, or as an \textbf{inference-time Potts
+MRF} whose posterior we compute over the labels. We then ask three questions, each with a
+controlled experiment: (Q1) does the prior help most when labels are scarce? (Q2) how does its
+value depend on whether the assumption is actually \emph{true} of the graph? (Q3) does it matter
+which mechanism we use? A fourth question runs underneath: is our approximate inference accurate
+enough that the answers describe the \emph{model} rather than the \emph{algorithm}? We answer it
+by computing exact marginals on small graphs and scoring every algorithm against them.
 
-\paragraph{Homophily and its measurement.} Raw edge homophily is not comparable across graphs;
-adjusted homophily and label informativeness are better behaved \citep{platonov2023characterizing}.
-Low homophily does not imply an uninformative graph -- ``good heterophily'' exists when
-neighbour label distributions are predictive \citep{ma2022homophily} -- a distinction our
-synthetic experiment makes concrete. Benchmarks and evaluation protocols under heterophily are
-themselves unreliable \citep{platonov2023critical}, and single-split Planetoid evaluation is
-known to flip conclusions \citep{shchur2018pitfalls}, motivating our multi-seed paired protocol.
+The project was deliberately designed so that the course's machinery is the object of study
+rather than incidental tooling. Table~\ref{tab:concepts} maps each concept to what we
+implemented and the source we followed.
 
-\paragraph{Approximate inference.} Benchmarking loopy BP against exact marginals on tractable
-networks follows \citet{murphy1999loopy}; our chromatic Gibbs schedule follows
-\citet{gonzalez2011parallel}. Our synthetic generator is a contextual stochastic block model
-\citep{deshpande2018contextual}.
+\begin{table}[t]
+\caption{What we implemented, which CMPT 727 concept it exercises, and the source we followed.
+Every row corresponds to code we wrote and ran.}
+\label{tab:concepts}
+\begin{center}
+\small
+\begin{tabular}{p{2.95cm}p{4.4cm}p{4.75cm}}
+\toprule
+\textbf{Course concept} & \textbf{What we implemented} & \textbf{Source followed} \\
+\midrule
+Markov random fields & Potts model over labels; network logits as unary potentials
+(Eq.~\ref{eq:potts}) & \citet{zhu2003semi}; \citet{kipf2017semi} and \citet{li2018deeper}
+for the backbone \\
+MAP estimation, regularization & Two training penalties, read as log-priors on the outputs
+& \citet{hu2016harnessing}; \citet{xu2018semantic} (semantic loss) \\
+Variational inference & Mean-field coordinate ascent with a provably monotone ELBO
+(Eq.~\ref{eq:mf}) & standard; block schedule via graph colouring \\
+Belief propagation; MCMC & Damped loopy BP (exact on trees); chromatic Rao-Blackwellized Gibbs
+with $\hat{R}$ and ESS gates & \citet{murphy1999loopy}; \citet{gonzalez2011parallel} \\
+Exact inference & Variable elimination and enumeration, used as ground truth
+& course material \\
+Generative models & Synthetic generator with Gaussian class-conditionals; closed-form Bayes
+classifier & \citet{deshpande2018contextual} \\
+Model misspecification & Homophily sweep making the same prior true or false by construction
+& \citet{ma2022homophily}; \citet{platonov2023characterizing} \\
+Evaluation and uncertainty & Paired designs, bootstrap intervals, pre-registered comparisons;
+NLL and Brier alongside accuracy & \citet{shchur2018pitfalls} \\
+Prior applied after training & Post-hoc inference on a frozen predictor
+& \citet{gasteiger2019predict}; \citet{huang2021combining} \\
+EM with latent variables & \emph{Not} implemented; identified as the fix for the failure we
+measured (\S\ref{sec:future}) & \citet{qu2019gmnn} (GMNN) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Background}
+
+\paragraph{Setting.} Given a graph $G=(V,E)$, features $X$ and labels $y_i\in\{1,\dots,C\}$
+observed on a small subset of nodes, we predict the rest. The setting is \emph{transductive}:
+all features and edges are visible during training, only labels are hidden. \emph{Edge
+homophily} $h$ is the fraction of edges whose endpoints share a label ($0.81$ on Cora); since it
+is not comparable across graphs with different class counts, we also report adjusted homophily
+and label informativeness \citep{platonov2023characterizing}.
+
+\paragraph{Why a GCN already assumes homophily.} A two-layer GCN computes
+$H^{(\ell+1)}=\sigma(\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}H^{(\ell)}W^{(\ell)})$, replacing
+each node's representation by a weighted neighbourhood average --- Laplacian smoothing
+\citep{li2018deeper}. The prior is already in the architecture, which is the confound described
+above.
+
+\paragraph{Relation to prior work.} None of the individual components is new;
+Table~\ref{tab:concepts} names the source for each. Homophily as a label MRF with observed
+labels as evidence is \citet{zhu2003semi}; a logical rule as a differentiable loss is
+\citet{hu2016harnessing} and \citet{xu2018semantic}; applying a relational correction after
+training a simple predictor is \citet{gasteiger2019predict} and \citet{huang2021combining};
+combining a GNN with an MRF trained by EM is GMNN \citep{qu2019gmnn}. Our contribution is not a
+new model but a controlled measurement of when these pieces pay off, plus a demonstration that
+one widely used piece does not do what it is usually said to do.
 
 \section{Methods}
 
-\subsection{Setup}
+\subsection{The experimental pipeline}
 
-We are given a graph $G=(V,E)$ with features $X$ and labels $y_i\in\{1,\dots,C\}$ observed on a
-small training set. All experiments are transductive: features and edges of validation and test
-nodes are visible during training, labels are not. An encoder $f_\theta$ (an MLP that ignores
-$G$, or a GCN that uses it) produces logits $s_i(c)$, and $p_i=\mathrm{softmax}(s_i)$.
+One run of our pipeline does the following.
 
-\subsection{One assumption, three impositions}
+\begin{enumerate}\itemsep1pt
+\item Sample $m$ labelled nodes per class, stratified, with fixed validation and test sets.
+\item Train an encoder -- an MLP (features only) or a GCN (features and graph) -- with
+      cross-entropy, optionally adding one of the two prior penalties.
+\item \textbf{Save the trained network's logits $s_i(c)$ to disk.}
+\item Build a Potts MRF using those saved logits as unary potentials and compute its posterior
+      by approximate inference.
+\item Record accuracy, macro-F1, NLL, Brier score and diagnostics as one row of a results file.
+\end{enumerate}
 
-Figure~\ref{fig:schematic} shows the design. With edgewise agreement
-$A(p)=\sum_{(i,j)\in E} p_i^\top p_j$, the three rungs are:
-
-\textbf{(M2) Laplacian penalty} -- the original proposal, a smoothness heuristic on the outputs:
-\begin{equation}
-\mathcal{L}_{\rm lap}=\tfrac{1}{|E|}\sum_{(i,j)\in E}\|p_i-p_j\|_2^2,
-\qquad \mathcal{L}=\mathcal{L}_{\rm CE}+\lambda\mathcal{L}_{\rm lap}.
-\end{equation}
-
-\textbf{(M3) Expected rule violation} -- under the factorized approximation,
-$\Pr(y_i=y_j)=p_i^\top p_j$, so the probability that the rule
-$\textsc{Edge}(i,j)\Rightarrow\textsc{SameClass}(i,j)$ fails is a semantic loss
-\citep{xu2018semantic}: $\mathcal{L}_{\rm rule}=\tfrac{1}{|E|}\sum_{(i,j)\in E}(1-p_i^\top p_j)$.
-
-\textbf{(M4) Explicit Potts MRF} -- the assumption as a joint distribution over labels, with the
-\emph{frozen} logits as unary potentials:
-\begin{equation}
-p(y\mid X,G)\;\propto\;\exp\Big[\sum_i s_i(y_i)+\beta\!\!\sum_{(i,j)\in E}\!\!w_{ij}\,
-\mathbf{1}[y_i=y_j]\Big].
-\label{eq:potts}
-\end{equation}
-Inference is \emph{post-hoc}: the encoder is trained normally, then Eq.~\ref{eq:potts} is solved.
-This is the isolation that makes the comparison clean -- every MRF variant is a pure function of
-the same unary evidence, so differences are attributable to the prior and the inference, not to
-a different fit.
+Step 3 is what makes the comparison clean: because inference consumes \emph{frozen} logits, the
+MRF and the plain network see exactly the same evidence, so any difference between them is caused
+by the prior and the inference, not by a differently-fitted network.
 
 \begin{figure}[t]
 \begin{center}
 \includegraphics[width=\linewidth]{fig1_schematic.pdf}
 \end{center}
-\caption{The same homophily assumption imposed in two places. Training-time: a penalty on the
-outputs changes the learned parameters. Inference-time: the frozen logits become unary
-potentials of a Potts MRF and the posterior is recomputed. Every inference routine is validated
-against exact marginals before use.}
+\caption{The same homophily assumption imposed in two different places. Upper path: a penalty
+added to the training loss changes the network's parameters. Lower path: the trained network's
+logits become the unary potentials of a Potts MRF and the posterior is recomputed at test time
+with the network frozen. Every inference routine is validated against exact marginals first.}
 \label{fig:schematic}
 \end{figure}
 
-\subsection{Proposition 1: what the three mechanisms share, and where they differ}
+\subsection{Three ways of imposing one assumption}
+\label{sec:ladder}
 
-\begin{quote}
-With $A(p)=\sum_{(i,j)\in E}p_i^\top p_j$,
-\[
-\mathcal{L}_{\rm rule}=1-\tfrac{A(p)}{|E|},\qquad
-\mathcal{L}_{\rm lap}=\tfrac{1}{|E|}\!\!\sum_{(i,j)\in E}\!\!\big(\|p_i\|^2+\|p_j\|^2\big)-\tfrac{2A(p)}{|E|},
-\]
-\[
-\mathcal{F}_{\rm MF}(q)=\sum_i q_i^\top s_i+\beta A(q)+\sum_i H(q_i).
-\]
-\end{quote}
-\emph{Proof:} expand $\|p_i-p_j\|^2=\|p_i\|^2+\|p_j\|^2-2p_i^\top p_j$ and sum; the mean-field
-objective is the standard ELBO for Eq.~\ref{eq:potts} under $q(y)=\prod_i q_i(y_i)$. $\square$
+Let $p_i=\mathrm{softmax}(s_i)$ be the predicted label distribution at node $i$.
 
-All three are driven by the \emph{same} pairwise statistic $A$. They differ in (i) which
-variable is optimized -- network parameters at training time versus the posterior at test time --
-and (ii) the companion term: the Laplacian form carries an extra \textbf{confidence penalty}
-$\sum_i \deg_i\|p_i\|^2$ that discourages confident predictions regardless of what the graph
-says, whereas the mean-field objective carries an \textbf{entropy} term. Section~\ref{sec:mech}
-tests this prediction directly.
-
-\subsection{Inference}
-
-The mean-field update for Eq.~\ref{eq:potts} is
+\textbf{(M2) Laplacian penalty} -- the model from our proposal, penalizing disagreement across
+each edge, with $\lambda$ playing the role of a prior precision in a MAP reading:
 \begin{equation}
-q_i(c)\;\propto\;\exp\Big[s_i(c)+\beta\sum_{j\in N(i)}w_{ij}\,q_j(c)\Big],
+\mathcal{L}_{\rm lap}=\frac{1}{|E|}\sum_{(i,j)\in E}\|p_i-p_j\|_2^2,
+\qquad
+\mathcal{L}=\mathcal{L}_{\rm CE}+\lambda\,\mathcal{L}_{\rm lap}.
+\end{equation}
+
+\textbf{(M3) Expected rule violation.} If predictions are treated as independent label
+distributions, the probability that two adjacent nodes share a label is
+$\Pr(y_i=y_j)=\sum_c p_{ic}p_{jc}=p_i^\top p_j$, so the probability the rule is \emph{violated}
+is $1-p_i^\top p_j$. This gives a loss with a direct probabilistic reading
+\citep{xu2018semantic}:
+$\mathcal{L}_{\rm rule}=\frac{1}{|E|}\sum_{(i,j)\in E}(1-p_i^\top p_j)$.
+
+\textbf{(M4) An explicit Potts MRF.} Rather than nudging outputs, we write a distribution over
+the labels themselves, using the trained logits as unary evidence:
+\begin{equation}
+p(y\mid X,G)\;\propto\;\exp\Big[\underbrace{\textstyle\sum_{i\in V} s_i(y_i)}_{\text{network evidence}}
+\;+\;\beta\!\!\sum_{(i,j)\in E}\!\!\underbrace{\mathbf{1}[y_i=y_j]}_{\text{homophily prior}}\Big].
+\label{eq:potts}
+\end{equation}
+Here $\beta\ge0$ encodes how strongly we believe the assumption, and $\beta=0$ recovers the plain
+network exactly -- which we use as a correctness test. Prediction means computing posterior
+marginals $q_i(c)\approx p(y_i=c\mid X,G)$ and taking the argmax.
+
+\subsection{Proposition 1: what the three share, and where they differ}
+
+The three are more closely related than they appear, and the difference explains one of our main
+results. With \emph{edgewise agreement} $A(p)=\sum_{(i,j)\in E}p_i^\top p_j$:
+\begin{align}
+\mathcal{L}_{\rm rule}&=1-\tfrac{1}{|E|}A(p), \qquad
+\mathcal{L}_{\rm lap}=\tfrac{1}{|E|}\!\!\sum_{(i,j)\in E}\!\!\left(\|p_i\|^2+\|p_j\|^2\right)
+-\tfrac{2}{|E|}A(p),\\
+\mathcal{F}_{\rm MF}(q)&=\textstyle\sum_i q_i^\top s_i+\beta A(q)+\sum_i H(q_i).
+\end{align}
+\emph{Proof.} Expand $\|p_i-p_j\|^2=\|p_i\|^2+\|p_j\|^2-2p_i^\top p_j$ and sum over edges;
+$\mathcal{F}_{\rm MF}$ is the evidence lower bound for Eq.~\ref{eq:potts} under a factorized
+$q(y)=\prod_i q_i(y_i)$. $\square$
+
+All three are driven by the \emph{same} statistic $A$, but differ in two ways. First in
+\emph{what is optimized}: the penalties change network parameters during training, while the MRF
+changes the posterior at test time with the network fixed. Second in the \emph{companion term}:
+the Laplacian form carries an extra $\sum_i\deg_i\|p_i\|^2$ that penalizes \emph{confident}
+predictions regardless of what the graph says, whereas the variational objective carries an
+entropy term. Section~\ref{sec:mech} tests this prediction experimentally and confirms it.
+
+\subsection{Computing the posterior: three approximations and one exact answer}
+\label{sec:inference}
+
+Exact marginals of Eq.~\ref{eq:potts} are intractable on Cora ($7^{2708}$ configurations), so we
+implemented three approximate algorithms from the course, plus exact inference for validation.
+
+\textbf{Mean-field variational inference} (our primary engine) approximates the posterior by a
+factorized $q(y)=\prod_i q_i(y_i)$ and maximizes the ELBO by coordinate ascent:
+\begin{equation}
+q_i(c)\;\propto\;\exp\Big[s_i(c)+\beta\sum_{j\in N(i)}q_j(c)\Big],
 \label{eq:mf}
 \end{equation}
-which we run \emph{to convergence} (never as a tuned iteration count) using colour-blocked
-coordinate ascent: nodes sharing a graph colour share no edge, so a whole colour class updates
-at once and the update remains exact block coordinate ascent, so the ELBO is monotone (asserted
-at every block). Note Eq.~\ref{eq:mf} is APPNP-style propagation with the unary evidence
-re-injected each sweep, but over the raw adjacency rather than the symmetric normalization a
-GCN applies -- the two therefore smooth differently.
+so each node's belief is its own evidence plus the summed beliefs of its neighbours. We update a
+whole \emph{graph-colour class} at a time: same-colour nodes share no edge, so they update
+simultaneously while the step remains exact block coordinate ascent -- vectorized \emph{and}
+provably ELBO-monotone, which we assert at runtime. We always run to convergence and never tune
+the iteration count, since a half-converged approximation would confound ``the model is worse''
+with ``we stopped early''.
 
-We additionally implement damped loopy BP (exploiting the Potts structure for $O(C)$ messages)
-and chromatic Gibbs sampling with Rao-Blackwellized marginals \citep{gonzalez2011parallel},
-gated by split $\hat{R}$ and ESS. Exact marginals come from brute-force enumeration
-($C^n\le 5\times10^6$) or repeated min-fill variable elimination.
+\textbf{Loopy BP} is \emph{exact on trees}, giving a strong correctness test, and approximate
+(sometimes non-convergent) on cyclic graphs. We use damped updates and exploit the Potts
+structure for $O(C)$ rather than $O(C^2)$ messages.
 
-\subsection{Two prior regimes}
+\textbf{Gibbs sampling} resamples an entire colour class at once, valid because same-colour
+nodes are conditionally independent \citep{gonzalez2011parallel}. We use the Rao-Blackwellized
+estimator -- averaging conditional probability vectors instead of counting label frequencies --
+and monitor split $\hat{R}$ and effective sample size, refusing to trust runs that fail those
+diagnostics.
 
-A subtlety decides whether harm is observable at all. If $\beta$ is selected on validation, the
-baseline is nested at $\beta\to 0$, so a wrong prior is simply tuned away and no harm can
-appear. We therefore pre-register two regimes: \textbf{tuned} ($\beta$ chosen per condition on
-validation -- the prior as an \emph{option}) and \textbf{dogmatic} ($\beta$ fixed at the value
-selected in a reference homophilous cell and applied everywhere -- the prior as an
-\emph{assumption}).
+\textbf{Exact inference.} On small graphs we compute true marginals two independent ways --
+enumeration when $C^n\le5\times10^6$, repeated variable elimination with a min-fill ordering
+otherwise -- and require agreement to $10^{-10}$ before using either as ground truth.
+
+\subsection{A synthetic graph where we control whether the assumption is true}
+\label{sec:csbm}
+
+Real datasets cannot tell us when a prior fails, because their homophily is fixed. We therefore
+generate graphs from a \emph{contextual stochastic block model} \citep{deshpande2018contextual}:
+$n=2800$ nodes in $C=7$ equal classes, edges drawn with probability $p_{\rm in}$ within a class
+and $p_{\rm out}$ across classes, and class-conditional Gaussian features
+$x_i\sim\mathcal{N}(\mu_{y_i},\sigma_x^2 I)$.
+
+Setting $p_{\rm in}=hk/(n_c-1)$ and $p_{\rm out}=(1-h)k/(n-n_c)$ makes the target homophily $h$
+adjustable while holding the expected degree at $k=8$, so degree cannot confound the comparison.
+Knowing the generative process also gives two reference ceilings: the Bayes-optimal feature-only
+classifier (\textsc{Oracle-F}, nearest class mean) and an oracle that also uses the graph with
+the \emph{generator-implied} coupling $\beta_{\rm gen}=\log(p_{\rm in}/p_{\rm out})$
+(\textsc{Oracle-G}). The feature noise $\sigma_x$ was fixed once, on separate pilot graphs never
+reused, by requiring \textsc{Oracle-F} accuracy in $[0.70,0.80]$.
+
+\subsection{Two ways of setting the prior's strength}
+
+One design decision determines whether harm is observable at all. If $\beta$ is chosen on
+validation data then, because $\beta=0$ recovers the baseline, a wrong prior is simply tuned away
+and can never hurt. We therefore study two regimes: \textbf{tuned}, with $\beta$ selected per
+condition (the prior as an \emph{option} the model may decline), and \textbf{dogmatic}, with
+$\beta$ fixed at the value selected on a highly homophilous reference graph and then applied
+everywhere (the prior as an \emph{assumption} committed to in advance, which is the situation of
+a practitioner who believes ``linked nodes share labels'' and does not re-check).
+
+\subsection{Correctness tests run before any experiment}
+
+Because nearly every conclusion depends on code that is easy to get subtly wrong, we gated the
+study on tests that had to pass first: $\lambda=0$ reproduces the plain GCN to $<10^{-5}$;
+$\beta=0$ reproduces $\mathrm{softmax}(s)$ to $2.1\times10^{-14}$ for every engine; enumeration
+and variable elimination agree to $<10^{-10}$; BP matches exact marginals on trees; the
+mean-field ELBO never decreases; and permuting test labels leaves training output bit-identical,
+proving test labels cannot leak into training.
 
 \section{Experimental setup}
 
-\paragraph{Datasets.} Cora and CiteSeer \citep{sen2008collective, yang2016revisiting} via the
-standard Planetoid split, plus a contextual SBM \citep{deshpande2018contextual} in which edge
-homophily $h$ is manipulated while expected degree, class balance, feature dimension and feature
-noise are held fixed, using $p_{\rm in}=hk/(n_c-1)$, $p_{\rm out}=(1-h)k/(n-n_c)$. Because the
-generative process is known it also yields a closed-form feature-only Bayes oracle
-(\textsc{Oracle-F}) and the generator-implied coupling
-$\beta_{\rm gen}=\log(p_{\rm in}/p_{\rm out})$ used by \textsc{Oracle-G}. Table~\ref{tab:data}
-reports statistics recomputed from the loaded objects.
+\paragraph{Datasets.} Cora and CiteSeer \citep{sen2008collective,yang2016revisiting} in the
+standard Planetoid split, plus the synthetic generator above. Table~\ref{tab:data} reports
+statistics recomputed from the loaded data rather than quoted from other papers.
 
-\paragraph{Protocol.} Pre-registered before any run and frozen under a git tag: 10 paired seeds
-(30 on confirmatory cells), $m\in\{1,2,5,10,20\}$ labels/class sampled stratified and nested
-across $m$; backbone hyperparameters tuned once per dataset \emph{and per architecture} at $m=5$
-and then frozen; prior strength tuned per condition on validation with an equal budget of six
-configurations; early stopping on validation accuracy. Selection is a pure function of
-validation accuracy and never reads a test column. The CSBM's feature noise $\sigma_x$ was fixed
-once on quarantined pilot seeds by requiring \textsc{Oracle-F} accuracy in $[0.70,0.80]$, and
-never retuned.
+\paragraph{Protocol.} The protocol was version-controlled \emph{before} any experiment ran, so
+the three main comparisons could not be adjusted after seeing results. It fixes: label budgets
+$m\in\{1,2,5,10,20\}$ per class, stratified and nested across $m$; 10 seeds (30 for the
+confirmatory comparisons); backbone hyperparameters tuned once per dataset and architecture at
+$m=5$, then frozen; prior strength tuned per condition on validation with an equal budget of six
+configurations for every model; early stopping on validation accuracy. Model selection is a pure
+function of validation accuracy and never reads a test-set column.
 
-\paragraph{Statistics.} Every comparison is paired by seed. We report the mean paired
-difference, a 95\% BCa bootstrap interval ($B=10{,}000$) and the sign count. Only three
-endpoints, fixed in advance, receive a hypothesis test (Holm-corrected Wilcoxon signed-rank);
-everything else is estimation and is labelled exploratory. On the real graphs the seeds vary the
-training sample and initialization on a \emph{fixed} graph and test set, so intervals describe
-protocol variability, not generalization to new graphs; only the CSBM redraws the graph per seed.
-
-\paragraph{Scale and validation.} 7{,}744 model runs and 11{,}280 exact-inference comparisons,
-CPU only. Before any experiment, gates verified that $\lambda=0$ reproduces the plain GCN to
-$<10^{-5}$, that $\beta=0$ reproduces $\mathrm{softmax}(s)$ to $2.1\times10^{-14}$ for every
-engine, that enumeration and variable elimination agree to $<10^{-10}$, and that permuting test
-labels leaves training output bit-identical. Thirteen automated audit checks pass.
+\paragraph{Statistics.}
+\label{sec:stats}
+Every comparison is \emph{paired}: within a seed all models see the same split and the same
+trained checkpoint, so per-seed differences remove split and initialization variance. We report
+the mean paired difference, a 95\% bias-corrected and accelerated bootstrap interval
+($B=10{,}000$) and the number of seeds in which the difference was positive. Only the three
+pre-registered comparisons receive a hypothesis test (Holm-corrected Wilcoxon signed-rank);
+everything else is an estimate labelled exploratory. On the real datasets the seeds vary only
+the training sample and initialization on a \emph{fixed} graph and test set, so the intervals
+describe run-to-run variability, not generalization to new graphs; only the synthetic experiment
+redraws the graph per seed. In total we ran 7{,}744 model runs and 11{,}280 exact-inference
+comparisons on CPU, and 13 automated audit checks pass.
 
 \begin{table}[t]
-\caption{Dataset statistics, recomputed from the loaded data rather than quoted. Adjusted
-homophily and label informativeness follow \citet{platonov2023characterizing}. The CSBM row
-shows the realized values at the frozen $\sigma_x$; expected degree is held at 8.0 for every $h$.}
+\caption{Dataset statistics, recomputed from the loaded data. LI is label informativeness. For
+the synthetic graphs expected degree is held at 8.0 at every homophily level by construction;
+note that at $h=0.05$ the adjusted homophily is \emph{negative}, i.e.\ the graph is
+heterophilous.}
 \label{tab:data}
 \begin{center}
 \small
 \begin{tabular}{lrrrrrrr}
 \toprule
 \textbf{Dataset} & \textbf{Nodes} & \textbf{Edges} & \textbf{Feat.} & \textbf{$C$} &
-\textbf{Deg.} & \textbf{$h_{\rm edge}$} & \textbf{$h_{\rm adj}$ / LI} \\
+\textbf{Degree} & \textbf{$h_{\rm edge}$} & \textbf{$h_{\rm adj}$ / LI} \\
 \midrule
 Cora            & 2{,}708 & 5{,}278 & 1{,}433 & 7 & 3.90 & 0.810 & 0.771 / 0.590 \\
 CiteSeer        & 3{,}327 & 4{,}552 & 3{,}703 & 6 & 2.74 & 0.736 & 0.671 / 0.451 \\
@@ -287,57 +366,60 @@ CSBM $h{=}0.90$ & 2{,}800 & $\approx$11.1k & 32 & 7 & 7.93 & 0.903 & 0.886 / 0.7
 
 \section{Results}
 
-\subsection{The prior's value tracks unary quality, not label scarcity}
+\subsection{Q1: the prior's value tracks the quality of the evidence, not label scarcity}
 
-Our first pre-registered endpoint (C1) predicted that the MRF's benefit over a feature-only MLP
-would be larger at $m{=}2$ than at $m{=}20$. Over 30 paired seeds the contrast is
-$\theta=-7.07$ points, 95\% CI $[-10.26,-3.91]$, $p=6.6\times10^{-4}$, 7/30 seeds positive:
-\textbf{the hypothesis is refuted, and the effect is significantly reversed}.
+\textbf{In short: we predicted the prior would help most when labels were scarcest; it helped
+\emph{least} there, and we can say exactly why.}
 
-Figure~\ref{fig:lowlabel}(b) shows why this is not a mundane null. The two arms move in
-opposite directions. Measured against the GCN, the explicit prior's benefit \emph{shrinks} with
-supervision ($+4.38\to+0.59$ points for the Laplacian penalty from $m{=}1$ to $m{=}20$).
-Measured against the MLP, it \emph{grows} ($+4.45\to+19.55$).
+Our first pre-registered comparison asked whether the MRF's advantage over a feature-only MLP is
+larger at $m{=}2$ than at $m{=}20$. Over 30 paired seeds the difference-of-differences is
+$\theta=-7.07$ points, 95\% CI $[-10.26,-3.91]$, $p=6.6\times10^{-4}$, with only 7 of 30 seeds
+in the predicted direction. The hypothesis is refuted and the effect runs the other way.
 
-The mechanism is visible in the selected couplings. At $m{=}1$ the MLP reaches $29.2\%$ against
-a chance level of $14.3\%$: there is almost nothing to propagate, and validation selects a weak
-coupling (median $\beta^\star=0.375$). From $m{\ge}2$ the unaries carry real signal, validation
-saturates the grid ($\beta^\star=2.0$), and propagation converts feature evidence into a 19--22
-point gain. Relational inference \emph{amplifies} label information already present in the
-unary evidence; it does not create it. Against a GCN the pattern inverts because the GCN has
-already propagated -- what is left for the explicit prior shrinks as supervision grows.
-CiteSeer reproduces this independently ($+5.34$, $+12.46$, $+10.09$ points at
-$m=1,5,20$; 10/10 seeds each), so the reversal is not a Cora artifact.
+Figure~\ref{fig:lowlabel}(b) shows the two arms moving in opposite directions. Measured against a
+GCN the explicit prior's benefit \emph{shrinks} with supervision ($+4.38\to+0.59$ points from
+$m{=}1$ to $m{=}20$ for the Laplacian penalty); measured against an MLP it \emph{grows}
+($+4.45\to+19.55$).
+
+\textbf{Why.} The selected coupling strengths tell the story. At $m{=}1$ the MLP reaches $29.2\%$
+against a chance level of $14.3\%$: there is little label signal to propagate, and validation
+accordingly selects a weak coupling (median $\beta^\star=0.375$). From $m{\ge}2$ the MLP carries
+real signal, validation selects the strongest available coupling, and propagation converts
+feature evidence into a 19--22 point gain. An MRF \emph{amplifies} label information that is
+already present; it does not manufacture it. Against a GCN the trend inverts for the
+complementary reason: the GCN has already propagated. CiteSeer reproduces the pattern
+independently ($+5.34$, $+12.46$, $+10.09$ points at $m=1,5,20$, 10 of 10 seeds each).
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics[width=\linewidth]{fig2_low_label.pdf}
+\includegraphics[width=0.95\linewidth]{fig2_low_label.pdf}
 \end{center}
-\caption{Cora, 10 paired seeds, validation-selected hyperparameters. (a) Accuracy against label
-budget; error bars are $\pm1$ s.d. (b) Paired differences with 95\% BCa intervals. The explicit
-prior's benefit over the GCN decays with supervision, while its benefit over the graph-blind MLP
-\emph{grows} -- the prior amplifies unary signal rather than substituting for it.}
+\caption{Cora, 10 paired seeds. (a) Accuracy against labels per class; error bars are $\pm1$
+standard deviation. (b) Paired differences with 95\% bootstrap intervals. The benefit of the
+explicit prior \emph{over the GCN} decays with supervision, while its benefit \emph{over the
+graph-blind MLP} grows -- the prior amplifies unary evidence rather than substituting for it.}
 \label{fig:lowlabel}
 \end{figure}
 
 \begin{table}[t]
-\caption{Main results: test accuracy (\%), mean $\pm$ s.d. over 10 paired seeds with
-validation-selected hyperparameters. Best per row in bold. Label propagation uses training
-labels as inference-time evidence and is reported separately for that reason.}
+\caption{Main results: test accuracy (\%), mean $\pm$ standard deviation over 10 paired seeds
+with hyperparameters selected on validation data. ``MRF(MLP)'' is the Potts MRF applied to the
+MLP's logits, ``MRF(GCN)'' to the GCN's. Label propagation uses training labels as inference-time
+evidence, which the other models do not, so it is listed separately.}
 \label{tab:main}
 \begin{center}
 \small
 \begin{tabular}{llrrrrrr}
 \toprule
-& $m$ & \textbf{MLP} & \textbf{LP} & \textbf{GCN} & \textbf{+Laplacian} &
+& $m$ & \textbf{MLP} & \textbf{Label prop.} & \textbf{GCN} & \textbf{+Laplacian} &
 \textbf{MRF(MLP)} & \textbf{MRF(GCN)} \\
 \midrule
 \multirow{5}{*}{\rotatebox{90}{Cora}}
 & 1  & 29.2\,$\pm$\,5.7 & 20.2\,$\pm$\,9.8 & 38.8\,$\pm$\,10.7 & \textbf{43.2\,$\pm$\,8.6} & 33.6\,$\pm$\,8.7 & 41.6\,$\pm$\,13.7 \\
 & 2  & 32.5\,$\pm$\,4.9 & 21.2\,$\pm$\,8.5 & 51.2\,$\pm$\,8.6 & 53.4\,$\pm$\,7.8 & 43.7\,$\pm$\,10.0 & \textbf{53.6\,$\pm$\,9.5} \\
 & 5  & 40.5\,$\pm$\,5.0 & 43.0\,$\pm$\,12.5 & 67.6\,$\pm$\,6.8 & 68.7\,$\pm$\,7.2 & 59.5\,$\pm$\,9.4 & \textbf{71.9\,$\pm$\,7.2} \\
-& 10 & 50.6\,$\pm$\,3.0 & 57.7\,$\pm$\,4.9 & 75.0\,$\pm$\,3.3 & 75.8\,$\pm$\,2.6 & 73.1\,$\pm$\,1.6 & 76.4\,$\pm$\,2.7 \\
-& 20 & 58.9\,$\pm$\,2.4 & 66.9\,$\pm$\,4.0 & 79.4\,$\pm$\,2.2 & 79.9\,$\pm$\,1.9 & 78.4\,$\pm$\,1.5 & 80.1\,$\pm$\,2.2 \\
+& 10 & 50.6\,$\pm$\,3.0 & 57.7\,$\pm$\,4.9 & 75.0\,$\pm$\,3.3 & 75.8\,$\pm$\,2.6 & 73.1\,$\pm$\,1.6 & \textbf{76.4\,$\pm$\,2.7} \\
+& 20 & 58.9\,$\pm$\,2.4 & 66.9\,$\pm$\,4.0 & 79.4\,$\pm$\,2.2 & 79.9\,$\pm$\,1.9 & 78.4\,$\pm$\,1.5 & \textbf{80.1\,$\pm$\,2.2} \\
 \midrule
 \multirow{3}{*}{\rotatebox{90}{CiteS.}}
 & 1  & 29.2\,$\pm$\,2.8 & 20.9\,$\pm$\,3.3 & 31.9\,$\pm$\,7.3 & \textbf{37.5\,$\pm$\,9.5} & 34.5\,$\pm$\,5.5 & 32.3\,$\pm$\,7.2 \\
@@ -348,70 +430,81 @@ labels as inference-time evidence and is reported separately for that reason.}
 \end{center}
 \end{table}
 
-\subsection{Prior correctness governs benefit -- but only a committed prior can be harmed}
+\subsection{Q2: the prior's value depends on whether it is true -- and on whether we commit to it}
+\label{sec:homophily}
 
-The CSBM sweep manipulates the truth of the prior directly. Both remaining endpoints are
-supported: benefit grows with homophily (C2: $+78.77$ points, CI $[+55.53,+84.87]$, 10/10
-seeds) and the dogmatic prior actively harms at $h{=}0.05$ (C3: $-29.72$ points, CI
-$[-31.81,-28.16]$, 10/10 seeds). Both survive Holm correction.
+\textbf{In short: a prior we tune is almost never harmful, while the identical prior fixed in
+advance can destroy the model.}
 
-Figure~\ref{fig:heatmap} makes the decisive comparison. Under the \textbf{dogmatic} regime the
-same prior swings from $-45.2$ to $+54.7$ points; under the \textbf{tuned} regime the worst cell
-is $-0.5$. The failure is not gradual degradation but \textbf{posterior collapse}: at
-$\beta{=}2$, $h{=}0.05$ the argmax edge agreement reaches $0.966$ and accuracy falls to
-$16.9\%\approx$ chance (Figure~\ref{fig:sens}c) -- the coupling term overwhelms the unaries and
-nearly every node receives the same label. Because $\beta\to0$ nests the baseline, validation
-simply retreats when the prior is wrong. \emph{Tuning is what converts a dangerous assumption
-into a safe option}, and a study that tuned everywhere would have observed a benign heatmap and
-concluded, wrongly, that the prior is harmless.
+Here the synthetic generator earns its place: we can make the assumption true or false while
+holding everything else constant. Both remaining pre-registered comparisons are supported. The
+benefit grows with homophily (difference between $h=0.9$ and $h=0.5$: $+78.77$ points, CI
+$[+55.53,+84.87]$, 10 of 10 seeds) and the dogmatic prior actively harms at $h=0.05$
+($-29.72$ points, CI $[-31.81,-28.16]$, 10 of 10 seeds). Both survive Holm correction.
 
-Per-seed interpolation of the zero crossing gives $h^\star = 0.76\,[0.52,0.87]$ at $m{=}1$,
-$0.57\,[0.40,0.59]$ at $m{=}5$ and $0.43\,[0.42,0.43]$ at $m{=}20$ (10/10 seeds;
-Figure~\ref{fig:cross}a): more supervision lets a model tolerate a wronger prior.
+Figure~\ref{fig:heatmap} holds the decisive comparison. Under the dogmatic regime the same prior
+ranges from $-45.2$ to $+54.7$ points depending only on the graph; under the tuned regime the
+worst cell is $-0.5$. The failure mode is not gradual degradation but \textbf{posterior
+collapse}: at $\beta{=}2$ on the $h{=}0.05$ graph, $96.6\%$ of edges end with both endpoints
+predicted the same label and accuracy falls to $16.9\%$, essentially chance
+(Figure~\ref{fig:sens}c). The coupling term simply overwhelms the unary evidence and the MRF
+paints nearly the whole graph one colour.
+
+The practical lesson concerns \emph{model selection as a safety mechanism}: because $\beta\to0$
+nests the baseline, validation retreats to a weak coupling whenever the prior is wrong, so a study
+that tuned everywhere would have seen a benign heatmap and concluded, incorrectly, that a
+homophily prior is harmless. Interpolating each seed's zero crossing gives a break-even homophily
+of $h^\star=0.76\,[0.52,0.87]$ at $m{=}1$, $0.57\,[0.40,0.59]$ at $m{=}5$ and
+$0.43\,[0.42,0.43]$ at $m{=}20$ (Figure~\ref{fig:cross}a): more supervision lets a model tolerate
+a wronger prior.
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics[width=\linewidth]{fig3_sbm_heatmap.pdf}
+\includegraphics[width=0.95\linewidth]{fig3_sbm_heatmap.pdf}
 \end{center}
-\caption{Contextual SBM: paired $\Delta$ accuracy of the Potts MRF over the MLP it is built on,
-across homophily $h$ and label budget $m$ (10 fresh graphs per cell; expected degree, class
-balance and feature noise held fixed). (a) With $\beta$ fixed in advance, the same prior swings
-from $-45$ to $+55$ points. (b) With $\beta$ selected on validation, the harm essentially
-disappears (worst cell $-0.5$).}
+\caption{Synthetic graphs: change in accuracy from adding the Potts MRF to the MLP, across
+homophily $h$ and label budget $m$ (10 freshly generated graphs per cell; expected degree, class
+balance and feature noise held fixed). (a) With the coupling fixed in advance the same prior
+swings from $-45$ to $+55$ points. (b) With the coupling chosen on validation data the harm
+essentially disappears.}
 \label{fig:heatmap}
 \end{figure}
 
-\paragraph{A low-homophily graph is not an uninformative graph.} At $h{=}0.05$ the generator
-implies a \emph{negative} coupling, $\beta_{\rm gen}=-1.15$. \textsc{Oracle-G}, which uses the
-true generative unaries with that coupling, reaches $77.0\%$ -- \emph{better} than the
-feature-only \textsc{Oracle-F} ($73.4\%$) -- while the positive-$\beta$ Potts prior collapses to
-$15\%$. The relational evidence is genuinely useful there; what fails is the \emph{same-label}
-assumption, which has the wrong sign. This is direct, controlled evidence for the distinction
-that \citet{ma2022homophily} draw between misspecification and uninformativeness. Validation
-tuning cannot repair it: $\beta^\star$ saturates at the grid maximum while $\beta_{\rm gen}$
-rises to $3.99$ at $h{=}0.9$, and no positive $\beta$ can express an anti-homophilous
-compatibility at all (Figure~\ref{fig:cross}b).
+\paragraph{A low-homophily graph is not an uninformative graph.} This distinction
+\citep{ma2022homophily} became concrete in our data. At $h=0.05$ the generator implies a
+\emph{negative} coupling, $\beta_{\rm gen}=-1.15$: neighbours are informative precisely because
+they tend to \emph{differ}. \textsc{Oracle-G}, which uses the true generative model with that
+coupling, reaches $77.0\%$ -- better than the feature-only \textsc{Oracle-F} at $73.4\%$ --
+while our positive-$\beta$ Potts prior collapses to $15\%$. The graph carries real signal; the
+\emph{same-label} assumption is simply the wrong assumption, with the wrong sign. No amount of
+tuning with $\beta\ge0$ can fix that, as Figure~\ref{fig:cross}(b) shows: the selected
+$\beta^\star$ saturates while $\beta_{\rm gen}$ keeps rising, and goes negative at low $h$. This
+is the clearest motivation for the future work in \S\ref{sec:future}.
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics[width=\linewidth]{fig4_crossover_beta.pdf}
+\includegraphics[width=0.95\linewidth]{fig4_crossover_beta.pdf}
 \end{center}
-\caption{(a) Dogmatic-regime benefit against homophily; triangles mark the per-seed median
-crossover $h^\star$. (b) The validation-selected coupling $\beta^\star$ against the
-generator-implied $\beta_{\rm gen}=\log(p_{\rm in}/p_{\rm out})$. Tuning tracks the right
-direction but saturates at the grid maximum, and cannot represent the negative coupling the
-generator implies at $h{\le}0.15$.}
+\caption{(a) Benefit of the dogmatic prior against homophily; triangles mark the median
+break-even point $h^\star$ across seeds. (b) The coupling selected on validation data,
+$\beta^\star$, against the coupling the generator actually implies,
+$\beta_{\rm gen}=\log(p_{\rm in}/p_{\rm out})$. Tuning moves in the right direction but is capped
+by our search grid, and cannot express the negative coupling required at $h\le0.15$.}
 \label{fig:cross}
 \end{figure}
 
-\subsection{The Laplacian penalty is largely generic regularization; the MRF is relational}
+\subsection{Q3: the penalty and the MRF are not doing the same thing}
 \label{sec:mech}
 
-Proposition~1 predicts that the Laplacian penalty does something a relational prior should not:
-it penalizes confidence irrespective of the graph. We test this with a control rather than an
-accuracy comparison. Rewiring Cora with a degree-preserving configuration model destroys label
-structure while preserving every node's degree (edge homophily falls from $0.810$ to
-$0.168$). On the rewired graph:
+\textbf{In short: destroy the graph's label structure and the MRF's benefit disappears, as it
+should -- but the Laplacian penalty keeps working, meaning it was never really using that
+structure.}
+
+Proposition~1 predicted that the Laplacian penalty does something a relational prior should not:
+penalize confident predictions irrespective of the graph. We tested this with a control rather
+than another accuracy comparison. We rewired Cora with a degree-preserving configuration model,
+which keeps every node's degree but destroys which nodes are connected; edge homophily drops
+from $0.810$ to $0.168$. If a method genuinely exploits label structure, its benefit must vanish.
 
 \begin{center}
 \small
@@ -427,137 +520,135 @@ MRF on GCN (mean-field), $m{=}5$ & $-0.06$ & $[-0.23,+0.15]$ & 3/10 \\
 \end{tabular}
 \end{center}
 
-The MRF's benefit \textbf{vanishes} -- its interval covers zero at both label rates -- so it is
-genuinely relational. The Laplacian penalty's benefit \textbf{survives} on a graph whose edges
-carry no label information, with intervals excluding zero. Much of what the original proposal's
-regularizer contributes on Cora is therefore not relational reasoning at all, but the confidence
-penalty that Proposition~1 exposes.
+The MRF behaves exactly as a relational method should: its interval covers zero at both label
+budgets. The Laplacian penalty does not -- it retains a clearly positive benefit on a graph whose
+edges carry no label information. Combined with Proposition~1, the interpretation is that much of
+what our proposal's regularizer contributed on Cora came from its confidence-penalty term, that
+is ordinary regularization, rather than from relational reasoning.
 
-\paragraph{Two honest caveats.} First, a three-layer GCN -- pure extra propagation, no
-probabilistic machinery -- gains $+2.91$ and $+3.69$ points at $m{=}1,2$, comparable to the
-explicit prior in that regime; we therefore claim no advantage over deeper propagation at very
-low label rates. Second, mechanism claims are only made above a measured noise floor: two GCNs
-differing \emph{only} by initialization seed already disagree on $16.2\%$ ($m{=}2$), $14.2\%$
-($m{=}5$) and $6.5\%$ ($m{=}20$) of test predictions.
+\paragraph{Two honest caveats.} First, a three-layer GCN -- which merely propagates further, with
+no probabilistic machinery -- gains $+2.91$ and $+3.69$ points at $m{=}1,2$, comparable to the
+explicit prior in that regime, so we do not claim the MRF beats simply using a deeper network at
+very low label rates. Second, we make mechanism claims only above a measured noise floor: two
+GCNs differing \emph{only} in initialization seed already disagree on $16.2\%$ ($m{=}2$),
+$14.2\%$ ($m{=}5$) and $6.5\%$ ($m{=}20$) of test predictions.
 
-\subsection{Consistency is not accuracy, and confident is not calibrated}
+\subsection{Consistency is not accuracy, and accuracy is not calibration}
+\label{sec:consistency}
 
-Rule satisfaction $R=\frac{1}{|E|}\sum p_i^\top p_j$ and argmax edge agreement increase
-monotonically with $\beta$ while accuracy peaks and then collapses
-(Figure~\ref{fig:sens}). At $h{=}0.05,\beta{=}2$ the model is maximally self-consistent
-($0.966$) and minimally correct ($16.9\%$). Optimizing agreement with a symbolic rule is thus
-not a proxy for optimizing correctness -- a caution that applies directly to the neuro-symbolic
-framing this project started from.
-
-The same warning appears in the probabilities. At $m{=}2$ on Cora the MRF improves MLP accuracy
-by $+11.2$ points yet \emph{worsens} test NLL from $1.86$ to $2.86$: strong coupling produces
-confident, sometimes confidently wrong, marginals. Only once supervision is ample does the
-probability quality improve as well (at $m{=}20$, MRF(GCN) NLL $0.978$ vs GCN $1.055$).
+Rule satisfaction $R=\frac{1}{|E|}\sum p_i^\top p_j$ and the fraction of edges whose predicted
+labels agree both rise monotonically with $\beta$, while accuracy rises and then collapses
+(Figure~\ref{fig:sens}). At the collapse point the model is maximally \emph{self-consistent}
+($96.6\%$ edge agreement) and minimally \emph{correct} ($16.9\%$): agreeing with a symbolic rule
+is not a proxy for being right. The same caution appears in the probabilities. At $m{=}2$ on Cora
+the MRF improves the MLP's accuracy by $11.2$ points but makes its test negative log-likelihood
+\emph{worse} ($1.86\to2.86$) -- strong coupling yields confident marginals, some confidently
+wrong. Only with ample supervision does probability quality improve too (at $m{=}20$, MRF(GCN)
+NLL $0.978$ versus GCN $1.055$).
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics[width=\linewidth]{fig5_sensitivity.pdf}
+\includegraphics[width=0.95\linewidth]{fig5_sensitivity.pdf}
 \end{center}
-\caption{Prior strength. (a,b) Accuracy against $\lambda$ and $\beta$ on Cora; both show an
-interior optimum. (c) On the misspecified CSBM ($h{=}0.05$), edge agreement rises monotonically
-towards 1 while accuracy collapses to chance -- maximal logical consistency at minimal accuracy.}
+\caption{The effect of prior strength. (a,b) Accuracy against $\lambda$ and $\beta$ on Cora; both
+have an interior optimum, so too much prior is as damaging as none. (c) On the misspecified
+synthetic graph ($h{=}0.05$), edge agreement climbs towards 1 while accuracy falls to chance:
+maximal logical consistency at minimal accuracy.}
 \label{fig:sens}
 \end{figure}
 
-\subsection{The inference is validated, and where it fails it fails diagnosably}
+\subsection{Are the approximations trustworthy? Validation against exact inference}
+\label{sec:fid}
 
-Because every conclusion above rests on approximate marginals, we score all three engines
-against exact inference on graphs small enough to solve exactly (Figure~\ref{fig:fid}).
-Loopy BP is exact on all three tree structures at every coupling (max TV $4.8\times10^{-7}$, at
-the message-tolerance floor), and every engine reproduces $\mathrm{softmax}(s)$ at $\beta=0$ to
-$2.1\times10^{-14}$ -- the gates that license trusting the implementation. Mean-field error
-grows steeply with coupling on every structure (TV $0.19$--$0.48$ at $\beta=4$): its
-factorized family cannot represent the dependence that strong coupling creates. The bias/variance
-split is explicit: on the $4\times4$ grid at $\beta=1.75$, Gibbs error falls from $0.077$ to
-$0.007$ as kept sweeps grow from 10 to 3{,}000, while mean-field ($0.176$) and loopy BP
-($0.060$) sit at fixed floors no extra compute removes.
+Every result above depends on approximate marginals, so we measured how good they are. On graphs
+small enough to solve exactly we compared all three algorithms against exact marginals across
+coupling strengths and graph structures (Figure~\ref{fig:fid}, in the appendix).
 
-\textbf{At scale the honest result is a diagnostic failure, not a comparison.} On Cora at
-$m{=}5$ we ran gated Gibbs against converged mean-field on identical logits. Where Gibbs passed
-its $\hat{R}$/ESS gates ($\beta\le1$) the two agreed closely (mean marginal TV $0.035$). Where
-validation had selected $\beta=2$, Gibbs \emph{failed to mix} -- $\hat{R}$ up to $2.58$ and ESS
-as low as $4.7$ from 8{,}000 samples -- so at exactly the coupling the models use, no
-trustworthy reference exists. We report that rather than presenting either method as ground
-truth: the Potts posterior on Cora at $\beta=2$ is multimodal enough to defeat a chromatic Gibbs
-sampler at this budget.
+The results reproduce the classical picture \citep{murphy1999loopy} and validate our
+implementations. Loopy BP is exact on all three tree structures at every coupling (largest error
+$4.8\times10^{-7}$, our message tolerance) and every engine reproduces $\mathrm{softmax}(s)$ at
+$\beta=0$ to $2.1\times10^{-14}$. Mean-field error grows sharply with coupling everywhere
+($0.19$--$0.48$ total variation at $\beta=4$), the expected consequence of asking a factorized
+approximation to model strongly dependent variables. The two kinds of error are directly visible:
+on the $4\times4$ grid at $\beta=1.75$ Gibbs error falls from $0.077$ to $0.007$ as kept sweeps
+grow from 10 to 3{,}000, while mean-field ($0.176$) and loopy BP ($0.060$) sit at floors no extra
+computation removes -- sampling error is variance and shrinks with effort, variational error is
+bias and does not.
 
-\begin{figure}[t]
-\begin{center}
-\includegraphics[width=\linewidth]{fig6_fidelity.pdf}
-\end{center}
-\caption{Approximate marginals against exact inference (20 draws per cell, 11{,}280 comparisons).
-Loopy BP is exact on trees at every coupling; mean-field's bias grows steeply with $\beta$
-everywhere; on loopy and dense graphs all methods degrade. This replicates known behaviour
-\citep{murphy1999loopy} and serves here as validation of the routines used at scale.}
-\label{fig:fid}
-\end{figure}
+\textbf{At full scale the honest answer is that we cannot always tell.} On Cora we ran Gibbs
+against converged mean-field on identical logits. Where Gibbs passed its diagnostics
+($\beta\le1$) the two agreed closely (mean marginal difference $0.035$). But at $\beta=2$ -- the
+coupling validation actually selects -- Gibbs \emph{failed to mix}, with $\hat{R}$ up to $2.58$
+and an effective sample size of $4.7$ from 8{,}000 samples. At exactly the setting our models use
+there is therefore no trustworthy sampling reference, and we report that rather than quoting
+numbers from an unmixed chain: the posterior there is evidently multimodal enough to trap it.
 
 \subsection{Robustness}
 
-Re-selecting hyperparameters with only 5 labels/class of validation data -- rather than the
-$\approx$500 the standard split provides -- preserves the effect ($+5.64$ points at $m{=}1$,
-8/10 seeds; $+7.82$ at $m{=}2$, 9/10), so the conclusions do not depend on an unrealistically
-large tuning set. Validation selects the $\beta$-grid maximum in most MRF-on-MLP cells, so the
-reported gains are \emph{lower bounds}; an exploratory extension to $\beta\le8$ is reported in
-the appendix and labelled as such.
+Re-selecting hyperparameters with only 5 labels per class of validation data -- instead of the
+roughly 500 the standard split provides, which is arguably unrealistic when claiming a low-label
+setting -- preserves the effect ($+5.64$ points at $m{=}1$ in 8 of 10 seeds; $+7.82$ at $m{=}2$
+in 9 of 10). Validation also selects the largest $\beta$ in our grid in most MRF-on-MLP cells,
+so our reported gains are \emph{lower bounds}.
 
 \section{Discussion and future work}
 
-\paragraph{What governs the value of a relational prior.} Our results replace the intuition
-``priors matter when data is scarce'' with a more precise statement: a relational prior pays in
-proportion to the relational information the base model has \emph{not} already extracted, and it
-requires enough unary signal to propagate. Both conditions failed simultaneously in the regime
-the original proposal targeted -- against a GCN, at one label per class -- which is exactly why
-that comparison is the least informative one to run.
+\paragraph{On when a prior is worth stating explicitly.} The intuition we started with -- priors
+matter when data is scarce -- is too coarse. Our measurements support something more specific: an
+explicit relational prior pays in proportion to the relational information the base model has
+\emph{not} already extracted, and it needs enough unary signal to have something to propagate.
+Both conditions failed simultaneously in exactly the setting our proposal targeted (a GCN at one
+label per class), which is why that was the least informative experiment we could have run.
 
-\paragraph{Why the mechanism distinction matters.} The rewiring control shows that a widely used
-``logic'' regularizer is doing something other than relational reasoning. This is not an argument
-against the penalty -- it helps -- but against the interpretation. If a symbolic penalty's
-benefit survives the destruction of the structure the symbol refers to, the symbolic reading is
-unsupported. We would encourage this control in any neuro-symbolic paper that claims a prior
-encodes relational knowledge.
+\paragraph{On the value of writing the model down.} Turning a smoothness penalty into an actual
+MRF changed what we could learn: it gave the prior one interpretable parameter $\beta$ whose
+selected value we could compare against a known ground-truth coupling, made the failure mode
+diagnosable as posterior collapse rather than an unexplained accuracy drop, and let us ask
+whether our inference was even correct -- which a penalty term does not permit. It also gave us
+the rewiring control, to us the most useful methodological outcome: a penalty described as
+encoding a relational rule should lose its benefit when the relations are destroyed, and ours did
+not. We suggest that control for any work claiming a regularizer encodes relational knowledge.
 
-\paragraph{Limitations.} Ten seeds (30 on endpoints) give approximate interval coverage. On the
-real graphs the intervals describe protocol variability on a fixed graph and test set, not
-cross-graph generalization; only the CSBM has graph-level replication. We study one backbone,
-one pairwise prior family and the transductive setting. The CSBM's magnitudes are
-generator-conditional, since $\sigma_x$ is a designer-chosen effect-size dial, and at high $h$
-the Potts prior is correct \emph{by construction} -- the SBM's edge log-odds are exactly the
-Potts sufficient statistic -- so that sweep is a known-truth check of the measurement
-instrument, not evidence about citation networks. The real-data results carry the
-generalization claims alone.
+\paragraph{Limitations.} Ten seeds (30 on the confirmatory comparisons) give approximate interval
+coverage, and on the real datasets those intervals describe run-to-run variability on a
+\emph{fixed} graph and test set rather than generalization to new graphs -- only the synthetic
+experiment redraws the graph per seed. We study one architecture, one pairwise prior and the
+transductive setting only, and the synthetic magnitudes depend on $\sigma_x$, chosen once in
+advance, which sets how much room the graph has to help. Most importantly, at high homophily the
+Potts prior is correct \emph{by construction}, since the SBM's edge probabilities have exactly
+the form the Potts model assumes; that sweep is best read as a controlled check of our
+measurement apparatus, with the real-data results carrying claims about real graphs.
 
-\paragraph{Future work.} The wrong-sign failure at low homophily points directly at the fix:
-replace the identity compatibility $\mathbf{1}[y_i=y_j]$ with a learned $C\times C$ matrix
-$\psi(a,b)=\exp(\beta C_{ab})$ fitted by EM over the unobserved labels, which can represent
-anti-homophily and which \textsc{Oracle-G} shows would be worth up to 62 points at $h{=}0.05$.
-This is the GMNN direction \citep{qu2019gmnn}, now motivated by a measured deficiency rather
-than by novelty. Second, the $\beta\ge2$ regime where Gibbs fails to mix calls for annealed or
-structured inference. Third, richer rules than a single pairwise predicate would test whether
-the confidence-penalty confound we identified generalizes.
+\paragraph{Future work.}
+\label{sec:future}
+Our clearest result points at its own remedy. The failure at low homophily is a \emph{sign}
+error: the model can only express ``neighbours agree'' while the data says ``neighbours differ''.
+The principled fix is to replace the fixed indicator $\mathbf{1}[y_i=y_j]$ with a learned
+$C\times C$ compatibility matrix $\psi(a,b)=\exp(\beta C_{ab})$, estimated by EM with the
+unlabelled nodes' labels as latent variables: an E-step computing approximate marginals with the
+machinery we have already built and validated, and an M-step updating $C$. Our \textsc{Oracle-G}
+measurement bounds the prize at up to 62 accuracy points at $h=0.05$. This is the direction taken
+by GMNN \citep{qu2019gmnn}; what our study adds is a measured deficiency motivating it. Two
+further directions follow: better inference where Gibbs fails to mix (annealing or a structured
+variational family), and richer rules than a single pairwise predicate.
 
 \section{Conclusion}
 
-A homophily prior is most useful when the base model has not already exploited the graph and the
-unary evidence is informative enough to propagate; it becomes harmful when its strength is fixed
-in advance on a graph that violates it, costing up to 45 points through posterior collapse below
-$h^\star\approx0.57$ at $m{=}5$. The controlled experiments support this because the contextual
-SBM manipulates the prior's correctness at fixed degree and features, the rewiring control
-separates relational reasoning from generic regularization, and the exact-inference suite
-certifies that these conclusions reflect the model rather than the approximation used to fit it.
+An explicit homophily prior is most useful when the base model has not already exploited the
+graph and the unary evidence is informative enough to propagate; it becomes harmful when its
+strength is fixed in advance on a graph that violates it, costing up to 45 accuracy points
+through posterior collapse below a break-even homophily of about $0.57$ at five labels per class.
+We can make these claims because the synthetic generator manipulates the prior's correctness at
+fixed degree and features, the rewiring control separates relational reasoning from ordinary
+regularization, and the exact-inference study certifies that the conclusions describe the model
+rather than the approximation used to fit it.
 
-\subsubsection*{Reproducibility statement}
+\subsubsection*{Reproducibility}
 
-The protocol -- hypotheses, endpoints, grids, seeds and analysis plan -- was written and
-git-tagged before any experiment ran; the two post-freeze amendments are documented with
-rationale. Every number in this paper is generated by script from append-only run logs; no value
-is transcribed by hand. Code, the frozen protocol, raw logs, and the analysis and figure scripts
-accompany this report.
+The protocol -- hypotheses, comparisons, grids, seeds and analysis plan -- was version-controlled
+before any experiment ran, and the two later amendments are documented with their rationale.
+Every number here is produced by script from append-only run logs; none is transcribed by hand.
+Code, protocol, raw logs and all analysis scripts accompany the report.
 
 \bibliography{iclr2026_conference}
 \bibliographystyle{iclr2026_conference}
@@ -565,47 +656,62 @@ accompany this report.
 \appendix
 \section{Appendix}
 
-\subsection{Pre-registered endpoints}
+\subsection{The three pre-registered comparisons}
 
 \begin{center}
 \small
 \begin{tabular}{llrrl}
 \toprule
-& Statement & $\theta$ (pts) & 95\% CI & Verdict \\
+& Statement & $\theta$ (pts) & 95\% CI & Outcome \\
 \midrule
-C1 & benefit larger at $m{=}2$ than $m{=}20$ & $-7.07$ & $[-10.26,-3.91]$ & refuted (reversed) \\
-C2 & dogmatic benefit larger at $h{=}0.9$ than $0.5$ & $+78.77$ & $[+55.53,+84.87]$ & supported \\
+C1 & benefit larger at $m{=}2$ than at $m{=}20$ & $-7.07$ & $[-10.26,-3.91]$ & refuted (reversed) \\
+C2 & dogmatic benefit larger at $h{=}0.9$ than at $0.5$ & $+78.77$ & $[+55.53,+84.87]$ & supported \\
 C3 & dogmatic prior harms at $h{=}0.05$ & $-29.72$ & $[-31.81,-28.16]$ & supported \\
 \bottomrule
 \end{tabular}
 \end{center}
-Holm-corrected two-sided Wilcoxon signed-rank; C1 on 30 paired seeds, C2/C3 on 10 fresh graphs.
+Holm-corrected two-sided Wilcoxon signed-rank tests; C1 uses 30 paired seeds, C2 and C3 use 10
+freshly generated graphs each.
 
 \subsection{Protocol amendments}
 
-\textbf{A1.} The pre-registered Gibbs convergence gate included a maximum inter-chain marginal
-TV criterion. Implementation testing showed this statistic measures finite-budget Monte-Carlo
-precision rather than mixing: a 12-node cycle at $\beta{=}1$ reached $\hat{R}=1.0004$ and
-ESS $=5540$ -- textbook good mixing -- yet inter-chain TV $=0.0258$. Retaining it as a gate
-would have mislabelled well-mixed chains as failures. It is still computed and reported; the
-pass/fail decision uses $\hat{R}$ and ESS. Amended before any experimental result existed.
+\textbf{A1.} Our pre-registered Gibbs convergence gate included a maximum between-chain
+difference in marginals. Implementation testing showed this quantity measures Monte-Carlo
+precision at a finite budget rather than mixing: a 12-node cycle at $\beta=1$ reached
+$\hat{R}=1.0004$ and an effective sample size of $5{,}540$ -- textbook good mixing -- yet a
+between-chain difference of $0.0258$. Keeping it as a gate would have labelled well-mixed chains
+as failures. It is still computed and reported, but the pass/fail decision now uses $\hat{R}$ and
+effective sample size. The change was made before any experimental result existed.
 
-\textbf{A2.} The $\beta$ grid maximum is binding in most MRF-on-MLP cells. An extension to
-$\beta\in\{3,4,6,8\}$ was run post-freeze and is labelled exploratory throughout.
+\textbf{A2.} The largest coupling in our search grid is selected in most MRF-on-MLP cells. An
+extension to larger $\beta$ was run afterwards and is labelled exploratory throughout.
 
-\subsection{Additional results}
+\subsection{Additional material}
 
-Figure~\ref{fig:bv} isolates the bias/variance distinction underlying the fidelity study.
-Further material -- full hyperparameter grids and selected values, per-seed tables, the
-similarity-weighting pre-check, the clamped collective-classification variant, and per-structure
-fidelity tables -- accompanies the code release.
+Figures~\ref{fig:fid} and~\ref{fig:bv} give the full inference-validation study behind
+\S\ref{sec:fid}. Full
+hyperparameter grids and selected values, per-seed tables, the complete synthetic sweep, the
+similarity-weighted prior variant, the label-clamped collective-classification variant and
+per-structure inference-accuracy tables accompany the code release.
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.5\linewidth]{fig7_bias_variance.pdf}
+\includegraphics[width=\linewidth]{fig6_fidelity.pdf}
+\end{center}
+\caption{Approximate marginals against exact inference (20 random problems per point; 11{,}280
+comparisons in total). Loopy BP is exact on trees at every coupling -- the test that validates
+our implementation -- while mean-field error grows steeply with $\beta$ everywhere. On loopy and
+dense graphs all methods degrade at strong coupling.}
+\label{fig:fid}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.52\linewidth]{fig7_bias_variance.pdf}
 \end{center}
 \caption{Monte-Carlo error shrinks with computation; variational bias does not. Gibbs error
-against kept sweeps, with the mean-field and loopy-BP bias floors as horizontal lines.}
+against the number of kept sweeps, with the mean-field and loopy-BP error floors shown as
+horizontal lines.}
 \label{fig:bv}
 \end{figure}
 
