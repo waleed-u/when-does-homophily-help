@@ -7,7 +7,7 @@ h_grid: [0.05, 0.15, 0.30, 0.50, 0.70, 0.90]
 labels_per_class: [1, 5, 20]
 feature_dim: 32
 mu_seed: 7                    # class-mean construction seed (frozen)
-sigma_x: null                 # frozen by CHANGELOG addendum M1 after the quarantined pilot
+sigma_x: 0.50                 # FROZEN by CHANGELOG addendum M1 (quarantined pilot; Oracle-F = 0.7444)
 pilot:
   seeds: [100, 101, 102, 103, 104, 105, 106, 107, 108, 109]
   oracle_acc_band: [0.70, 0.80]   # Oracle-F acceptance band, fixed in advance
