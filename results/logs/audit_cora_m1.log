@@ -1,0 +1,320 @@
+M0_mlp-4bb93f7aaa cora M0_mlp m=1 seed=0 test_acc=0.2450
+M1_gcn-e8afecf807 cora M1_gcn m=1 seed=0 test_acc=0.4090
+M2_lap-45fbea6ddb cora M2_lap m=1 seed=0 test_acc=0.4090
+M2_lap-46d21afc29 cora M2_lap m=1 seed=0 test_acc=0.4090
+M2_lap-561ccd1ecf cora M2_lap m=1 seed=0 test_acc=0.4070
+M2_lap-6d6924c8f1 cora M2_lap m=1 seed=0 test_acc=0.4200
+M2_lap-435db77dd6 cora M2_lap m=1 seed=0 test_acc=0.4110
+M2_lap-7f5de1c840 cora M2_lap m=1 seed=0 test_acc=0.4180
+M3_rule-b7ebc5ddb3 cora M3_rule m=1 seed=0 test_acc=0.4090
+M3_rule-74ad91adc9 cora M3_rule m=1 seed=0 test_acc=0.3950
+M3_rule-a20e6db2a1 cora M3_rule m=1 seed=0 test_acc=0.3950
+M3_rule-84ea942404 cora M3_rule m=1 seed=0 test_acc=0.3830
+M3_rule-72b09ea40f cora M3_rule m=1 seed=0 test_acc=0.3560
+M3_rule-95851165cc cora M3_rule m=1 seed=0 test_acc=0.1610
+M4_mrf_gcn-3f29ac6f4c cora M4_mrf_gcn beta=0.05 m=1 seed=0 test_acc=0.4060
+M4_mrf_mlp-4e6424cd8c cora M4_mrf_mlp beta=0.05 m=1 seed=0 test_acc=0.2460
+M4_mrf_gcn_clamped-e799ff8216 cora M4_mrf_gcn_clamped beta=0.05 m=1 seed=0 test_acc=0.4060
+M4_mrf_gcn-a1933c3f8f cora M4_mrf_gcn beta=0.1 m=1 seed=0 test_acc=0.3950
+M4_mrf_mlp-795a441c5c cora M4_mrf_mlp beta=0.1 m=1 seed=0 test_acc=0.2430
+M4_mrf_gcn_clamped-e64f4b6586 cora M4_mrf_gcn_clamped beta=0.1 m=1 seed=0 test_acc=0.3950
+M4_mrf_gcn-fa142fc680 cora M4_mrf_gcn beta=0.25 m=1 seed=0 test_acc=0.3820
+M4_mrf_mlp-6e81f9757a cora M4_mrf_mlp beta=0.25 m=1 seed=0 test_acc=0.2460
+M4_mrf_gcn_clamped-568bde66fb cora M4_mrf_gcn_clamped beta=0.25 m=1 seed=0 test_acc=0.3810
+M4_mrf_gcn-5c47c5dd80 cora M4_mrf_gcn beta=0.5 m=1 seed=0 test_acc=0.3020
+M4_mrf_mlp-d3ea8e7a1d cora M4_mrf_mlp beta=0.5 m=1 seed=0 test_acc=0.2590
+M4_mrf_gcn_clamped-e57f67ccc5 cora M4_mrf_gcn_clamped beta=0.5 m=1 seed=0 test_acc=0.3030
+M4_mrf_gcn-b0c5bd0b49 cora M4_mrf_gcn beta=1.0 m=1 seed=0 test_acc=0.2340
+M4_mrf_mlp-e7a849cd68 cora M4_mrf_mlp beta=1.0 m=1 seed=0 test_acc=0.3040
+M4_mrf_gcn_clamped-9dd51c2800 cora M4_mrf_gcn_clamped beta=1.0 m=1 seed=0 test_acc=0.2350
+M4_mrf_gcn-9f46670889 cora M4_mrf_gcn beta=2.0 m=1 seed=0 test_acc=0.3950
+M4_mrf_mlp-e1062bb62a cora M4_mrf_mlp beta=2.0 m=1 seed=0 test_acc=0.2910
+M4_mrf_gcn_clamped-f41a4adae2 cora M4_mrf_gcn_clamped beta=2.0 m=1 seed=0 test_acc=0.4030
+M0_mlp-c6fa6c96f8 cora M0_mlp m=1 seed=1 test_acc=0.2680
+M1_gcn-9375685831 cora M1_gcn m=1 seed=1 test_acc=0.2080
+M2_lap-a86746aa97 cora M2_lap m=1 seed=1 test_acc=0.2080
+M2_lap-15ddd72d0d cora M2_lap m=1 seed=1 test_acc=0.2080
+M2_lap-21b2d9af14 cora M2_lap m=1 seed=1 test_acc=0.2780
+M2_lap-10c93e3545 cora M2_lap m=1 seed=1 test_acc=0.3750
+M2_lap-54cce9339b cora M2_lap m=1 seed=1 test_acc=0.3830
+M2_lap-fc08d78798 cora M2_lap m=1 seed=1 test_acc=0.3840
+M3_rule-c3495a2d35 cora M3_rule m=1 seed=1 test_acc=0.2080
+M3_rule-518aad5db2 cora M3_rule m=1 seed=1 test_acc=0.2080
+M3_rule-fc61590465 cora M3_rule m=1 seed=1 test_acc=0.2080
+M3_rule-03b8730c3b cora M3_rule m=1 seed=1 test_acc=0.2080
+M3_rule-b457a4dfda cora M3_rule m=1 seed=1 test_acc=0.2190
+M3_rule-eecfa754c7 cora M3_rule m=1 seed=1 test_acc=0.1110
+M4_mrf_gcn-7d1c5948df cora M4_mrf_gcn beta=0.05 m=1 seed=1 test_acc=0.2060
+M4_mrf_mlp-50e367b34b cora M4_mrf_mlp beta=0.05 m=1 seed=1 test_acc=0.2670
+M4_mrf_gcn_clamped-b9d55f87f9 cora M4_mrf_gcn_clamped beta=0.05 m=1 seed=1 test_acc=0.2070
+M4_mrf_gcn-29c253ed37 cora M4_mrf_gcn beta=0.1 m=1 seed=1 test_acc=0.2060
+M4_mrf_mlp-42a0d47727 cora M4_mrf_mlp beta=0.1 m=1 seed=1 test_acc=0.2680
+M4_mrf_gcn_clamped-bfc78cedf9 cora M4_mrf_gcn_clamped beta=0.1 m=1 seed=1 test_acc=0.2100
+M4_mrf_gcn-214e8a2234 cora M4_mrf_gcn beta=0.25 m=1 seed=1 test_acc=0.1840
+M4_mrf_mlp-58a21ceab3 cora M4_mrf_mlp beta=0.25 m=1 seed=1 test_acc=0.2680
+M4_mrf_gcn_clamped-bea5fae2c3 cora M4_mrf_gcn_clamped beta=0.25 m=1 seed=1 test_acc=0.2040
+M4_mrf_gcn-7a6a0fbd11 cora M4_mrf_gcn beta=0.5 m=1 seed=1 test_acc=0.1110
+M4_mrf_mlp-bce26e7920 cora M4_mrf_mlp beta=0.5 m=1 seed=1 test_acc=0.3220
+M4_mrf_gcn_clamped-15268957a9 cora M4_mrf_gcn_clamped beta=0.5 m=1 seed=1 test_acc=0.1820
+M4_mrf_gcn-05c28e4fc4 cora M4_mrf_gcn beta=1.0 m=1 seed=1 test_acc=0.1060
+M4_mrf_mlp-374a29251f cora M4_mrf_mlp beta=1.0 m=1 seed=1 test_acc=0.3830
+M4_mrf_gcn_clamped-4f9e360ded cora M4_mrf_gcn_clamped beta=1.0 m=1 seed=1 test_acc=0.1580
+M4_mrf_gcn-266fd2a9c2 cora M4_mrf_gcn beta=2.0 m=1 seed=1 test_acc=0.1060
+M4_mrf_mlp-5c269b23d3 cora M4_mrf_mlp beta=2.0 m=1 seed=1 test_acc=0.3700
+M4_mrf_gcn_clamped-b90fad3deb cora M4_mrf_gcn_clamped beta=2.0 m=1 seed=1 test_acc=0.1850
+M0_mlp-4cbd9bebc3 cora M0_mlp m=1 seed=2 test_acc=0.3550
+M1_gcn-3e390eb58c cora M1_gcn m=1 seed=2 test_acc=0.4680
+M2_lap-fcfb22d94a cora M2_lap m=1 seed=2 test_acc=0.4580
+M2_lap-d51520be4d cora M2_lap m=1 seed=2 test_acc=0.4570
+M2_lap-31ace337fe cora M2_lap m=1 seed=2 test_acc=0.4700
+M2_lap-3f883a1812 cora M2_lap m=1 seed=2 test_acc=0.4680
+M2_lap-ad0e3df469 cora M2_lap m=1 seed=2 test_acc=0.4900
+M2_lap-efc5f47a99 cora M2_lap m=1 seed=2 test_acc=0.5490
+M3_rule-e21ce2a4f2 cora M3_rule m=1 seed=2 test_acc=0.4580
+M3_rule-4c0d17d675 cora M3_rule m=1 seed=2 test_acc=0.4680
+M3_rule-012512186d cora M3_rule m=1 seed=2 test_acc=0.4640
+M3_rule-df192ea3a2 cora M3_rule m=1 seed=2 test_acc=0.4590
+M3_rule-c562cd5f37 cora M3_rule m=1 seed=2 test_acc=0.4450
+M3_rule-e0836f6491 cora M3_rule m=1 seed=2 test_acc=0.2170
+M4_mrf_gcn-dbef915d7e cora M4_mrf_gcn beta=0.05 m=1 seed=2 test_acc=0.4710
+M4_mrf_mlp-8dae13add1 cora M4_mrf_mlp beta=0.05 m=1 seed=2 test_acc=0.3580
+M4_mrf_gcn_clamped-75729e4ae4 cora M4_mrf_gcn_clamped beta=0.05 m=1 seed=2 test_acc=0.4710
+M4_mrf_gcn-601c3781c6 cora M4_mrf_gcn beta=0.1 m=1 seed=2 test_acc=0.4770
+M4_mrf_mlp-8a7719459d cora M4_mrf_mlp beta=0.1 m=1 seed=2 test_acc=0.3660
+M4_mrf_gcn_clamped-1199953e53 cora M4_mrf_gcn_clamped beta=0.1 m=1 seed=2 test_acc=0.4770
+M4_mrf_gcn-1c1c63ba6b cora M4_mrf_gcn beta=0.25 m=1 seed=2 test_acc=0.4930
+M4_mrf_mlp-26991a4bdd cora M4_mrf_mlp beta=0.25 m=1 seed=2 test_acc=0.3800
+M4_mrf_gcn_clamped-aa0b17fec9 cora M4_mrf_gcn_clamped beta=0.25 m=1 seed=2 test_acc=0.4930
+M4_mrf_gcn-4ba1a61d3e cora M4_mrf_gcn beta=0.5 m=1 seed=2 test_acc=0.5010
+M4_mrf_mlp-d3e76cce95 cora M4_mrf_mlp beta=0.5 m=1 seed=2 test_acc=0.3650
+M4_mrf_gcn_clamped-79dcd320a3 cora M4_mrf_gcn_clamped beta=0.5 m=1 seed=2 test_acc=0.5010
+M4_mrf_gcn-84b0f5a3c0 cora M4_mrf_gcn beta=1.0 m=1 seed=2 test_acc=0.4900
+M4_mrf_mlp-0801a2f203 cora M4_mrf_mlp beta=1.0 m=1 seed=2 test_acc=0.3410
+M4_mrf_gcn_clamped-f98d4a0af2 cora M4_mrf_gcn_clamped beta=1.0 m=1 seed=2 test_acc=0.4900
+M4_mrf_gcn-7829898d7b cora M4_mrf_gcn beta=2.0 m=1 seed=2 test_acc=0.4870
+M4_mrf_mlp-f70c1a8ae7 cora M4_mrf_mlp beta=2.0 m=1 seed=2 test_acc=0.3780
+M4_mrf_gcn_clamped-47b71a843f cora M4_mrf_gcn_clamped beta=2.0 m=1 seed=2 test_acc=0.4870
+M0_mlp-960ef3d6c0 cora M0_mlp m=1 seed=3 test_acc=0.2910
+M1_gcn-3ae262b766 cora M1_gcn m=1 seed=3 test_acc=0.3780
+M2_lap-d7c07d7644 cora M2_lap m=1 seed=3 test_acc=0.3780
+M2_lap-29be73e7c7 cora M2_lap m=1 seed=3 test_acc=0.3820
+M2_lap-315602d007 cora M2_lap m=1 seed=3 test_acc=0.3710
+M2_lap-1b7a6e074b cora M2_lap m=1 seed=3 test_acc=0.3780
+M2_lap-9f65f8afbc cora M2_lap m=1 seed=3 test_acc=0.3780
+M2_lap-94fc9b8cda cora M2_lap m=1 seed=3 test_acc=0.3490
+M3_rule-6e95ce6d97 cora M3_rule m=1 seed=3 test_acc=0.3770
+M3_rule-0caa90bb21 cora M3_rule m=1 seed=3 test_acc=0.3770
+M3_rule-4551d56f36 cora M3_rule m=1 seed=3 test_acc=0.3570
+M3_rule-bdc61ed7a6 cora M3_rule m=1 seed=3 test_acc=0.3400
+M3_rule-f33d203dbc cora M3_rule m=1 seed=3 test_acc=0.3230
+M3_rule-064b77284a cora M3_rule m=1 seed=3 test_acc=0.1900
+M4_mrf_gcn-b981f9b10a cora M4_mrf_gcn beta=0.05 m=1 seed=3 test_acc=0.3780
+M4_mrf_mlp-03435cabdc cora M4_mrf_mlp beta=0.05 m=1 seed=3 test_acc=0.2950
+M4_mrf_gcn_clamped-af8b3cfa2d cora M4_mrf_gcn_clamped beta=0.05 m=1 seed=3 test_acc=0.3780
+M4_mrf_gcn-35c3d08538 cora M4_mrf_gcn beta=0.1 m=1 seed=3 test_acc=0.3760
+M4_mrf_mlp-109fb3d155 cora M4_mrf_mlp beta=0.1 m=1 seed=3 test_acc=0.2930
+M4_mrf_gcn_clamped-761122f076 cora M4_mrf_gcn_clamped beta=0.1 m=1 seed=3 test_acc=0.3760
+M4_mrf_gcn-53bbbdd8ba cora M4_mrf_gcn beta=0.25 m=1 seed=3 test_acc=0.3710
+M4_mrf_mlp-2f20aabfe8 cora M4_mrf_mlp beta=0.25 m=1 seed=3 test_acc=0.2950
+M4_mrf_gcn_clamped-4974a6536b cora M4_mrf_gcn_clamped beta=0.25 m=1 seed=3 test_acc=0.3710
+M4_mrf_gcn-7941b71c15 cora M4_mrf_gcn beta=0.5 m=1 seed=3 test_acc=0.3520
+M4_mrf_mlp-5f65da3cb6 cora M4_mrf_mlp beta=0.5 m=1 seed=3 test_acc=0.3060
+M4_mrf_gcn_clamped-d39c399be5 cora M4_mrf_gcn_clamped beta=0.5 m=1 seed=3 test_acc=0.3520
+M4_mrf_gcn-b17189299b cora M4_mrf_gcn beta=1.0 m=1 seed=3 test_acc=0.3360
+M4_mrf_mlp-20228d25bd cora M4_mrf_mlp beta=1.0 m=1 seed=3 test_acc=0.2890
+M4_mrf_gcn_clamped-88c386c3d2 cora M4_mrf_gcn_clamped beta=1.0 m=1 seed=3 test_acc=0.3360
+M4_mrf_gcn-5c0cddaa3e cora M4_mrf_gcn beta=2.0 m=1 seed=3 test_acc=0.3420
+M4_mrf_mlp-3b08d72d75 cora M4_mrf_mlp beta=2.0 m=1 seed=3 test_acc=0.2910
+M4_mrf_gcn_clamped-77c49c6b8f cora M4_mrf_gcn_clamped beta=2.0 m=1 seed=3 test_acc=0.3930
+M0_mlp-2ad6f2b0e7 cora M0_mlp m=1 seed=4 test_acc=0.3650
+M1_gcn-4510974a6a cora M1_gcn m=1 seed=4 test_acc=0.5880
+M2_lap-7532b79c02 cora M2_lap m=1 seed=4 test_acc=0.5990
+M2_lap-927d98ad8f cora M2_lap m=1 seed=4 test_acc=0.6010
+M2_lap-6bf7b121dd cora M2_lap m=1 seed=4 test_acc=0.5930
+M2_lap-1186321ba7 cora M2_lap m=1 seed=4 test_acc=0.5650
+M2_lap-d7b7d47819 cora M2_lap m=1 seed=4 test_acc=0.5340
+M2_lap-21f8db8e5c cora M2_lap m=1 seed=4 test_acc=0.5050
+M3_rule-3ba6b23a46 cora M3_rule m=1 seed=4 test_acc=0.6070
+M3_rule-b3f7178694 cora M3_rule m=1 seed=4 test_acc=0.5990
+M3_rule-bf4bc5f8ac cora M3_rule m=1 seed=4 test_acc=0.5910
+M3_rule-98d374b417 cora M3_rule m=1 seed=4 test_acc=0.2860
+M3_rule-623925ae49 cora M3_rule m=1 seed=4 test_acc=0.1540
+M3_rule-61ba4cfeed cora M3_rule m=1 seed=4 test_acc=0.1450
+M4_mrf_gcn-c5544c9f2a cora M4_mrf_gcn beta=0.05 m=1 seed=4 test_acc=0.5920
+M4_mrf_mlp-36f840061a cora M4_mrf_mlp beta=0.05 m=1 seed=4 test_acc=0.3680
+M4_mrf_gcn_clamped-ce678da8ef cora M4_mrf_gcn_clamped beta=0.05 m=1 seed=4 test_acc=0.5920
+M4_mrf_gcn-3159e75c3c cora M4_mrf_gcn beta=0.1 m=1 seed=4 test_acc=0.5940
+M4_mrf_mlp-4d4ba58464 cora M4_mrf_mlp beta=0.1 m=1 seed=4 test_acc=0.3740
+M4_mrf_gcn_clamped-6f6b034a8d cora M4_mrf_gcn_clamped beta=0.1 m=1 seed=4 test_acc=0.5940
+M4_mrf_gcn-7c518b5384 cora M4_mrf_gcn beta=0.25 m=1 seed=4 test_acc=0.5950
+M4_mrf_mlp-5634b91992 cora M4_mrf_mlp beta=0.25 m=1 seed=4 test_acc=0.3870
+M4_mrf_gcn_clamped-d962c6c70c cora M4_mrf_gcn_clamped beta=0.25 m=1 seed=4 test_acc=0.5950
+M4_mrf_gcn-10b20a82fa cora M4_mrf_gcn beta=0.5 m=1 seed=4 test_acc=0.6350
+M4_mrf_mlp-4b4ca3d1ad cora M4_mrf_mlp beta=0.5 m=1 seed=4 test_acc=0.3290
+M4_mrf_gcn_clamped-276adc1d02 cora M4_mrf_gcn_clamped beta=0.5 m=1 seed=4 test_acc=0.6350
+M4_mrf_gcn-f3ddce9d0e cora M4_mrf_gcn beta=1.0 m=1 seed=4 test_acc=0.6600
+M4_mrf_mlp-a0a3370d67 cora M4_mrf_mlp beta=1.0 m=1 seed=4 test_acc=0.2020
+M4_mrf_gcn_clamped-96e823c321 cora M4_mrf_gcn_clamped beta=1.0 m=1 seed=4 test_acc=0.6600
+M4_mrf_gcn-22faa0e05a cora M4_mrf_gcn beta=2.0 m=1 seed=4 test_acc=0.6680
+M4_mrf_mlp-cae061e0f5 cora M4_mrf_mlp beta=2.0 m=1 seed=4 test_acc=0.4890
+M4_mrf_gcn_clamped-786283d0ec cora M4_mrf_gcn_clamped beta=2.0 m=1 seed=4 test_acc=0.6680
+M0_mlp-cfb5fe6928 cora M0_mlp m=1 seed=5 test_acc=0.2420
+M1_gcn-30c48d0805 cora M1_gcn m=1 seed=5 test_acc=0.2880
+M2_lap-24a32ff5ed cora M2_lap m=1 seed=5 test_acc=0.2880
+M2_lap-095d6ec691 cora M2_lap m=1 seed=5 test_acc=0.2880
+M2_lap-047412676a cora M2_lap m=1 seed=5 test_acc=0.2880
+M2_lap-e73edfa110 cora M2_lap m=1 seed=5 test_acc=0.2910
+M2_lap-a93e53e031 cora M2_lap m=1 seed=5 test_acc=0.2930
+M2_lap-650f576426 cora M2_lap m=1 seed=5 test_acc=0.3070
+M3_rule-2088940583 cora M3_rule m=1 seed=5 test_acc=0.2880
+M3_rule-e1d5359e3b cora M3_rule m=1 seed=5 test_acc=0.2880
+M3_rule-fa25255e1e cora M3_rule m=1 seed=5 test_acc=0.2860
+M3_rule-c867fff7d0 cora M3_rule m=1 seed=5 test_acc=0.2590
+M3_rule-c417a2da63 cora M3_rule m=1 seed=5 test_acc=0.2530
+M3_rule-9644788690 cora M3_rule m=1 seed=5 test_acc=0.0690
+M4_mrf_gcn-e648f300ed cora M4_mrf_gcn beta=0.05 m=1 seed=5 test_acc=0.2830
+M4_mrf_mlp-91ff5c9c62 cora M4_mrf_mlp beta=0.05 m=1 seed=5 test_acc=0.2450
+M4_mrf_gcn_clamped-85bf35efbc cora M4_mrf_gcn_clamped beta=0.05 m=1 seed=5 test_acc=0.2850
+M4_mrf_gcn-4509ced4d2 cora M4_mrf_gcn beta=0.1 m=1 seed=5 test_acc=0.2780
+M4_mrf_mlp-38eee29bdc cora M4_mrf_mlp beta=0.1 m=1 seed=5 test_acc=0.2490
+M4_mrf_gcn_clamped-e63266dd55 cora M4_mrf_gcn_clamped beta=0.1 m=1 seed=5 test_acc=0.2800
+M4_mrf_gcn-bc6740f0f2 cora M4_mrf_gcn beta=0.25 m=1 seed=5 test_acc=0.2630
+M4_mrf_mlp-11681dcf47 cora M4_mrf_mlp beta=0.25 m=1 seed=5 test_acc=0.2710
+M4_mrf_gcn_clamped-bf5909e94a cora M4_mrf_gcn_clamped beta=0.25 m=1 seed=5 test_acc=0.2640
+M4_mrf_gcn-754b2134a6 cora M4_mrf_gcn beta=0.5 m=1 seed=5 test_acc=0.1940
+M4_mrf_mlp-883491a9a8 cora M4_mrf_mlp beta=0.5 m=1 seed=5 test_acc=0.2820
+M4_mrf_gcn_clamped-32b5a4e2ee cora M4_mrf_gcn_clamped beta=0.5 m=1 seed=5 test_acc=0.2110
+M4_mrf_gcn-051fd4f206 cora M4_mrf_gcn beta=1.0 m=1 seed=5 test_acc=0.1520
+M4_mrf_mlp-df000356fd cora M4_mrf_mlp beta=1.0 m=1 seed=5 test_acc=0.2800
+M4_mrf_gcn_clamped-03fd4db869 cora M4_mrf_gcn_clamped beta=1.0 m=1 seed=5 test_acc=0.2060
+M4_mrf_gcn-9f99d16185 cora M4_mrf_gcn beta=2.0 m=1 seed=5 test_acc=0.1890
+M4_mrf_mlp-754d08210b cora M4_mrf_mlp beta=2.0 m=1 seed=5 test_acc=0.2990
+M4_mrf_gcn_clamped-5039096670 cora M4_mrf_gcn_clamped beta=2.0 m=1 seed=5 test_acc=0.2020
+M0_mlp-7a675ada63 cora M0_mlp m=1 seed=6 test_acc=0.3220
+M1_gcn-512b8318f4 cora M1_gcn m=1 seed=6 test_acc=0.3330
+M2_lap-1ba4b83101 cora M2_lap m=1 seed=6 test_acc=0.3350
+M2_lap-1447136cea cora M2_lap m=1 seed=6 test_acc=0.3280
+M2_lap-61b0308f21 cora M2_lap m=1 seed=6 test_acc=0.3360
+M2_lap-1d4405f515 cora M2_lap m=1 seed=6 test_acc=0.3320
+M2_lap-c37a9d0c2a cora M2_lap m=1 seed=6 test_acc=0.3500
+M2_lap-0746a35e0b cora M2_lap m=1 seed=6 test_acc=0.3850
+M3_rule-3d7d9cc481 cora M3_rule m=1 seed=6 test_acc=0.3330
+M3_rule-55cf6b3161 cora M3_rule m=1 seed=6 test_acc=0.3340
+M3_rule-a23fe5a4d4 cora M3_rule m=1 seed=6 test_acc=0.3500
+M3_rule-b1f464e4de cora M3_rule m=1 seed=6 test_acc=0.3160
+M3_rule-b98b10c1b9 cora M3_rule m=1 seed=6 test_acc=0.2390
+M3_rule-9215572f4c cora M3_rule m=1 seed=6 test_acc=0.1480
+M4_mrf_gcn-8eb303dcc1 cora M4_mrf_gcn beta=0.05 m=1 seed=6 test_acc=0.3350
+M4_mrf_mlp-e5fdb269bb cora M4_mrf_mlp beta=0.05 m=1 seed=6 test_acc=0.3200
+M4_mrf_gcn_clamped-121fe6efc6 cora M4_mrf_gcn_clamped beta=0.05 m=1 seed=6 test_acc=0.3350
+M4_mrf_gcn-564874c661 cora M4_mrf_gcn beta=0.1 m=1 seed=6 test_acc=0.3410
+M4_mrf_mlp-3038b77b03 cora M4_mrf_mlp beta=0.1 m=1 seed=6 test_acc=0.3210
+M4_mrf_gcn_clamped-03474e12d9 cora M4_mrf_gcn_clamped beta=0.1 m=1 seed=6 test_acc=0.3410
+M4_mrf_gcn-e5a65983aa cora M4_mrf_gcn beta=0.25 m=1 seed=6 test_acc=0.3550
+M4_mrf_mlp-84e233ee3a cora M4_mrf_mlp beta=0.25 m=1 seed=6 test_acc=0.3200
+M4_mrf_gcn_clamped-cf7c873110 cora M4_mrf_gcn_clamped beta=0.25 m=1 seed=6 test_acc=0.3550
+M4_mrf_gcn-e291ddcd02 cora M4_mrf_gcn beta=0.5 m=1 seed=6 test_acc=0.3620
+M4_mrf_mlp-73ca2ab9e6 cora M4_mrf_mlp beta=0.5 m=1 seed=6 test_acc=0.3190
+M4_mrf_gcn_clamped-aba6fe11ff cora M4_mrf_gcn_clamped beta=0.5 m=1 seed=6 test_acc=0.3620
+M4_mrf_gcn-906e9fbd89 cora M4_mrf_gcn beta=1.0 m=1 seed=6 test_acc=0.3830
+M4_mrf_mlp-64cb5362ed cora M4_mrf_mlp beta=1.0 m=1 seed=6 test_acc=0.3190
+M4_mrf_gcn_clamped-f750bf6c4f cora M4_mrf_gcn_clamped beta=1.0 m=1 seed=6 test_acc=0.3830
+M4_mrf_gcn-c44c416011 cora M4_mrf_gcn beta=2.0 m=1 seed=6 test_acc=0.3770
+M4_mrf_mlp-fc3115a35d cora M4_mrf_mlp beta=2.0 m=1 seed=6 test_acc=0.3190
+M4_mrf_gcn_clamped-8e9b5c3d42 cora M4_mrf_gcn_clamped beta=2.0 m=1 seed=6 test_acc=0.3770
+M0_mlp-d4270ce6dc cora M0_mlp m=1 seed=7 test_acc=0.3120
+M1_gcn-5c280e9d7c cora M1_gcn m=1 seed=7 test_acc=0.3400
+M2_lap-c5a2a7c9b1 cora M2_lap m=1 seed=7 test_acc=0.3430
+M2_lap-09b937dba5 cora M2_lap m=1 seed=7 test_acc=0.3500
+M2_lap-7d854ec30c cora M2_lap m=1 seed=7 test_acc=0.3880
+M2_lap-32b065f146 cora M2_lap m=1 seed=7 test_acc=0.4140
+M2_lap-f52304b8df cora M2_lap m=1 seed=7 test_acc=0.4100
+M2_lap-85c163d1ba cora M2_lap m=1 seed=7 test_acc=0.3800
+M3_rule-beeb1c70eb cora M3_rule m=1 seed=7 test_acc=0.3400
+M3_rule-2501ac7c32 cora M3_rule m=1 seed=7 test_acc=0.3410
+M3_rule-33aa00bbe3 cora M3_rule m=1 seed=7 test_acc=0.3190
+M3_rule-5b1f91218b cora M3_rule m=1 seed=7 test_acc=0.2130
+M3_rule-68de485192 cora M3_rule m=1 seed=7 test_acc=0.1400
+M3_rule-e06ba427bc cora M3_rule m=1 seed=7 test_acc=0.1300
+M4_mrf_gcn-eb56a3ec3a cora M4_mrf_gcn beta=0.05 m=1 seed=7 test_acc=0.3380
+M4_mrf_mlp-5747e07999 cora M4_mrf_mlp beta=0.05 m=1 seed=7 test_acc=0.3130
+M4_mrf_gcn_clamped-ad671c630c cora M4_mrf_gcn_clamped beta=0.05 m=1 seed=7 test_acc=0.3380
+M4_mrf_gcn-617abe6221 cora M4_mrf_gcn beta=0.1 m=1 seed=7 test_acc=0.3320
+M4_mrf_mlp-f8c8520b70 cora M4_mrf_mlp beta=0.1 m=1 seed=7 test_acc=0.3160
+M4_mrf_gcn_clamped-b7f9394f05 cora M4_mrf_gcn_clamped beta=0.1 m=1 seed=7 test_acc=0.3320
+M4_mrf_gcn-9bb00168ca cora M4_mrf_gcn beta=0.25 m=1 seed=7 test_acc=0.3010
+M4_mrf_mlp-e3b969727a cora M4_mrf_mlp beta=0.25 m=1 seed=7 test_acc=0.3300
+M4_mrf_gcn_clamped-bc588a7f64 cora M4_mrf_gcn_clamped beta=0.25 m=1 seed=7 test_acc=0.3010
+M4_mrf_gcn-910fe55e3a cora M4_mrf_gcn beta=0.5 m=1 seed=7 test_acc=0.2560
+M4_mrf_mlp-df2ba42b7e cora M4_mrf_mlp beta=0.5 m=1 seed=7 test_acc=0.4000
+M4_mrf_gcn_clamped-66f52bdb44 cora M4_mrf_gcn_clamped beta=0.5 m=1 seed=7 test_acc=0.2560
+M4_mrf_gcn-77c140f234 cora M4_mrf_gcn beta=1.0 m=1 seed=7 test_acc=0.2360
+M4_mrf_mlp-8adcfeb29a cora M4_mrf_mlp beta=1.0 m=1 seed=7 test_acc=0.4210
+M4_mrf_gcn_clamped-2586352df4 cora M4_mrf_gcn_clamped beta=1.0 m=1 seed=7 test_acc=0.2360
+M4_mrf_gcn-fd290533c2 cora M4_mrf_gcn beta=2.0 m=1 seed=7 test_acc=0.3530
+M4_mrf_mlp-75446f5039 cora M4_mrf_mlp beta=2.0 m=1 seed=7 test_acc=0.4250
+M4_mrf_gcn_clamped-8083eeb8e3 cora M4_mrf_gcn_clamped beta=2.0 m=1 seed=7 test_acc=0.3530
+M0_mlp-4135f4f44c cora M0_mlp m=1 seed=8 test_acc=0.1840
+M1_gcn-542ef25150 cora M1_gcn m=1 seed=8 test_acc=0.3930
+M2_lap-ebfcc19bba cora M2_lap m=1 seed=8 test_acc=0.3920
+M2_lap-f24b835f72 cora M2_lap m=1 seed=8 test_acc=0.3940
+M2_lap-9fe3cbb562 cora M2_lap m=1 seed=8 test_acc=0.3930
+M2_lap-bc720f5886 cora M2_lap m=1 seed=8 test_acc=0.4080
+M2_lap-aabc5f3821 cora M2_lap m=1 seed=8 test_acc=0.4020
+M2_lap-c637ddd3e8 cora M2_lap m=1 seed=8 test_acc=0.4160
+M3_rule-d06775ba5a cora M3_rule m=1 seed=8 test_acc=0.3930
+M3_rule-127abb9f5f cora M3_rule m=1 seed=8 test_acc=0.3880
+M3_rule-15a78c2cd2 cora M3_rule m=1 seed=8 test_acc=0.3570
+M3_rule-d9cd58cc7c cora M3_rule m=1 seed=8 test_acc=0.2640
+M3_rule-e809736f24 cora M3_rule m=1 seed=8 test_acc=0.2420
+M3_rule-f7568f6927 cora M3_rule m=1 seed=8 test_acc=0.1530
+M4_mrf_gcn-8e509abf30 cora M4_mrf_gcn beta=0.05 m=1 seed=8 test_acc=0.3920
+M4_mrf_mlp-d7a2219ffa cora M4_mrf_mlp beta=0.05 m=1 seed=8 test_acc=0.1820
+M4_mrf_gcn_clamped-8af2363cb7 cora M4_mrf_gcn_clamped beta=0.05 m=1 seed=8 test_acc=0.3920
+M4_mrf_gcn-cbd6379df0 cora M4_mrf_gcn beta=0.1 m=1 seed=8 test_acc=0.3960
+M4_mrf_mlp-e78e9fcd3a cora M4_mrf_mlp beta=0.1 m=1 seed=8 test_acc=0.1840
+M4_mrf_gcn_clamped-d8be6c0c4b cora M4_mrf_gcn_clamped beta=0.1 m=1 seed=8 test_acc=0.3960
+M4_mrf_gcn-f7e8fd1548 cora M4_mrf_gcn beta=0.25 m=1 seed=8 test_acc=0.3950
+M4_mrf_mlp-15590a77e1 cora M4_mrf_mlp beta=0.25 m=1 seed=8 test_acc=0.1830
+M4_mrf_gcn_clamped-fb4b1f4c75 cora M4_mrf_gcn_clamped beta=0.25 m=1 seed=8 test_acc=0.3950
+M4_mrf_gcn-1ef1339631 cora M4_mrf_gcn beta=0.5 m=1 seed=8 test_acc=0.4000
+M4_mrf_mlp-7b1f6d89be cora M4_mrf_mlp beta=0.5 m=1 seed=8 test_acc=0.2000
+M4_mrf_gcn_clamped-bf8294ee7e cora M4_mrf_gcn_clamped beta=0.5 m=1 seed=8 test_acc=0.4000
+M4_mrf_gcn-878308a63e cora M4_mrf_gcn beta=1.0 m=1 seed=8 test_acc=0.4180
+M4_mrf_mlp-aac176088e cora M4_mrf_mlp beta=1.0 m=1 seed=8 test_acc=0.1480
+M4_mrf_gcn_clamped-d0a967fd91 cora M4_mrf_gcn_clamped beta=1.0 m=1 seed=8 test_acc=0.4180
+M4_mrf_gcn-a5636a172e cora M4_mrf_gcn beta=2.0 m=1 seed=8 test_acc=0.4370
+M4_mrf_mlp-78f43fecad cora M4_mrf_mlp beta=2.0 m=1 seed=8 test_acc=0.1750
+M4_mrf_gcn_clamped-fe26b8e943 cora M4_mrf_gcn_clamped beta=2.0 m=1 seed=8 test_acc=0.4370
+M0_mlp-71d39ab8ef cora M0_mlp m=1 seed=9 test_acc=0.3330
+M1_gcn-9f0cdde5bd cora M1_gcn m=1 seed=9 test_acc=0.4760
+M2_lap-837ef3afd0 cora M2_lap m=1 seed=9 test_acc=0.4820
+M2_lap-94b0b21127 cora M2_lap m=1 seed=9 test_acc=0.4810
+M2_lap-e79cb37d46 cora M2_lap m=1 seed=9 test_acc=0.4720
+M2_lap-e96629ee5d cora M2_lap m=1 seed=9 test_acc=0.4550
+M2_lap-c2b813258f cora M2_lap m=1 seed=9 test_acc=0.4500
+M2_lap-9500826ce5 cora M2_lap m=1 seed=9 test_acc=0.4410
+M3_rule-48edbf9da8 cora M3_rule m=1 seed=9 test_acc=0.4800
+M3_rule-0245b799ea cora M3_rule m=1 seed=9 test_acc=0.4810
+M3_rule-d1f2ba46a6 cora M3_rule m=1 seed=9 test_acc=0.4750
+M3_rule-afd65b1367 cora M3_rule m=1 seed=9 test_acc=0.4930
+M3_rule-07785402c1 cora M3_rule m=1 seed=9 test_acc=0.3900
+M3_rule-5df3d7076d cora M3_rule m=1 seed=9 test_acc=0.3030
+M4_mrf_gcn-f4d4db721c cora M4_mrf_gcn beta=0.05 m=1 seed=9 test_acc=0.4800
+M4_mrf_mlp-8453f20ced cora M4_mrf_mlp beta=0.05 m=1 seed=9 test_acc=0.3320
+M4_mrf_gcn_clamped-9e109099c8 cora M4_mrf_gcn_clamped beta=0.05 m=1 seed=9 test_acc=0.4800
+M4_mrf_gcn-2aefdd7596 cora M4_mrf_gcn beta=0.1 m=1 seed=9 test_acc=0.4860
+M4_mrf_mlp-79d49c6fc4 cora M4_mrf_mlp beta=0.1 m=1 seed=9 test_acc=0.3300
+M4_mrf_gcn_clamped-2a29107335 cora M4_mrf_gcn_clamped beta=0.1 m=1 seed=9 test_acc=0.4860
+M4_mrf_gcn-064b9cd779 cora M4_mrf_gcn beta=0.25 m=1 seed=9 test_acc=0.5240
+M4_mrf_mlp-903521a9a9 cora M4_mrf_mlp beta=0.25 m=1 seed=9 test_acc=0.3330
+M4_mrf_gcn_clamped-db9c2f1be7 cora M4_mrf_gcn_clamped beta=0.25 m=1 seed=9 test_acc=0.5240
+M4_mrf_gcn-15f82958da cora M4_mrf_gcn beta=0.5 m=1 seed=9 test_acc=0.5700
+M4_mrf_mlp-6501af864f cora M4_mrf_mlp beta=0.5 m=1 seed=9 test_acc=0.3300
+M4_mrf_gcn_clamped-c95971d1ec cora M4_mrf_gcn_clamped beta=0.5 m=1 seed=9 test_acc=0.5700
+M4_mrf_gcn-1f39cfff52 cora M4_mrf_gcn beta=1.0 m=1 seed=9 test_acc=0.5870
+M4_mrf_mlp-a98080c936 cora M4_mrf_mlp beta=1.0 m=1 seed=9 test_acc=0.3170
+M4_mrf_gcn_clamped-0d8b76844c cora M4_mrf_gcn_clamped beta=1.0 m=1 seed=9 test_acc=0.5870
+M4_mrf_gcn-44a8624fe2 cora M4_mrf_gcn beta=2.0 m=1 seed=9 test_acc=0.5900
+M4_mrf_mlp-ef6d1a0e5e cora M4_mrf_mlp beta=2.0 m=1 seed=9 test_acc=0.3170
+M4_mrf_gcn_clamped-41138af436 cora M4_mrf_gcn_clamped beta=2.0 m=1 seed=9 test_acc=0.5900

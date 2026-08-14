@@ -1,0 +1,200 @@
+M0_mlp-c4fc08a463 cora_betaext M0_mlp m=2 seed=0 test_acc=0.2940
+M1_gcn-092dac9536 cora_betaext M1_gcn m=2 seed=0 test_acc=0.4660
+M4_mrf_mlp-35797d0ef4 cora_betaext M4_mrf_mlp beta=3.0 m=2 seed=0 test_acc=0.4070
+M4_mrf_gcn-197d263b35 cora_betaext M4_mrf_gcn beta=3.0 m=2 seed=0 test_acc=0.4790
+M4_mrf_mlp-7aebca986d cora_betaext M4_mrf_mlp beta=4.0 m=2 seed=0 test_acc=0.3990
+M4_mrf_gcn-d264dc3ce9 cora_betaext M4_mrf_gcn beta=4.0 m=2 seed=0 test_acc=0.4800
+M4_mrf_mlp-98e75e3897 cora_betaext M4_mrf_mlp beta=6.0 m=2 seed=0 test_acc=0.3900
+M4_mrf_gcn-2d16bc8bee cora_betaext M4_mrf_gcn beta=6.0 m=2 seed=0 test_acc=0.4750
+M4_mrf_mlp-07bd44795b cora_betaext M4_mrf_mlp beta=8.0 m=2 seed=0 test_acc=0.3910
+M4_mrf_gcn-4e7edd8c0b cora_betaext M4_mrf_gcn beta=8.0 m=2 seed=0 test_acc=0.4810
+M0_mlp-40f201bf36 cora_betaext M0_mlp m=2 seed=1 test_acc=0.3300
+M1_gcn-5ef049d8b5 cora_betaext M1_gcn m=2 seed=1 test_acc=0.4350
+M4_mrf_mlp-a947f6ce7a cora_betaext M4_mrf_mlp beta=3.0 m=2 seed=1 test_acc=0.4860
+M4_mrf_gcn-e90413cc25 cora_betaext M4_mrf_gcn beta=3.0 m=2 seed=1 test_acc=0.4260
+M4_mrf_mlp-1ac1776ed2 cora_betaext M4_mrf_mlp beta=4.0 m=2 seed=1 test_acc=0.4790
+M4_mrf_gcn-ca3aa9c835 cora_betaext M4_mrf_gcn beta=4.0 m=2 seed=1 test_acc=0.4360
+M4_mrf_mlp-c67b39af80 cora_betaext M4_mrf_mlp beta=6.0 m=2 seed=1 test_acc=0.4550
+M4_mrf_gcn-d3f798ee89 cora_betaext M4_mrf_gcn beta=6.0 m=2 seed=1 test_acc=0.4550
+M4_mrf_mlp-1e1ce545a1 cora_betaext M4_mrf_mlp beta=8.0 m=2 seed=1 test_acc=0.4440
+M4_mrf_gcn-54d2b4ba52 cora_betaext M4_mrf_gcn beta=8.0 m=2 seed=1 test_acc=0.4570
+M0_mlp-2abfc0eaa2 cora_betaext M0_mlp m=2 seed=2 test_acc=0.4100
+M1_gcn-14e27a46a3 cora_betaext M1_gcn m=2 seed=2 test_acc=0.6690
+M4_mrf_mlp-84e16ffd33 cora_betaext M4_mrf_mlp beta=3.0 m=2 seed=2 test_acc=0.5640
+M4_mrf_gcn-2a287636d5 cora_betaext M4_mrf_gcn beta=3.0 m=2 seed=2 test_acc=0.7170
+M4_mrf_mlp-48bfbfda1d cora_betaext M4_mrf_mlp beta=4.0 m=2 seed=2 test_acc=0.5620
+M4_mrf_gcn-3af768e31f cora_betaext M4_mrf_gcn beta=4.0 m=2 seed=2 test_acc=0.7180
+M4_mrf_mlp-2b8780bab3 cora_betaext M4_mrf_mlp beta=6.0 m=2 seed=2 test_acc=0.5600
+M4_mrf_gcn-4757fbfc84 cora_betaext M4_mrf_gcn beta=6.0 m=2 seed=2 test_acc=0.7130
+M4_mrf_mlp-a91abbba9e cora_betaext M4_mrf_mlp beta=8.0 m=2 seed=2 test_acc=0.5640
+M4_mrf_gcn-4fd494e3df cora_betaext M4_mrf_gcn beta=8.0 m=2 seed=2 test_acc=0.7090
+M0_mlp-6c5740b585 cora_betaext M0_mlp m=2 seed=3 test_acc=0.2910
+M1_gcn-b617975fb9 cora_betaext M1_gcn m=2 seed=3 test_acc=0.4320
+M4_mrf_mlp-52ae8840e4 cora_betaext M4_mrf_mlp beta=3.0 m=2 seed=3 test_acc=0.3440
+M4_mrf_gcn-af47a648b7 cora_betaext M4_mrf_gcn beta=3.0 m=2 seed=3 test_acc=0.4210
+M4_mrf_mlp-dfdc165254 cora_betaext M4_mrf_mlp beta=4.0 m=2 seed=3 test_acc=0.3520
+M4_mrf_gcn-2bd45604cd cora_betaext M4_mrf_gcn beta=4.0 m=2 seed=3 test_acc=0.4210
+M4_mrf_mlp-46a70fbc0f cora_betaext M4_mrf_mlp beta=6.0 m=2 seed=3 test_acc=0.3590
+M4_mrf_gcn-c30d5e621c cora_betaext M4_mrf_gcn beta=6.0 m=2 seed=3 test_acc=0.4230
+M4_mrf_mlp-fbb5a0ff0f cora_betaext M4_mrf_mlp beta=8.0 m=2 seed=3 test_acc=0.3710
+M4_mrf_gcn-482c601d35 cora_betaext M4_mrf_gcn beta=8.0 m=2 seed=3 test_acc=0.4190
+M0_mlp-9f56542bfa cora_betaext M0_mlp m=2 seed=4 test_acc=0.3620
+M1_gcn-ec4267461d cora_betaext M1_gcn m=2 seed=4 test_acc=0.6210
+M4_mrf_mlp-da6bea0fec cora_betaext M4_mrf_mlp beta=3.0 m=2 seed=4 test_acc=0.6070
+M4_mrf_gcn-cdccb08eb0 cora_betaext M4_mrf_gcn beta=3.0 m=2 seed=4 test_acc=0.6620
+M4_mrf_mlp-8e2f52d3b0 cora_betaext M4_mrf_mlp beta=4.0 m=2 seed=4 test_acc=0.6070
+M4_mrf_gcn-830e78d287 cora_betaext M4_mrf_gcn beta=4.0 m=2 seed=4 test_acc=0.6620
+M4_mrf_mlp-79b63e199d cora_betaext M4_mrf_mlp beta=6.0 m=2 seed=4 test_acc=0.6120
+M4_mrf_gcn-27ba0ec57c cora_betaext M4_mrf_gcn beta=6.0 m=2 seed=4 test_acc=0.6740
+M4_mrf_mlp-a7a62bb4bc cora_betaext M4_mrf_mlp beta=8.0 m=2 seed=4 test_acc=0.6070
+M4_mrf_gcn-ed10d66651 cora_betaext M4_mrf_gcn beta=8.0 m=2 seed=4 test_acc=0.6760
+M0_mlp-1d2bb28fcb cora_betaext M0_mlp m=2 seed=5 test_acc=0.2530
+M1_gcn-05116e1def cora_betaext M1_gcn m=2 seed=5 test_acc=0.4350
+M4_mrf_mlp-cf5d25dcf7 cora_betaext M4_mrf_mlp beta=3.0 m=2 seed=5 test_acc=0.3430
+M4_mrf_gcn-e8514c12ea cora_betaext M4_mrf_gcn beta=3.0 m=2 seed=5 test_acc=0.4770
+M4_mrf_mlp-0e322e4678 cora_betaext M4_mrf_mlp beta=4.0 m=2 seed=5 test_acc=0.3450
+M4_mrf_gcn-b15acc92c1 cora_betaext M4_mrf_gcn beta=4.0 m=2 seed=5 test_acc=0.4770
+M4_mrf_mlp-a7ae7c634c cora_betaext M4_mrf_mlp beta=6.0 m=2 seed=5 test_acc=0.3570
+M4_mrf_gcn-a70c96efa9 cora_betaext M4_mrf_gcn beta=6.0 m=2 seed=5 test_acc=0.4730
+M4_mrf_mlp-9f6ba0bb5c cora_betaext M4_mrf_mlp beta=8.0 m=2 seed=5 test_acc=0.3590
+M4_mrf_gcn-ff166fbc1f cora_betaext M4_mrf_gcn beta=8.0 m=2 seed=5 test_acc=0.4740
+M0_mlp-3fe9a15cd7 cora_betaext M0_mlp m=2 seed=6 test_acc=0.3180
+M1_gcn-c80e8ec066 cora_betaext M1_gcn m=2 seed=6 test_acc=0.4830
+M4_mrf_mlp-fe60c1fdc6 cora_betaext M4_mrf_mlp beta=3.0 m=2 seed=6 test_acc=0.3190
+M4_mrf_gcn-a7047c66fd cora_betaext M4_mrf_gcn beta=3.0 m=2 seed=6 test_acc=0.5020
+M4_mrf_mlp-5fb32f3c96 cora_betaext M4_mrf_mlp beta=4.0 m=2 seed=6 test_acc=0.3190
+M4_mrf_gcn-38c12bb4ba cora_betaext M4_mrf_gcn beta=4.0 m=2 seed=6 test_acc=0.5030
+M4_mrf_mlp-718ea5259c cora_betaext M4_mrf_mlp beta=6.0 m=2 seed=6 test_acc=0.3190
+M4_mrf_gcn-68848344b5 cora_betaext M4_mrf_gcn beta=6.0 m=2 seed=6 test_acc=0.5050
+M4_mrf_mlp-34d4f1576f cora_betaext M4_mrf_mlp beta=8.0 m=2 seed=6 test_acc=0.3190
+M4_mrf_gcn-0a7639a469 cora_betaext M4_mrf_gcn beta=8.0 m=2 seed=6 test_acc=0.5020
+M0_mlp-66e8e86216 cora_betaext M0_mlp m=2 seed=7 test_acc=0.3520
+M1_gcn-cb1ea7c291 cora_betaext M1_gcn m=2 seed=7 test_acc=0.5290
+M4_mrf_mlp-99f31af53f cora_betaext M4_mrf_mlp beta=3.0 m=2 seed=7 test_acc=0.5360
+M4_mrf_gcn-03d3fa1eee cora_betaext M4_mrf_gcn beta=3.0 m=2 seed=7 test_acc=0.5710
+M4_mrf_mlp-4efe81fc57 cora_betaext M4_mrf_mlp beta=4.0 m=2 seed=7 test_acc=0.5340
+M4_mrf_gcn-5570986391 cora_betaext M4_mrf_gcn beta=4.0 m=2 seed=7 test_acc=0.5700
+M4_mrf_mlp-01961a476f cora_betaext M4_mrf_mlp beta=6.0 m=2 seed=7 test_acc=0.5310
+M4_mrf_gcn-eb6fa936eb cora_betaext M4_mrf_gcn beta=6.0 m=2 seed=7 test_acc=0.5850
+M4_mrf_mlp-b49d921ac8 cora_betaext M4_mrf_mlp beta=8.0 m=2 seed=7 test_acc=0.5080
+M4_mrf_gcn-5e17996092 cora_betaext M4_mrf_gcn beta=8.0 m=2 seed=7 test_acc=0.5760
+M0_mlp-4d01b30117 cora_betaext M0_mlp m=2 seed=8 test_acc=0.2670
+M1_gcn-a91332f379 cora_betaext M1_gcn m=2 seed=8 test_acc=0.4620
+M4_mrf_mlp-39aa5df07a cora_betaext M4_mrf_mlp beta=3.0 m=2 seed=8 test_acc=0.4090
+M4_mrf_gcn-ce0f88c99b cora_betaext M4_mrf_gcn beta=3.0 m=2 seed=8 test_acc=0.5020
+M4_mrf_mlp-f2dc214e98 cora_betaext M4_mrf_mlp beta=4.0 m=2 seed=8 test_acc=0.4110
+M4_mrf_gcn-8cb3c6afe1 cora_betaext M4_mrf_gcn beta=4.0 m=2 seed=8 test_acc=0.4980
+M4_mrf_mlp-3f0ba42c23 cora_betaext M4_mrf_mlp beta=6.0 m=2 seed=8 test_acc=0.4100
+M4_mrf_gcn-0f13bcb7a0 cora_betaext M4_mrf_gcn beta=6.0 m=2 seed=8 test_acc=0.4910
+M4_mrf_mlp-b0b6abcb16 cora_betaext M4_mrf_mlp beta=8.0 m=2 seed=8 test_acc=0.4020
+M4_mrf_gcn-080ac176c7 cora_betaext M4_mrf_gcn beta=8.0 m=2 seed=8 test_acc=0.4890
+M0_mlp-3837b24c42 cora_betaext M0_mlp m=2 seed=9 test_acc=0.3690
+M1_gcn-ae9b5ded6e cora_betaext M1_gcn m=2 seed=9 test_acc=0.5870
+M4_mrf_mlp-d03be6e64f cora_betaext M4_mrf_mlp beta=3.0 m=2 seed=9 test_acc=0.3240
+M4_mrf_gcn-c3d336ca02 cora_betaext M4_mrf_gcn beta=3.0 m=2 seed=9 test_acc=0.6350
+M4_mrf_mlp-5a52562ac4 cora_betaext M4_mrf_mlp beta=4.0 m=2 seed=9 test_acc=0.3290
+M4_mrf_gcn-4742a863de cora_betaext M4_mrf_gcn beta=4.0 m=2 seed=9 test_acc=0.6390
+M4_mrf_mlp-ea0b5d2633 cora_betaext M4_mrf_mlp beta=6.0 m=2 seed=9 test_acc=0.3300
+M4_mrf_gcn-ca84c03826 cora_betaext M4_mrf_gcn beta=6.0 m=2 seed=9 test_acc=0.6600
+M4_mrf_mlp-aabf4f1279 cora_betaext M4_mrf_mlp beta=8.0 m=2 seed=9 test_acc=0.3330
+M4_mrf_gcn-baf0c7d05b cora_betaext M4_mrf_gcn beta=8.0 m=2 seed=9 test_acc=0.6590
+M0_mlp-d950f35502 cora_betaext M0_mlp m=20 seed=0 test_acc=0.5630
+M1_gcn-f385c84651 cora_betaext M1_gcn m=20 seed=0 test_acc=0.8180
+M4_mrf_mlp-b23da51c0c cora_betaext M4_mrf_mlp beta=3.0 m=20 seed=0 test_acc=0.7730
+M4_mrf_gcn-9a74ac3dba cora_betaext M4_mrf_gcn beta=3.0 m=20 seed=0 test_acc=0.8240
+M4_mrf_mlp-4076faea2c cora_betaext M4_mrf_mlp beta=4.0 m=20 seed=0 test_acc=0.7710
+M4_mrf_gcn-7fd91bfb2a cora_betaext M4_mrf_gcn beta=4.0 m=20 seed=0 test_acc=0.8270
+M4_mrf_mlp-a5796f1d07 cora_betaext M4_mrf_mlp beta=6.0 m=20 seed=0 test_acc=0.7710
+M4_mrf_gcn-0552631114 cora_betaext M4_mrf_gcn beta=6.0 m=20 seed=0 test_acc=0.8240
+M4_mrf_mlp-ef6dcc81f3 cora_betaext M4_mrf_mlp beta=8.0 m=20 seed=0 test_acc=0.7680
+M4_mrf_gcn-d36d601fe1 cora_betaext M4_mrf_gcn beta=8.0 m=20 seed=0 test_acc=0.8240
+M0_mlp-9daee9be98 cora_betaext M0_mlp m=20 seed=1 test_acc=0.5910
+M1_gcn-28369898b2 cora_betaext M1_gcn m=20 seed=1 test_acc=0.7650
+M4_mrf_mlp-fb1bfceeab cora_betaext M4_mrf_mlp beta=3.0 m=20 seed=1 test_acc=0.7830
+M4_mrf_gcn-0afc3b32a2 cora_betaext M4_mrf_gcn beta=3.0 m=20 seed=1 test_acc=0.7840
+M4_mrf_mlp-be2e2dfc9b cora_betaext M4_mrf_mlp beta=4.0 m=20 seed=1 test_acc=0.7820
+M4_mrf_gcn-a2177930d9 cora_betaext M4_mrf_gcn beta=4.0 m=20 seed=1 test_acc=0.7900
+M4_mrf_mlp-5f5ca85f0f cora_betaext M4_mrf_mlp beta=6.0 m=20 seed=1 test_acc=0.7840
+M4_mrf_gcn-3cde98ebeb cora_betaext M4_mrf_gcn beta=6.0 m=20 seed=1 test_acc=0.7900
+M4_mrf_mlp-75c34b5293 cora_betaext M4_mrf_mlp beta=8.0 m=20 seed=1 test_acc=0.7840
+M4_mrf_gcn-4568e9f28a cora_betaext M4_mrf_gcn beta=8.0 m=20 seed=1 test_acc=0.7910
+M0_mlp-9da931988a cora_betaext M0_mlp m=20 seed=2 test_acc=0.6150
+M1_gcn-d824d204d0 cora_betaext M1_gcn m=20 seed=2 test_acc=0.8080
+M4_mrf_mlp-5a98a10271 cora_betaext M4_mrf_mlp beta=3.0 m=20 seed=2 test_acc=0.7970
+M4_mrf_gcn-9f4679ca02 cora_betaext M4_mrf_gcn beta=3.0 m=20 seed=2 test_acc=0.8090
+M4_mrf_mlp-add382cc92 cora_betaext M4_mrf_mlp beta=4.0 m=20 seed=2 test_acc=0.8020
+M4_mrf_gcn-5d4e58185f cora_betaext M4_mrf_gcn beta=4.0 m=20 seed=2 test_acc=0.8100
+M4_mrf_mlp-532181ae6d cora_betaext M4_mrf_mlp beta=6.0 m=20 seed=2 test_acc=0.7960
+M4_mrf_gcn-4f3fa6c989 cora_betaext M4_mrf_gcn beta=6.0 m=20 seed=2 test_acc=0.8110
+M4_mrf_mlp-4b93b6d291 cora_betaext M4_mrf_mlp beta=8.0 m=20 seed=2 test_acc=0.7980
+M4_mrf_gcn-f0a0f879bb cora_betaext M4_mrf_gcn beta=8.0 m=20 seed=2 test_acc=0.8110
+M0_mlp-cdf6b792e0 cora_betaext M0_mlp m=20 seed=3 test_acc=0.6070
+M1_gcn-5aafe275ff cora_betaext M1_gcn m=20 seed=3 test_acc=0.8040
+M4_mrf_mlp-8b24980e5c cora_betaext M4_mrf_mlp beta=3.0 m=20 seed=3 test_acc=0.8000
+M4_mrf_gcn-3d8bf636e5 cora_betaext M4_mrf_gcn beta=3.0 m=20 seed=3 test_acc=0.7940
+M4_mrf_mlp-e69765b17d cora_betaext M4_mrf_mlp beta=4.0 m=20 seed=3 test_acc=0.7960
+M4_mrf_gcn-d0b7c8f345 cora_betaext M4_mrf_gcn beta=4.0 m=20 seed=3 test_acc=0.7950
+M4_mrf_mlp-9a0743beb6 cora_betaext M4_mrf_mlp beta=6.0 m=20 seed=3 test_acc=0.7920
+M4_mrf_gcn-bb62f3cab2 cora_betaext M4_mrf_gcn beta=6.0 m=20 seed=3 test_acc=0.7900
+M4_mrf_mlp-912b285382 cora_betaext M4_mrf_mlp beta=8.0 m=20 seed=3 test_acc=0.7960
+M4_mrf_gcn-bff27c0a32 cora_betaext M4_mrf_gcn beta=8.0 m=20 seed=3 test_acc=0.7920
+M0_mlp-70f9f6ac8d cora_betaext M0_mlp m=20 seed=4 test_acc=0.5740
+M1_gcn-f7da2e8bf0 cora_betaext M1_gcn m=20 seed=4 test_acc=0.7770
+M4_mrf_mlp-07647cb1d4 cora_betaext M4_mrf_mlp beta=3.0 m=20 seed=4 test_acc=0.7700
+M4_mrf_gcn-96385a3ed8 cora_betaext M4_mrf_gcn beta=3.0 m=20 seed=4 test_acc=0.7960
+M4_mrf_mlp-6817d85612 cora_betaext M4_mrf_mlp beta=4.0 m=20 seed=4 test_acc=0.7770
+M4_mrf_gcn-aa4a00a492 cora_betaext M4_mrf_gcn beta=4.0 m=20 seed=4 test_acc=0.7980
+M4_mrf_mlp-a203bd8c21 cora_betaext M4_mrf_mlp beta=6.0 m=20 seed=4 test_acc=0.7720
+M4_mrf_gcn-4395c04f6a cora_betaext M4_mrf_gcn beta=6.0 m=20 seed=4 test_acc=0.7960
+M4_mrf_mlp-6b6b11f0ab cora_betaext M4_mrf_mlp beta=8.0 m=20 seed=4 test_acc=0.7600
+M4_mrf_gcn-5d60f3efac cora_betaext M4_mrf_gcn beta=8.0 m=20 seed=4 test_acc=0.7970
+M0_mlp-3621f9ab9e cora_betaext M0_mlp m=20 seed=5 test_acc=0.5660
+M1_gcn-d72247ade4 cora_betaext M1_gcn m=20 seed=5 test_acc=0.7690
+M4_mrf_mlp-f055f3199f cora_betaext M4_mrf_mlp beta=3.0 m=20 seed=5 test_acc=0.7620
+M4_mrf_gcn-aad8dc9463 cora_betaext M4_mrf_gcn beta=3.0 m=20 seed=5 test_acc=0.7660
+M4_mrf_mlp-a0db7d81b4 cora_betaext M4_mrf_mlp beta=4.0 m=20 seed=5 test_acc=0.7640
+M4_mrf_gcn-7a0ee5f89a cora_betaext M4_mrf_gcn beta=4.0 m=20 seed=5 test_acc=0.7660
+M4_mrf_mlp-9854bf73d1 cora_betaext M4_mrf_mlp beta=6.0 m=20 seed=5 test_acc=0.7630
+M4_mrf_gcn-f9e8e8e64c cora_betaext M4_mrf_gcn beta=6.0 m=20 seed=5 test_acc=0.7640
+M4_mrf_mlp-c6824c6057 cora_betaext M4_mrf_mlp beta=8.0 m=20 seed=5 test_acc=0.7550
+M4_mrf_gcn-5d58fbc5a6 cora_betaext M4_mrf_gcn beta=8.0 m=20 seed=5 test_acc=0.7640
+M0_mlp-5bb96a2eaf cora_betaext M0_mlp m=20 seed=6 test_acc=0.5750
+M1_gcn-d66f7b77a4 cora_betaext M1_gcn m=20 seed=6 test_acc=0.8170
+M4_mrf_mlp-5da771f431 cora_betaext M4_mrf_mlp beta=3.0 m=20 seed=6 test_acc=0.7920
+M4_mrf_gcn-057521b9fb cora_betaext M4_mrf_gcn beta=3.0 m=20 seed=6 test_acc=0.8100
+M4_mrf_mlp-8eb85b66c2 cora_betaext M4_mrf_mlp beta=4.0 m=20 seed=6 test_acc=0.7920
+M4_mrf_gcn-3a5046a484 cora_betaext M4_mrf_gcn beta=4.0 m=20 seed=6 test_acc=0.8100
+M4_mrf_mlp-8d808da9d4 cora_betaext M4_mrf_mlp beta=6.0 m=20 seed=6 test_acc=0.7910
+M4_mrf_gcn-5eb16ae7a4 cora_betaext M4_mrf_gcn beta=6.0 m=20 seed=6 test_acc=0.8090
+M4_mrf_mlp-ee3e0a5f00 cora_betaext M4_mrf_mlp beta=8.0 m=20 seed=6 test_acc=0.7960
+M4_mrf_gcn-52cf911fc2 cora_betaext M4_mrf_gcn beta=8.0 m=20 seed=6 test_acc=0.8080
+M0_mlp-26aaa3efe9 cora_betaext M0_mlp m=20 seed=7 test_acc=0.6040
+M1_gcn-96fbd03481 cora_betaext M1_gcn m=20 seed=7 test_acc=0.8190
+M4_mrf_mlp-fd32906f90 cora_betaext M4_mrf_mlp beta=3.0 m=20 seed=7 test_acc=0.7800
+M4_mrf_gcn-748bb02166 cora_betaext M4_mrf_gcn beta=3.0 m=20 seed=7 test_acc=0.7980
+M4_mrf_mlp-96f36eb9ae cora_betaext M4_mrf_mlp beta=4.0 m=20 seed=7 test_acc=0.7700
+M4_mrf_gcn-99233dda8c cora_betaext M4_mrf_gcn beta=4.0 m=20 seed=7 test_acc=0.7900
+M4_mrf_mlp-ca0055ccec cora_betaext M4_mrf_mlp beta=6.0 m=20 seed=7 test_acc=0.7610
+M4_mrf_gcn-a31ef4cdb6 cora_betaext M4_mrf_gcn beta=6.0 m=20 seed=7 test_acc=0.7960
+M4_mrf_mlp-7764caae78 cora_betaext M4_mrf_mlp beta=8.0 m=20 seed=7 test_acc=0.7610
+M4_mrf_gcn-27c774302b cora_betaext M4_mrf_gcn beta=8.0 m=20 seed=7 test_acc=0.7900
+M0_mlp-933c36e902 cora_betaext M0_mlp m=20 seed=8 test_acc=0.5630
+M1_gcn-9035ef8662 cora_betaext M1_gcn m=20 seed=8 test_acc=0.7690
+M4_mrf_mlp-967788d6c5 cora_betaext M4_mrf_mlp beta=3.0 m=20 seed=8 test_acc=0.7560
+M4_mrf_gcn-989fe83791 cora_betaext M4_mrf_gcn beta=3.0 m=20 seed=8 test_acc=0.7710
+M4_mrf_mlp-f6fe911b33 cora_betaext M4_mrf_mlp beta=4.0 m=20 seed=8 test_acc=0.7560
+M4_mrf_gcn-0b75fc7f5d cora_betaext M4_mrf_gcn beta=4.0 m=20 seed=8 test_acc=0.7780
+M4_mrf_mlp-60c6c0cc2a cora_betaext M4_mrf_mlp beta=6.0 m=20 seed=8 test_acc=0.7470
+M4_mrf_gcn-5724bc7d13 cora_betaext M4_mrf_gcn beta=6.0 m=20 seed=8 test_acc=0.7760
+M4_mrf_mlp-60483bfaae cora_betaext M4_mrf_mlp beta=8.0 m=20 seed=8 test_acc=0.7510
+M4_mrf_gcn-4dbb13dee0 cora_betaext M4_mrf_gcn beta=8.0 m=20 seed=8 test_acc=0.7810
+M0_mlp-344a79563b cora_betaext M0_mlp m=20 seed=9 test_acc=0.6270
+M1_gcn-cde5259790 cora_betaext M1_gcn m=20 seed=9 test_acc=0.7890
+M4_mrf_mlp-32637d1120 cora_betaext M4_mrf_mlp beta=3.0 m=20 seed=9 test_acc=0.7970
+M4_mrf_gcn-4517c9430b cora_betaext M4_mrf_gcn beta=3.0 m=20 seed=9 test_acc=0.7990
+M4_mrf_mlp-8bfaac2a3a cora_betaext M4_mrf_mlp beta=4.0 m=20 seed=9 test_acc=0.7930
+M4_mrf_gcn-107db5c49d cora_betaext M4_mrf_gcn beta=4.0 m=20 seed=9 test_acc=0.8000
+M4_mrf_mlp-184c6397d2 cora_betaext M4_mrf_mlp beta=6.0 m=20 seed=9 test_acc=0.7900
+M4_mrf_gcn-2582e3e98d cora_betaext M4_mrf_gcn beta=6.0 m=20 seed=9 test_acc=0.8000
+M4_mrf_mlp-1fd975d279 cora_betaext M4_mrf_mlp beta=8.0 m=20 seed=9 test_acc=0.7880
+M4_mrf_gcn-7127b64d99 cora_betaext M4_mrf_gcn beta=8.0 m=20 seed=9 test_acc=0.7990

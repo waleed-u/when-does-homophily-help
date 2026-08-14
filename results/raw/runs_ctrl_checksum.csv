@@ -1,0 +1,11 @@
+run_id,dataset,model,regime,inference_method,label_per_class,split_seed,lambda,beta,weighted_prior,clamped,best_epoch,val_acc,val_f1,val_nll,val_brier,test_acc,test_f1,test_nll,test_brier,ece,rule_score,edge_agreement,converged,iters,final_residual,ess_min,ess_median,rhat_max,target_h,empirical_h,adjusted_h,label_informativeness,sigma_x,beta_gen,lr,weight_decay,hidden,dropout,train_seconds,infer_seconds,logits_path,git_commit,protocol_hash,notes
+CHK-5838cb3ae1,cora,M4_mrf_gcn,checksum,gibbs,5,0,,2.0,,,,,,,,0.747,,,,,,,0,,,5.7,,1.86815,,,,,,,,,,,,,,4225688,9f9bb01aee1b,tv_mf_gibbs_mean=0.15789 max=1.0000 mf_acc=0.7460
+CHK-3c190d7c86,cora,M4_mrf_gcn,checksum,gibbs,5,1,,0.25,,,,,,,,0.536,,,,,,,1,,,5650.0,,1.00002,,,,,,,,,,,,,,4225688,9f9bb01aee1b,tv_mf_gibbs_mean=0.00161 max=0.1430 mf_acc=0.5340
+CHK-fc5b584438,cora,M4_mrf_gcn,checksum,gibbs,5,2,,0.25,,,,,,,,0.768,,,,,,,1,,,7486.7,,0.99982,,,,,,,,,,,,,,4225688,9f9bb01aee1b,tv_mf_gibbs_mean=0.00088 max=0.0341 mf_acc=0.7700
+CHK-6300e1ef7d,cora,M4_mrf_gcn,checksum,gibbs,5,3,,2.0,,,,,,,,0.689,,,,,,,0,,,5.9,,1.78061,,,,,,,,,,,,,,4225688,9f9bb01aee1b,tv_mf_gibbs_mean=0.18823 max=1.0000 mf_acc=0.7220
+CHK-4ca3ce2f67,cora,M4_mrf_gcn,checksum,gibbs,5,4,,2.0,,,,,,,,0.725,,,,,,,0,,,5.9,,1.77739,,,,,,,,,,,,,,4225688,9f9bb01aee1b,tv_mf_gibbs_mean=0.22087 max=1.0000 mf_acc=0.7490
+CHK-934b03a16c,cora,M4_mrf_gcn,checksum,gibbs,5,5,,2.0,,,,,,,,0.659,,,,,,,0,,,8.1,,1.42826,,,,,,,,,,,,,,4225688,9f9bb01aee1b,tv_mf_gibbs_mean=0.19277 max=1.0000 mf_acc=0.7210
+CHK-59cacc17e1,cora,M4_mrf_gcn,checksum,gibbs,5,6,,1.0,,,,,,,,0.756,,,,,,,0,,,1834.2,,1.01283,,,,,,,,,,,,,,4225688,9f9bb01aee1b,tv_mf_gibbs_mean=0.05164 max=0.9444 mf_acc=0.7560
+CHK-b88607785c,cora,M4_mrf_gcn,checksum,gibbs,5,7,,2.0,,,,,,,,0.641,,,,,,,0,,,4.7,,2.5766,,,,,,,,,,,,,,4225688,9f9bb01aee1b,tv_mf_gibbs_mean=0.14316 max=1.0000 mf_acc=0.7100
+CHK-b3578c4b0e,cora,M4_mrf_gcn,checksum,gibbs,5,8,,1.0,,,,,,,,0.613,,,,,,,1,,,3287.2,,1.00329,,,,,,,,,,,,,,4225688,9f9bb01aee1b,tv_mf_gibbs_mean=0.09631 max=1.0000 mf_acc=0.6910
+CHK-d9d83f4808,cora,M4_mrf_gcn,checksum,gibbs,5,9,,1.0,,,,,,,,0.805,,,,,,,1,,,4372.5,,0.99975,,,,,,,,,,,,,,4225688,9f9bb01aee1b,tv_mf_gibbs_mean=0.04035 max=0.6125 mf_acc=0.7920

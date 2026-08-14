@@ -1,6 +1,6 @@
 # PROJECT_STATUS.md
 
-**Last updated:** start of implementation phase (after workspace audit).
+**Last updated:** after full execution — all Tier-1 and Tier-2 experiments complete, analysed and audited.
 **Rule:** this file records what has *actually* been built and run. Nothing here is aspirational; planned work lives in `FINAL_RESEARCH_DESIGN.md`.
 
 ## 1. Original research goal
@@ -34,45 +34,65 @@ Both match the playbook's expected values, confirming the loader path is correct
 - **Fidelity-suite small graphs** (generated): builders not yet implemented.
 - Roman-empire: **cut to future work** by the approved design (not required).
 
-## 6. Methods already implemented
+## 6. Methods implemented (all complete)
 
-| Module | Status |
-|---|---|
-| `src/data.py` | Planetoid loading (certifi SSL fix), row normalization, undirected-edge helper — **working** |
-| `src/splits.py` | stratified train masks, nesting across m, SBM masks, small-validation masks, disjointness assert — **working, invariants verified** |
-| `src/homophily.py` | edge/adjusted homophily, label informativeness, mean degree — **working, values verified** |
-| `src/metrics.py` | accuracy, macro-F1, NLL, Brier, ECE, rule satisfaction R, argmax edge-agreement — **written, not yet exercised** |
-| `src/inference/coloring.py` | greedy graph coloring for MF blocks / chromatic Gibbs — **written, not yet exercised** |
-
-Infrastructure: venv with torch 2.13.0 (CPU) + PyG 2.8.0; git repo with `PROTOCOL.md` committed and tagged `protocol-freeze` (the pre-registration boundary).
-
-Day-1 microbenchmark (measured): GCN epoch on Cora-shaped data **3.7 ms** (≈0.9 s per 250-epoch run); mean-field sweep **0.22 ms** (≈22 ms per 100 sweeps). Compute is not a constraint.
+Data pipeline, splits and homophily diagnostics; MLP and GCN (2- and 3-layer); Laplacian and
+rule-violation regularizers; training loop with early stopping and per-run logit saving; label
+propagation; Potts MRF with similarity weighting; **exact inference** (brute-force enumeration
+and repeated min-fill variable elimination); **mean-field VI** (colour-blocked, ELBO-monotone);
+**damped loopy BP**; **chromatic Rao-Blackwellised Gibbs** with R-hat/ESS diagnostics; CSBM
+generator with closed-form Oracle-F and generative Oracle-G; run logging, analysis
+(validation-only selection, paired BCa bootstrap, Holm-corrected endpoints), figures, tables and
+an automated audit.
 
 ## 7. Methods still missing
 
-Models (MLP, GCN), regularizer losses (Laplacian, rule-violation), training loop with early stopping and logit saving, run logging (`runs.csv`), exact inference (enumeration + variable elimination), mean-field, loopy BP, chromatic Gibbs + MCMC diagnostics, CSBM generator + oracles, small-graph builders, label propagation baseline, similarity weights, all analysis/figure/table scripts.
+None required by the design. Cut to future work as planned: EM-learned compatibility matrix,
+Roman-empire stress test, joint/unrolled training.
 
-## 8. Experiments already completed
+## 8. Experiments completed
 
-**None.** No experimental result exists yet; `results/runs.csv` and `results/fidelity.csv` do not exist. The only executed computations are the dataset-statistics verification and the timing microbenchmark reported above.
+**7,744 model runs + 11,280 exact-inference comparisons.** E0 sanity gate; E1 proposal
+reproduction; E2 Cora low-label factorial (5 label rates x 10 seeds, 30 on endpoint cells);
+E3 strength sensitivity; E4 mechanism ladder; E5 CSBM sweep (6 homophily levels x 3 label rates
+x 10 fresh graphs, tuned and dogmatic regimes, both oracles); E6 CiteSeer replication;
+E7 inference fidelity (7 structures x 10 couplings x 2 evidence levels x 20 draws x 4 engines);
+E8r MF-vs-Gibbs checksum; E13 small-validation ablation; plus controls: degree-preserving
+rewiring null, 3-layer propagation-depth control, retrain-noise floor, M5 similarity pre-check,
+and an exploratory beta-grid extension.
 
 ## 9. Experiments still required
 
-E0 (sanity gate), E1 (proposal reproduction), E2 (Cora low-label factorial), E3 (strength sensitivity), E4 (mechanism ladder), E5 (CSBM sweep, tuned + dogmatic), E6 (CiteSeer replication), E7 (fidelity suite), E8r (Gibbs checksum), E13 (small-validation ablation), plus controls: rewired-graph null, deeper-GCN row, M3 row, clamped variant, M5 pre-check and variant. Specified in `FINAL_RESEARCH_DESIGN.md`.
+None for the planned scope.
 
 ## 10. Existing results
 
-None (see §8). Verified dataset statistics in §4 are descriptive facts about the data, not experimental results.
+See `SCIENTIFIC_FINDINGS.md`. Headline: C1 **refuted and significantly reversed**
+(theta = -7.07 pts, CI [-10.26,-3.91], p=6.6e-4); C2 and C3 **supported** (+78.77 and -29.72 pts,
+10/10 seeds); crossover h* = 0.76/0.57/0.43 at m=1/5/20; the Laplacian penalty's benefit
+survives degree-preserving rewiring while the MRF's vanishes; BP exact on trees to 4.8e-7;
+Gibbs fails to mix at the couplings models actually use on Cora (R-hat 2.58, ESS 4.7).
 
 ## 11. Existing figures/tables
 
-None.
+Six figures (`figures/F2`-`F6`, incl. F3b) and seven tables (`tables/T1`-`T7`, `.csv` + `.tex`),
+all generated by script from raw CSVs. `RESULTS_MANIFEST.md` maps experiment -> raw file ->
+figure/table -> paper section.
 
-## 12. Known problems
+## 12. Known problems (all resolved or documented)
 
-1. **SSL certificate failure** on first Planetoid download (macOS framework Python lacks a cert bundle). Fixed in `src/data.py` by pointing `SSL_CERT_FILE` at `certifi`.
-2. `torch.use_deterministic_algorithms(True)` interacts with scatter-based PyG ops; must be validated once the GCN exists (fallback: `warn_only=True`, documented if used).
-3. Cora at m=20 needs ≥20 eligible nodes/class outside val/test — holds, but `splits.py` raises explicitly if violated (guards future datasets).
+1. **SSL certificate failure** on first Planetoid download — fixed in `src/data.py` via `certifi`.
+2. `torch.use_deterministic_algorithms(True)` set with `warn_only=True` for PyG scatter ops.
+3. **Gibbs gate mis-specification** — the pre-registered inter-chain-TV criterion measured
+   finite-budget Monte-Carlo precision, not mixing, and would have mislabelled well-mixed chains
+   as failures. Amended before any experimental result existed (CHANGELOG A1).
+4. **beta-grid maximum is binding** — validation selects beta=2.0 (the grid edge) in most
+   MRF-on-MLP cells, so reported gains are lower bounds. Quantified by an exploratory extension
+   (`tables/T7_beta_extension.csv`), labelled exploratory per the amendment policy.
+5. **Gibbs does not mix at beta=2 on Cora** (R-hat 2.58, ESS 4.7) — reported as a diagnostic
+   failure rather than used as a reference.
+6. **Deeper-GCN caveat** — at m<=2 a 3-layer GCN gains as much as the explicit prior, so no
+   superiority over deeper propagation is claimed in that regime.
 
 ## 13. Reproducibility issues
 
@@ -80,9 +100,9 @@ None outstanding. In place: frozen tagged protocol; deterministic seeding; pinne
 
 ## 14. Recommended next steps
 
-1. Models + losses + training loop + run logging; gate `λ=0 ≡ GCN` and leakage tests. → E0, E1.
-2. Exact kit + mean-field with ELBO-monotonicity assertion; gates `β=0 ≡ softmax`, `enumeration ≡ VE`.
-3. Loopy BP + chromatic Gibbs; gate `BP ≡ exact on trees`; run the fidelity suite (E7).
-4. Post-hoc inference pipeline + LP baseline; then the Cora block (E2/E3/E4).
-5. CSBM generator + σ_x pilot → freeze → SBM grid (E5), CiteSeer (E6), Tier-2 controls.
-6. Analysis (paired CIs, C1–C3), figures/tables, audit, paper material.
+1. Draw the method schematic (F1) for the Methods section.
+2. Write the report in `report/` from `PAPER_BLUEPRINT.md`, importing `figures/*.pdf` and
+   `tables/*.tex` — no hand-typed numbers.
+3. Optional depth if time allows (all currently future work): EM-learned compatibility matrix
+   (motivated directly by the wrong-sign finding at low homophily), annealed or structured
+   inference for the beta>=2 regime where Gibbs fails, Roman-empire stress test.

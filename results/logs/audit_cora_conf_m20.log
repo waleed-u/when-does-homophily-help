@@ -1,0 +1,140 @@
+M0_mlp-985066b072 cora M0_mlp m=20 seed=10 test_acc=0.5810
+M4_mrf_mlp-0280ba5919 cora M4_mrf_mlp beta=0.05 m=20 seed=10 test_acc=0.5950
+M4_mrf_mlp-637d19d720 cora M4_mrf_mlp beta=0.1 m=20 seed=10 test_acc=0.6010
+M4_mrf_mlp-d905db677a cora M4_mrf_mlp beta=0.25 m=20 seed=10 test_acc=0.6450
+M4_mrf_mlp-26c6b7d702 cora M4_mrf_mlp beta=0.5 m=20 seed=10 test_acc=0.7160
+M4_mrf_mlp-99846a3bd2 cora M4_mrf_mlp beta=1.0 m=20 seed=10 test_acc=0.7190
+M4_mrf_mlp-bbf0dce281 cora M4_mrf_mlp beta=2.0 m=20 seed=10 test_acc=0.7610
+M0_mlp-c100aedd91 cora M0_mlp m=20 seed=11 test_acc=0.5250
+M4_mrf_mlp-14f0b9beb5 cora M4_mrf_mlp beta=0.05 m=20 seed=11 test_acc=0.5350
+M4_mrf_mlp-62ad688f6e cora M4_mrf_mlp beta=0.1 m=20 seed=11 test_acc=0.5400
+M4_mrf_mlp-735980337e cora M4_mrf_mlp beta=0.25 m=20 seed=11 test_acc=0.5810
+M4_mrf_mlp-d071258c78 cora M4_mrf_mlp beta=0.5 m=20 seed=11 test_acc=0.6340
+M4_mrf_mlp-0f82100323 cora M4_mrf_mlp beta=1.0 m=20 seed=11 test_acc=0.6920
+M4_mrf_mlp-a45459a36a cora M4_mrf_mlp beta=2.0 m=20 seed=11 test_acc=0.7150
+M0_mlp-f25b918dad cora M0_mlp m=20 seed=12 test_acc=0.5850
+M4_mrf_mlp-d19d72ec89 cora M4_mrf_mlp beta=0.05 m=20 seed=12 test_acc=0.5970
+M4_mrf_mlp-06a164a360 cora M4_mrf_mlp beta=0.1 m=20 seed=12 test_acc=0.6130
+M4_mrf_mlp-91e015774b cora M4_mrf_mlp beta=0.25 m=20 seed=12 test_acc=0.6520
+M4_mrf_mlp-0a39114b0f cora M4_mrf_mlp beta=0.5 m=20 seed=12 test_acc=0.7240
+M4_mrf_mlp-2f47af1a7c cora M4_mrf_mlp beta=1.0 m=20 seed=12 test_acc=0.7630
+M4_mrf_mlp-38cb1e840b cora M4_mrf_mlp beta=2.0 m=20 seed=12 test_acc=0.7710
+M0_mlp-5f02db0bf7 cora M0_mlp m=20 seed=13 test_acc=0.5880
+M4_mrf_mlp-4259bf9229 cora M4_mrf_mlp beta=0.05 m=20 seed=13 test_acc=0.5960
+M4_mrf_mlp-74e4d199c8 cora M4_mrf_mlp beta=0.1 m=20 seed=13 test_acc=0.6080
+M4_mrf_mlp-98a1bb1c57 cora M4_mrf_mlp beta=0.25 m=20 seed=13 test_acc=0.6370
+M4_mrf_mlp-0d27113c51 cora M4_mrf_mlp beta=0.5 m=20 seed=13 test_acc=0.7080
+M4_mrf_mlp-69810c0b4f cora M4_mrf_mlp beta=1.0 m=20 seed=13 test_acc=0.7570
+M4_mrf_mlp-05de2f4d36 cora M4_mrf_mlp beta=2.0 m=20 seed=13 test_acc=0.7570
+M0_mlp-5b585d171d cora M0_mlp m=20 seed=14 test_acc=0.5920
+M4_mrf_mlp-fd7ae0ab2c cora M4_mrf_mlp beta=0.05 m=20 seed=14 test_acc=0.6070
+M4_mrf_mlp-ceabb418d7 cora M4_mrf_mlp beta=0.1 m=20 seed=14 test_acc=0.6130
+M4_mrf_mlp-51ba2e04e3 cora M4_mrf_mlp beta=0.25 m=20 seed=14 test_acc=0.6420
+M4_mrf_mlp-90d5433538 cora M4_mrf_mlp beta=0.5 m=20 seed=14 test_acc=0.7110
+M4_mrf_mlp-8171a786cb cora M4_mrf_mlp beta=1.0 m=20 seed=14 test_acc=0.7780
+M4_mrf_mlp-1c4fc20cec cora M4_mrf_mlp beta=2.0 m=20 seed=14 test_acc=0.7820
+M0_mlp-632484355f cora M0_mlp m=20 seed=15 test_acc=0.5690
+M4_mrf_mlp-8868c9b5f9 cora M4_mrf_mlp beta=0.05 m=20 seed=15 test_acc=0.5720
+M4_mrf_mlp-42c3a2f2f1 cora M4_mrf_mlp beta=0.1 m=20 seed=15 test_acc=0.5930
+M4_mrf_mlp-093c065cc9 cora M4_mrf_mlp beta=0.25 m=20 seed=15 test_acc=0.6260
+M4_mrf_mlp-ee1d4d65ee cora M4_mrf_mlp beta=0.5 m=20 seed=15 test_acc=0.6980
+M4_mrf_mlp-681b92cff5 cora M4_mrf_mlp beta=1.0 m=20 seed=15 test_acc=0.7650
+M4_mrf_mlp-9d1479d319 cora M4_mrf_mlp beta=2.0 m=20 seed=15 test_acc=0.7850
+M0_mlp-d635d7d7ac cora M0_mlp m=20 seed=16 test_acc=0.6220
+M4_mrf_mlp-67f5fa76e9 cora M4_mrf_mlp beta=0.05 m=20 seed=16 test_acc=0.6330
+M4_mrf_mlp-c695a7d8df cora M4_mrf_mlp beta=0.1 m=20 seed=16 test_acc=0.6440
+M4_mrf_mlp-c77185e80d cora M4_mrf_mlp beta=0.25 m=20 seed=16 test_acc=0.6920
+M4_mrf_mlp-4af41d7eb0 cora M4_mrf_mlp beta=0.5 m=20 seed=16 test_acc=0.7550
+M4_mrf_mlp-01d7b2421e cora M4_mrf_mlp beta=1.0 m=20 seed=16 test_acc=0.7950
+M4_mrf_mlp-3589296f62 cora M4_mrf_mlp beta=2.0 m=20 seed=16 test_acc=0.8180
+M0_mlp-21a882fd53 cora M0_mlp m=20 seed=17 test_acc=0.5790
+M4_mrf_mlp-e0e0e5b0c9 cora M4_mrf_mlp beta=0.05 m=20 seed=17 test_acc=0.5910
+M4_mrf_mlp-b063b4916b cora M4_mrf_mlp beta=0.1 m=20 seed=17 test_acc=0.6080
+M4_mrf_mlp-556d902754 cora M4_mrf_mlp beta=0.25 m=20 seed=17 test_acc=0.6510
+M4_mrf_mlp-0f8c235689 cora M4_mrf_mlp beta=0.5 m=20 seed=17 test_acc=0.7060
+M4_mrf_mlp-597fda1faf cora M4_mrf_mlp beta=1.0 m=20 seed=17 test_acc=0.7590
+M4_mrf_mlp-fbbbdc26f0 cora M4_mrf_mlp beta=2.0 m=20 seed=17 test_acc=0.7840
+M0_mlp-7b4866f246 cora M0_mlp m=20 seed=18 test_acc=0.5800
+M4_mrf_mlp-8ef9d3d293 cora M4_mrf_mlp beta=0.05 m=20 seed=18 test_acc=0.5880
+M4_mrf_mlp-07838a3a12 cora M4_mrf_mlp beta=0.1 m=20 seed=18 test_acc=0.5940
+M4_mrf_mlp-1534540022 cora M4_mrf_mlp beta=0.25 m=20 seed=18 test_acc=0.6410
+M4_mrf_mlp-4977a9c514 cora M4_mrf_mlp beta=0.5 m=20 seed=18 test_acc=0.7080
+M4_mrf_mlp-279d8904d8 cora M4_mrf_mlp beta=1.0 m=20 seed=18 test_acc=0.7630
+M4_mrf_mlp-8326a20754 cora M4_mrf_mlp beta=2.0 m=20 seed=18 test_acc=0.7760
+M0_mlp-82e32ac68f cora M0_mlp m=20 seed=19 test_acc=0.5860
+M4_mrf_mlp-440628481d cora M4_mrf_mlp beta=0.05 m=20 seed=19 test_acc=0.5970
+M4_mrf_mlp-0a85403be1 cora M4_mrf_mlp beta=0.1 m=20 seed=19 test_acc=0.6050
+M4_mrf_mlp-c58bf184ab cora M4_mrf_mlp beta=0.25 m=20 seed=19 test_acc=0.6440
+M4_mrf_mlp-2819f033aa cora M4_mrf_mlp beta=0.5 m=20 seed=19 test_acc=0.7230
+M4_mrf_mlp-e48d021638 cora M4_mrf_mlp beta=1.0 m=20 seed=19 test_acc=0.7890
+M4_mrf_mlp-e5bfbe49c8 cora M4_mrf_mlp beta=2.0 m=20 seed=19 test_acc=0.8010
+M0_mlp-20a46c5775 cora M0_mlp m=20 seed=20 test_acc=0.5910
+M4_mrf_mlp-af59e378c5 cora M4_mrf_mlp beta=0.05 m=20 seed=20 test_acc=0.6060
+M4_mrf_mlp-ce797a89a3 cora M4_mrf_mlp beta=0.1 m=20 seed=20 test_acc=0.6180
+M4_mrf_mlp-3de0a3ab8a cora M4_mrf_mlp beta=0.25 m=20 seed=20 test_acc=0.6590
+M4_mrf_mlp-f87e75472d cora M4_mrf_mlp beta=0.5 m=20 seed=20 test_acc=0.7170
+M4_mrf_mlp-64cc3ef39f cora M4_mrf_mlp beta=1.0 m=20 seed=20 test_acc=0.7620
+M4_mrf_mlp-8ee0d850a1 cora M4_mrf_mlp beta=2.0 m=20 seed=20 test_acc=0.7960
+M0_mlp-6f72c8ed4c cora M0_mlp m=20 seed=21 test_acc=0.5920
+M4_mrf_mlp-e4b22db5b3 cora M4_mrf_mlp beta=0.05 m=20 seed=21 test_acc=0.6070
+M4_mrf_mlp-94ec7e3045 cora M4_mrf_mlp beta=0.1 m=20 seed=21 test_acc=0.6220
+M4_mrf_mlp-52371951b0 cora M4_mrf_mlp beta=0.25 m=20 seed=21 test_acc=0.6490
+M4_mrf_mlp-e330bbb9c4 cora M4_mrf_mlp beta=0.5 m=20 seed=21 test_acc=0.6990
+M4_mrf_mlp-50bbd74c88 cora M4_mrf_mlp beta=1.0 m=20 seed=21 test_acc=0.7590
+M4_mrf_mlp-931152f054 cora M4_mrf_mlp beta=2.0 m=20 seed=21 test_acc=0.7610
+M0_mlp-b90b2338ed cora M0_mlp m=20 seed=22 test_acc=0.5920
+M4_mrf_mlp-5f57f53994 cora M4_mrf_mlp beta=0.05 m=20 seed=22 test_acc=0.6100
+M4_mrf_mlp-8e2b64c897 cora M4_mrf_mlp beta=0.1 m=20 seed=22 test_acc=0.6200
+M4_mrf_mlp-b5b4155d36 cora M4_mrf_mlp beta=0.25 m=20 seed=22 test_acc=0.6500
+M4_mrf_mlp-8efda2926f cora M4_mrf_mlp beta=0.5 m=20 seed=22 test_acc=0.7210
+M4_mrf_mlp-40d707c8be cora M4_mrf_mlp beta=1.0 m=20 seed=22 test_acc=0.7960
+M4_mrf_mlp-7379d5ff76 cora M4_mrf_mlp beta=2.0 m=20 seed=22 test_acc=0.8030
+M0_mlp-ba97b680bd cora M0_mlp m=20 seed=23 test_acc=0.5910
+M4_mrf_mlp-5cc8f26db5 cora M4_mrf_mlp beta=0.05 m=20 seed=23 test_acc=0.6000
+M4_mrf_mlp-bf49621d3c cora M4_mrf_mlp beta=0.1 m=20 seed=23 test_acc=0.6040
+M4_mrf_mlp-c8efcce988 cora M4_mrf_mlp beta=0.25 m=20 seed=23 test_acc=0.6420
+M4_mrf_mlp-50ae4943f1 cora M4_mrf_mlp beta=0.5 m=20 seed=23 test_acc=0.6970
+M4_mrf_mlp-156c709332 cora M4_mrf_mlp beta=1.0 m=20 seed=23 test_acc=0.7640
+M4_mrf_mlp-650e0dea42 cora M4_mrf_mlp beta=2.0 m=20 seed=23 test_acc=0.7810
+M0_mlp-9bd028f215 cora M0_mlp m=20 seed=24 test_acc=0.5760
+M4_mrf_mlp-f6bc0ad14c cora M4_mrf_mlp beta=0.05 m=20 seed=24 test_acc=0.5900
+M4_mrf_mlp-f067935b96 cora M4_mrf_mlp beta=0.1 m=20 seed=24 test_acc=0.6010
+M4_mrf_mlp-605fc9b94a cora M4_mrf_mlp beta=0.25 m=20 seed=24 test_acc=0.6280
+M4_mrf_mlp-8c86b9a1e4 cora M4_mrf_mlp beta=0.5 m=20 seed=24 test_acc=0.6950
+M4_mrf_mlp-241f5663e1 cora M4_mrf_mlp beta=1.0 m=20 seed=24 test_acc=0.7490
+M4_mrf_mlp-7515b0cbf2 cora M4_mrf_mlp beta=2.0 m=20 seed=24 test_acc=0.7630
+M0_mlp-bcc89f6180 cora M0_mlp m=20 seed=25 test_acc=0.5940
+M4_mrf_mlp-29dd001304 cora M4_mrf_mlp beta=0.05 m=20 seed=25 test_acc=0.6000
+M4_mrf_mlp-19d2895b5e cora M4_mrf_mlp beta=0.1 m=20 seed=25 test_acc=0.6150
+M4_mrf_mlp-dff11da7c8 cora M4_mrf_mlp beta=0.25 m=20 seed=25 test_acc=0.6620
+M4_mrf_mlp-ece20b9977 cora M4_mrf_mlp beta=0.5 m=20 seed=25 test_acc=0.7450
+M4_mrf_mlp-6d69e46841 cora M4_mrf_mlp beta=1.0 m=20 seed=25 test_acc=0.7770
+M4_mrf_mlp-67ee15e91c cora M4_mrf_mlp beta=2.0 m=20 seed=25 test_acc=0.7930
+M0_mlp-e633f43155 cora M0_mlp m=20 seed=26 test_acc=0.5850
+M4_mrf_mlp-0bff5e611d cora M4_mrf_mlp beta=0.05 m=20 seed=26 test_acc=0.5940
+M4_mrf_mlp-29eb7eb375 cora M4_mrf_mlp beta=0.1 m=20 seed=26 test_acc=0.6070
+M4_mrf_mlp-c63ad77d8f cora M4_mrf_mlp beta=0.25 m=20 seed=26 test_acc=0.6550
+M4_mrf_mlp-5067560f72 cora M4_mrf_mlp beta=0.5 m=20 seed=26 test_acc=0.7220
+M4_mrf_mlp-2ea69bb9c3 cora M4_mrf_mlp beta=1.0 m=20 seed=26 test_acc=0.7710
+M4_mrf_mlp-434c076ebd cora M4_mrf_mlp beta=2.0 m=20 seed=26 test_acc=0.7790
+M0_mlp-110da9f345 cora M0_mlp m=20 seed=27 test_acc=0.5790
+M4_mrf_mlp-063080a295 cora M4_mrf_mlp beta=0.05 m=20 seed=27 test_acc=0.5900
+M4_mrf_mlp-8391175314 cora M4_mrf_mlp beta=0.1 m=20 seed=27 test_acc=0.5960
+M4_mrf_mlp-e9802e63e7 cora M4_mrf_mlp beta=0.25 m=20 seed=27 test_acc=0.6490
+M4_mrf_mlp-227bae4316 cora M4_mrf_mlp beta=0.5 m=20 seed=27 test_acc=0.7110
+M4_mrf_mlp-ac0e58b77f cora M4_mrf_mlp beta=1.0 m=20 seed=27 test_acc=0.7730
+M4_mrf_mlp-89a07f4fd8 cora M4_mrf_mlp beta=2.0 m=20 seed=27 test_acc=0.7760
+M0_mlp-a16d58f4c2 cora M0_mlp m=20 seed=28 test_acc=0.5810
+M4_mrf_mlp-6fbc040076 cora M4_mrf_mlp beta=0.05 m=20 seed=28 test_acc=0.5910
+M4_mrf_mlp-9376b6375d cora M4_mrf_mlp beta=0.1 m=20 seed=28 test_acc=0.5990
+M4_mrf_mlp-b7ed67f023 cora M4_mrf_mlp beta=0.25 m=20 seed=28 test_acc=0.6470
+M4_mrf_mlp-838c9459db cora M4_mrf_mlp beta=0.5 m=20 seed=28 test_acc=0.7360
+M4_mrf_mlp-b08602b4e5 cora M4_mrf_mlp beta=1.0 m=20 seed=28 test_acc=0.7970
+M4_mrf_mlp-464922b6a5 cora M4_mrf_mlp beta=2.0 m=20 seed=28 test_acc=0.7950
+M0_mlp-e8cc339e78 cora M0_mlp m=20 seed=29 test_acc=0.5640
+M4_mrf_mlp-1cf0242148 cora M4_mrf_mlp beta=0.05 m=20 seed=29 test_acc=0.5800
+M4_mrf_mlp-a0faa67fd3 cora M4_mrf_mlp beta=0.1 m=20 seed=29 test_acc=0.5950
+M4_mrf_mlp-5f08826b80 cora M4_mrf_mlp beta=0.25 m=20 seed=29 test_acc=0.6420
+M4_mrf_mlp-20eb6ee09c cora M4_mrf_mlp beta=0.5 m=20 seed=29 test_acc=0.7110
+M4_mrf_mlp-8f64a3e74e cora M4_mrf_mlp beta=1.0 m=20 seed=29 test_acc=0.7830
+M4_mrf_mlp-496187b761 cora M4_mrf_mlp beta=2.0 m=20 seed=29 test_acc=0.7970

@@ -1,0 +1,282 @@
+M0_mlp-9a58615475 cora_smallval M0_mlp m=1 seed=0 test_acc=0.2310
+M1_gcn-e3fea54c02 cora_smallval M1_gcn m=1 seed=0 test_acc=0.3600
+M0_mlp-434426264d cora_smallval M0_mlp m=1 seed=0 test_acc=0.2310
+M1_gcn-96a956895f cora_smallval M1_gcn m=1 seed=0 test_acc=0.3600
+M4_mrf_mlp-c73d7820d1 cora_smallval M4_mrf_mlp beta=0.05 m=1 seed=0 test_acc=0.2320
+M4_mrf_gcn-f376bf0f43 cora_smallval M4_mrf_gcn beta=0.05 m=1 seed=0 test_acc=0.3560
+M4_mrf_mlp-a443f3b87d cora_smallval M4_mrf_mlp beta=0.1 m=1 seed=0 test_acc=0.2280
+M4_mrf_gcn-685c196288 cora_smallval M4_mrf_gcn beta=0.1 m=1 seed=0 test_acc=0.3530
+M4_mrf_mlp-7a206d285b cora_smallval M4_mrf_mlp beta=0.25 m=1 seed=0 test_acc=0.2260
+M4_mrf_gcn-282632bc07 cora_smallval M4_mrf_gcn beta=0.25 m=1 seed=0 test_acc=0.3120
+M4_mrf_mlp-fef0e3cdd2 cora_smallval M4_mrf_mlp beta=0.5 m=1 seed=0 test_acc=0.2340
+M4_mrf_gcn-b5e3d7cd01 cora_smallval M4_mrf_gcn beta=0.5 m=1 seed=0 test_acc=0.2250
+M4_mrf_mlp-514c14a00f cora_smallval M4_mrf_mlp beta=1.0 m=1 seed=0 test_acc=0.2560
+M4_mrf_gcn-ca4ed42a4e cora_smallval M4_mrf_gcn beta=1.0 m=1 seed=0 test_acc=0.1700
+M4_mrf_mlp-31517d634f cora_smallval M4_mrf_mlp beta=2.0 m=1 seed=0 test_acc=0.2640
+M4_mrf_gcn-efb006fc02 cora_smallval M4_mrf_gcn beta=2.0 m=1 seed=0 test_acc=0.1680
+M0_mlp-8e66a4618b cora_smallval M0_mlp m=1 seed=1 test_acc=0.1980
+M1_gcn-f1c8688c43 cora_smallval M1_gcn m=1 seed=1 test_acc=0.1860
+M4_mrf_mlp-0ea96daaba cora_smallval M4_mrf_mlp beta=0.05 m=1 seed=1 test_acc=0.1950
+M4_mrf_gcn-821122dc51 cora_smallval M4_mrf_gcn beta=0.05 m=1 seed=1 test_acc=0.1840
+M4_mrf_mlp-e65bc0be77 cora_smallval M4_mrf_mlp beta=0.1 m=1 seed=1 test_acc=0.1930
+M4_mrf_gcn-4debb04398 cora_smallval M4_mrf_gcn beta=0.1 m=1 seed=1 test_acc=0.1780
+M4_mrf_mlp-e699a90b7b cora_smallval M4_mrf_mlp beta=0.25 m=1 seed=1 test_acc=0.1880
+M4_mrf_gcn-c022f2c4e2 cora_smallval M4_mrf_gcn beta=0.25 m=1 seed=1 test_acc=0.1650
+M4_mrf_mlp-d477f8787b cora_smallval M4_mrf_mlp beta=0.5 m=1 seed=1 test_acc=0.1670
+M4_mrf_gcn-efb0a74847 cora_smallval M4_mrf_gcn beta=0.5 m=1 seed=1 test_acc=0.1460
+M4_mrf_mlp-8b36cf73cc cora_smallval M4_mrf_mlp beta=1.0 m=1 seed=1 test_acc=0.1390
+M4_mrf_gcn-58a331d75e cora_smallval M4_mrf_gcn beta=1.0 m=1 seed=1 test_acc=0.1350
+M4_mrf_mlp-b19773cec6 cora_smallval M4_mrf_mlp beta=2.0 m=1 seed=1 test_acc=0.1380
+M4_mrf_gcn-880e5ddf55 cora_smallval M4_mrf_gcn beta=2.0 m=1 seed=1 test_acc=0.1330
+M0_mlp-287b68259b cora_smallval M0_mlp m=1 seed=2 test_acc=0.3760
+M1_gcn-b9b43f7fe9 cora_smallval M1_gcn m=1 seed=2 test_acc=0.4640
+M4_mrf_mlp-1a9352fb5d cora_smallval M4_mrf_mlp beta=0.05 m=1 seed=2 test_acc=0.3780
+M4_mrf_gcn-46cad1053a cora_smallval M4_mrf_gcn beta=0.05 m=1 seed=2 test_acc=0.4730
+M4_mrf_mlp-ec180ea41a cora_smallval M4_mrf_mlp beta=0.1 m=1 seed=2 test_acc=0.3840
+M4_mrf_gcn-59deff9bc3 cora_smallval M4_mrf_gcn beta=0.1 m=1 seed=2 test_acc=0.4740
+M4_mrf_mlp-a30152e6b0 cora_smallval M4_mrf_mlp beta=0.25 m=1 seed=2 test_acc=0.4060
+M4_mrf_gcn-74834e32d1 cora_smallval M4_mrf_gcn beta=0.25 m=1 seed=2 test_acc=0.4830
+M4_mrf_mlp-7fbd97d206 cora_smallval M4_mrf_mlp beta=0.5 m=1 seed=2 test_acc=0.4810
+M4_mrf_gcn-0705bcdcb5 cora_smallval M4_mrf_gcn beta=0.5 m=1 seed=2 test_acc=0.4920
+M4_mrf_mlp-db2f89dc09 cora_smallval M4_mrf_mlp beta=1.0 m=1 seed=2 test_acc=0.4900
+M4_mrf_gcn-9056e943d1 cora_smallval M4_mrf_gcn beta=1.0 m=1 seed=2 test_acc=0.4880
+M4_mrf_mlp-66c2f636ac cora_smallval M4_mrf_mlp beta=2.0 m=1 seed=2 test_acc=0.4730
+M4_mrf_gcn-74c18e9209 cora_smallval M4_mrf_gcn beta=2.0 m=1 seed=2 test_acc=0.4970
+M0_mlp-3a09aa6c72 cora_smallval M0_mlp m=1 seed=3 test_acc=0.2290
+M1_gcn-c950d8d21f cora_smallval M1_gcn m=1 seed=3 test_acc=0.3790
+M4_mrf_mlp-76ff57e3b4 cora_smallval M4_mrf_mlp beta=0.05 m=1 seed=3 test_acc=0.2350
+M4_mrf_gcn-1b7e978663 cora_smallval M4_mrf_gcn beta=0.05 m=1 seed=3 test_acc=0.3820
+M4_mrf_mlp-72486318d4 cora_smallval M4_mrf_mlp beta=0.1 m=1 seed=3 test_acc=0.2380
+M4_mrf_gcn-1309b5ba77 cora_smallval M4_mrf_gcn beta=0.1 m=1 seed=3 test_acc=0.3840
+M4_mrf_mlp-47755e78ef cora_smallval M4_mrf_mlp beta=0.25 m=1 seed=3 test_acc=0.2470
+M4_mrf_gcn-7760081005 cora_smallval M4_mrf_gcn beta=0.25 m=1 seed=3 test_acc=0.3730
+M4_mrf_mlp-2641126ffb cora_smallval M4_mrf_mlp beta=0.5 m=1 seed=3 test_acc=0.2170
+M4_mrf_gcn-da1c26503a cora_smallval M4_mrf_gcn beta=0.5 m=1 seed=3 test_acc=0.3460
+M4_mrf_mlp-f838d70124 cora_smallval M4_mrf_mlp beta=1.0 m=1 seed=3 test_acc=0.2270
+M4_mrf_gcn-d7205732a4 cora_smallval M4_mrf_gcn beta=1.0 m=1 seed=3 test_acc=0.3420
+M4_mrf_mlp-e19befeeb7 cora_smallval M4_mrf_mlp beta=2.0 m=1 seed=3 test_acc=0.2690
+M4_mrf_gcn-dfaca455d3 cora_smallval M4_mrf_gcn beta=2.0 m=1 seed=3 test_acc=0.3850
+M0_mlp-9ab3d2e751 cora_smallval M0_mlp m=1 seed=4 test_acc=0.3520
+M1_gcn-53fdb476c8 cora_smallval M1_gcn m=1 seed=4 test_acc=0.6000
+M4_mrf_mlp-d92ecfc007 cora_smallval M4_mrf_mlp beta=0.05 m=1 seed=4 test_acc=0.3530
+M4_mrf_gcn-a51cc4744c cora_smallval M4_mrf_gcn beta=0.05 m=1 seed=4 test_acc=0.6020
+M4_mrf_mlp-157fe35146 cora_smallval M4_mrf_mlp beta=0.1 m=1 seed=4 test_acc=0.3570
+M4_mrf_gcn-6b69e0a5fe cora_smallval M4_mrf_gcn beta=0.1 m=1 seed=4 test_acc=0.6000
+M4_mrf_mlp-c8e93ba051 cora_smallval M4_mrf_mlp beta=0.25 m=1 seed=4 test_acc=0.3770
+M4_mrf_gcn-b0c765e6aa cora_smallval M4_mrf_gcn beta=0.25 m=1 seed=4 test_acc=0.6110
+M4_mrf_mlp-6512ac6471 cora_smallval M4_mrf_mlp beta=0.5 m=1 seed=4 test_acc=0.2750
+M4_mrf_gcn-7036e308e1 cora_smallval M4_mrf_gcn beta=0.5 m=1 seed=4 test_acc=0.6330
+M4_mrf_mlp-6348edc6a7 cora_smallval M4_mrf_mlp beta=1.0 m=1 seed=4 test_acc=0.1720
+M4_mrf_gcn-a70df465f4 cora_smallval M4_mrf_gcn beta=1.0 m=1 seed=4 test_acc=0.6640
+M4_mrf_mlp-eebf1e3951 cora_smallval M4_mrf_mlp beta=2.0 m=1 seed=4 test_acc=0.2170
+M4_mrf_gcn-64cb5a1afb cora_smallval M4_mrf_gcn beta=2.0 m=1 seed=4 test_acc=0.6750
+M0_mlp-77c8278cec cora_smallval M0_mlp m=1 seed=5 test_acc=0.2340
+M1_gcn-c4f253e6fe cora_smallval M1_gcn m=1 seed=5 test_acc=0.2880
+M4_mrf_mlp-a424a607cd cora_smallval M4_mrf_mlp beta=0.05 m=1 seed=5 test_acc=0.2420
+M4_mrf_gcn-a90166fc6b cora_smallval M4_mrf_gcn beta=0.05 m=1 seed=5 test_acc=0.2830
+M4_mrf_mlp-bdaf9fc3a9 cora_smallval M4_mrf_mlp beta=0.1 m=1 seed=5 test_acc=0.2490
+M4_mrf_gcn-e7f02ab894 cora_smallval M4_mrf_gcn beta=0.1 m=1 seed=5 test_acc=0.2780
+M4_mrf_mlp-c926aecb20 cora_smallval M4_mrf_mlp beta=0.25 m=1 seed=5 test_acc=0.2780
+M4_mrf_gcn-4d764f464f cora_smallval M4_mrf_gcn beta=0.25 m=1 seed=5 test_acc=0.2630
+M4_mrf_mlp-e76d6f371b cora_smallval M4_mrf_mlp beta=0.5 m=1 seed=5 test_acc=0.3240
+M4_mrf_gcn-6c38167e77 cora_smallval M4_mrf_gcn beta=0.5 m=1 seed=5 test_acc=0.1940
+M4_mrf_mlp-7f740933e9 cora_smallval M4_mrf_mlp beta=1.0 m=1 seed=5 test_acc=0.3730
+M4_mrf_gcn-8d81c7ca1d cora_smallval M4_mrf_gcn beta=1.0 m=1 seed=5 test_acc=0.1520
+M4_mrf_mlp-e2beab4de2 cora_smallval M4_mrf_mlp beta=2.0 m=1 seed=5 test_acc=0.3610
+M4_mrf_gcn-f1389219df cora_smallval M4_mrf_gcn beta=2.0 m=1 seed=5 test_acc=0.1890
+M0_mlp-d306dd06fd cora_smallval M0_mlp m=1 seed=6 test_acc=0.2300
+M1_gcn-be5736072b cora_smallval M1_gcn m=1 seed=6 test_acc=0.3110
+M4_mrf_mlp-a68e5b2714 cora_smallval M4_mrf_mlp beta=0.05 m=1 seed=6 test_acc=0.2290
+M4_mrf_gcn-61d42bc017 cora_smallval M4_mrf_gcn beta=0.05 m=1 seed=6 test_acc=0.3170
+M4_mrf_mlp-ded27d4418 cora_smallval M4_mrf_mlp beta=0.1 m=1 seed=6 test_acc=0.2330
+M4_mrf_gcn-148724ddc7 cora_smallval M4_mrf_gcn beta=0.1 m=1 seed=6 test_acc=0.3160
+M4_mrf_mlp-985eb102b1 cora_smallval M4_mrf_mlp beta=0.25 m=1 seed=6 test_acc=0.2360
+M4_mrf_gcn-c2aa229632 cora_smallval M4_mrf_gcn beta=0.25 m=1 seed=6 test_acc=0.2990
+M4_mrf_mlp-7a5e75dddf cora_smallval M4_mrf_mlp beta=0.5 m=1 seed=6 test_acc=0.2740
+M4_mrf_gcn-2ab0f9bfb9 cora_smallval M4_mrf_gcn beta=0.5 m=1 seed=6 test_acc=0.2640
+M4_mrf_mlp-4a1eeb1e9a cora_smallval M4_mrf_mlp beta=1.0 m=1 seed=6 test_acc=0.3290
+M4_mrf_gcn-ed78ad8ad7 cora_smallval M4_mrf_gcn beta=1.0 m=1 seed=6 test_acc=0.2320
+M4_mrf_mlp-f11dd131c8 cora_smallval M4_mrf_mlp beta=2.0 m=1 seed=6 test_acc=0.3310
+M4_mrf_gcn-67baf16b32 cora_smallval M4_mrf_gcn beta=2.0 m=1 seed=6 test_acc=0.2740
+M0_mlp-8046e3175a cora_smallval M0_mlp m=1 seed=7 test_acc=0.2670
+M1_gcn-dc19b4d1df cora_smallval M1_gcn m=1 seed=7 test_acc=0.2740
+M4_mrf_mlp-4ecb66077c cora_smallval M4_mrf_mlp beta=0.05 m=1 seed=7 test_acc=0.2740
+M4_mrf_gcn-ede1d048ac cora_smallval M4_mrf_gcn beta=0.05 m=1 seed=7 test_acc=0.2720
+M4_mrf_mlp-9c586b0539 cora_smallval M4_mrf_mlp beta=0.1 m=1 seed=7 test_acc=0.2790
+M4_mrf_gcn-b6c7ffa8ae cora_smallval M4_mrf_gcn beta=0.1 m=1 seed=7 test_acc=0.2710
+M4_mrf_mlp-51e4653c92 cora_smallval M4_mrf_mlp beta=0.25 m=1 seed=7 test_acc=0.2950
+M4_mrf_gcn-ea59f65ba0 cora_smallval M4_mrf_gcn beta=0.25 m=1 seed=7 test_acc=0.2720
+M4_mrf_mlp-6d28ec1962 cora_smallval M4_mrf_mlp beta=0.5 m=1 seed=7 test_acc=0.3680
+M4_mrf_gcn-103251911f cora_smallval M4_mrf_gcn beta=0.5 m=1 seed=7 test_acc=0.2760
+M4_mrf_mlp-e5429490b3 cora_smallval M4_mrf_mlp beta=1.0 m=1 seed=7 test_acc=0.4050
+M4_mrf_gcn-a2a84d99d8 cora_smallval M4_mrf_gcn beta=1.0 m=1 seed=7 test_acc=0.2790
+M4_mrf_mlp-db0f45169d cora_smallval M4_mrf_mlp beta=2.0 m=1 seed=7 test_acc=0.4640
+M4_mrf_gcn-15a9cb957e cora_smallval M4_mrf_gcn beta=2.0 m=1 seed=7 test_acc=0.2800
+M0_mlp-6dc7361582 cora_smallval M0_mlp m=1 seed=8 test_acc=0.1820
+M1_gcn-ee31d3613f cora_smallval M1_gcn m=1 seed=8 test_acc=0.3540
+M4_mrf_mlp-8ffb3f9e3b cora_smallval M4_mrf_mlp beta=0.05 m=1 seed=8 test_acc=0.1790
+M4_mrf_gcn-ef84061af3 cora_smallval M4_mrf_gcn beta=0.05 m=1 seed=8 test_acc=0.3520
+M4_mrf_mlp-7d8249dab2 cora_smallval M4_mrf_mlp beta=0.1 m=1 seed=8 test_acc=0.1800
+M4_mrf_gcn-376eba23ae cora_smallval M4_mrf_gcn beta=0.1 m=1 seed=8 test_acc=0.3520
+M4_mrf_mlp-42fbb78ddc cora_smallval M4_mrf_mlp beta=0.25 m=1 seed=8 test_acc=0.1880
+M4_mrf_gcn-61efd9f38f cora_smallval M4_mrf_gcn beta=0.25 m=1 seed=8 test_acc=0.3400
+M4_mrf_mlp-a6268c57e1 cora_smallval M4_mrf_mlp beta=0.5 m=1 seed=8 test_acc=0.1720
+M4_mrf_gcn-a43160018f cora_smallval M4_mrf_gcn beta=0.5 m=1 seed=8 test_acc=0.3090
+M4_mrf_mlp-c7251ce35f cora_smallval M4_mrf_mlp beta=1.0 m=1 seed=8 test_acc=0.1130
+M4_mrf_gcn-fed7191cd1 cora_smallval M4_mrf_gcn beta=1.0 m=1 seed=8 test_acc=0.2960
+M4_mrf_mlp-56382c944c cora_smallval M4_mrf_mlp beta=2.0 m=1 seed=8 test_acc=0.1130
+M4_mrf_gcn-fd52e1c526 cora_smallval M4_mrf_gcn beta=2.0 m=1 seed=8 test_acc=0.3430
+M0_mlp-644f758b08 cora_smallval M0_mlp m=1 seed=9 test_acc=0.3140
+M1_gcn-e4e341f3ec cora_smallval M1_gcn m=1 seed=9 test_acc=0.4020
+M4_mrf_mlp-058e226223 cora_smallval M4_mrf_mlp beta=0.05 m=1 seed=9 test_acc=0.3200
+M4_mrf_gcn-2d00ef6ea0 cora_smallval M4_mrf_gcn beta=0.05 m=1 seed=9 test_acc=0.4000
+M4_mrf_mlp-4cee804c66 cora_smallval M4_mrf_mlp beta=0.1 m=1 seed=9 test_acc=0.3260
+M4_mrf_gcn-ad9b6f2aee cora_smallval M4_mrf_gcn beta=0.1 m=1 seed=9 test_acc=0.3990
+M4_mrf_mlp-7e30993c7d cora_smallval M4_mrf_mlp beta=0.25 m=1 seed=9 test_acc=0.3420
+M4_mrf_gcn-c3e80117c5 cora_smallval M4_mrf_gcn beta=0.25 m=1 seed=9 test_acc=0.3890
+M4_mrf_mlp-e260c1110d cora_smallval M4_mrf_mlp beta=0.5 m=1 seed=9 test_acc=0.3650
+M4_mrf_gcn-3cfcb7bae8 cora_smallval M4_mrf_gcn beta=0.5 m=1 seed=9 test_acc=0.3810
+M4_mrf_mlp-bff621be7e cora_smallval M4_mrf_mlp beta=1.0 m=1 seed=9 test_acc=0.3590
+M4_mrf_gcn-f910768ddb cora_smallval M4_mrf_gcn beta=1.0 m=1 seed=9 test_acc=0.3170
+M4_mrf_mlp-69f791fe82 cora_smallval M4_mrf_mlp beta=2.0 m=1 seed=9 test_acc=0.3770
+M4_mrf_gcn-0f02494306 cora_smallval M4_mrf_gcn beta=2.0 m=1 seed=9 test_acc=0.3540
+M0_mlp-91a9bc1033 cora_smallval M0_mlp m=2 seed=0 test_acc=0.2770
+M1_gcn-661ee96ad0 cora_smallval M1_gcn m=2 seed=0 test_acc=0.3760
+M4_mrf_mlp-c4e00cf861 cora_smallval M4_mrf_mlp beta=0.05 m=2 seed=0 test_acc=0.2770
+M4_mrf_gcn-879a7808be cora_smallval M4_mrf_gcn beta=0.05 m=2 seed=0 test_acc=0.3700
+M4_mrf_mlp-caaf8e79d5 cora_smallval M4_mrf_mlp beta=0.1 m=2 seed=0 test_acc=0.2790
+M4_mrf_gcn-42c23915b7 cora_smallval M4_mrf_gcn beta=0.1 m=2 seed=0 test_acc=0.3640
+M4_mrf_mlp-ba6afe91c6 cora_smallval M4_mrf_mlp beta=0.25 m=2 seed=0 test_acc=0.2790
+M4_mrf_gcn-5e35337b7a cora_smallval M4_mrf_gcn beta=0.25 m=2 seed=0 test_acc=0.3230
+M4_mrf_mlp-339ee35da4 cora_smallval M4_mrf_mlp beta=0.5 m=2 seed=0 test_acc=0.2940
+M4_mrf_gcn-549b4e32d8 cora_smallval M4_mrf_gcn beta=0.5 m=2 seed=0 test_acc=0.2540
+M4_mrf_mlp-5171360f2e cora_smallval M4_mrf_mlp beta=1.0 m=2 seed=0 test_acc=0.2490
+M4_mrf_gcn-f5171e73d0 cora_smallval M4_mrf_gcn beta=1.0 m=2 seed=0 test_acc=0.2820
+M4_mrf_mlp-8e973ba06d cora_smallval M4_mrf_mlp beta=2.0 m=2 seed=0 test_acc=0.2610
+M4_mrf_gcn-c5c44265af cora_smallval M4_mrf_gcn beta=2.0 m=2 seed=0 test_acc=0.3090
+M0_mlp-68421c066e cora_smallval M0_mlp m=2 seed=1 test_acc=0.2980
+M1_gcn-c141e0a199 cora_smallval M1_gcn m=2 seed=1 test_acc=0.4080
+M4_mrf_mlp-7549029b8b cora_smallval M4_mrf_mlp beta=0.05 m=2 seed=1 test_acc=0.3070
+M4_mrf_gcn-88d1074449 cora_smallval M4_mrf_gcn beta=0.05 m=2 seed=1 test_acc=0.4020
+M4_mrf_mlp-8e88d487e7 cora_smallval M4_mrf_mlp beta=0.1 m=2 seed=1 test_acc=0.3120
+M4_mrf_gcn-132d6f34b8 cora_smallval M4_mrf_gcn beta=0.1 m=2 seed=1 test_acc=0.3990
+M4_mrf_mlp-aaf78782a0 cora_smallval M4_mrf_mlp beta=0.25 m=2 seed=1 test_acc=0.3360
+M4_mrf_gcn-e5e6c9d64e cora_smallval M4_mrf_gcn beta=0.25 m=2 seed=1 test_acc=0.3780
+M4_mrf_mlp-b570b0654b cora_smallval M4_mrf_mlp beta=0.5 m=2 seed=1 test_acc=0.3970
+M4_mrf_gcn-a41b42b693 cora_smallval M4_mrf_gcn beta=0.5 m=2 seed=1 test_acc=0.3600
+M4_mrf_mlp-880b2cf505 cora_smallval M4_mrf_mlp beta=1.0 m=2 seed=1 test_acc=0.4270
+M4_mrf_gcn-8ef37538f2 cora_smallval M4_mrf_gcn beta=1.0 m=2 seed=1 test_acc=0.3600
+M4_mrf_mlp-5d6613dda1 cora_smallval M4_mrf_mlp beta=2.0 m=2 seed=1 test_acc=0.4480
+M4_mrf_gcn-0ee3d2b1c7 cora_smallval M4_mrf_gcn beta=2.0 m=2 seed=1 test_acc=0.3560
+M0_mlp-d550369005 cora_smallval M0_mlp m=2 seed=2 test_acc=0.3770
+M1_gcn-f153247b3f cora_smallval M1_gcn m=2 seed=2 test_acc=0.5900
+M4_mrf_mlp-9eb3557c18 cora_smallval M4_mrf_mlp beta=0.05 m=2 seed=2 test_acc=0.3840
+M4_mrf_gcn-06e737e389 cora_smallval M4_mrf_gcn beta=0.05 m=2 seed=2 test_acc=0.5940
+M4_mrf_mlp-9388acafb8 cora_smallval M4_mrf_mlp beta=0.1 m=2 seed=2 test_acc=0.3880
+M4_mrf_gcn-eaf01c9c4e cora_smallval M4_mrf_gcn beta=0.1 m=2 seed=2 test_acc=0.6020
+M4_mrf_mlp-39ce393c8f cora_smallval M4_mrf_mlp beta=0.25 m=2 seed=2 test_acc=0.4280
+M4_mrf_gcn-66d6671730 cora_smallval M4_mrf_gcn beta=0.25 m=2 seed=2 test_acc=0.6020
+M4_mrf_mlp-33213b78a1 cora_smallval M4_mrf_mlp beta=0.5 m=2 seed=2 test_acc=0.4940
+M4_mrf_gcn-78b263d81e cora_smallval M4_mrf_gcn beta=0.5 m=2 seed=2 test_acc=0.5100
+M4_mrf_mlp-b1bb93ed0d cora_smallval M4_mrf_mlp beta=1.0 m=2 seed=2 test_acc=0.5050
+M4_mrf_gcn-0d9b0c3349 cora_smallval M4_mrf_gcn beta=1.0 m=2 seed=2 test_acc=0.5560
+M4_mrf_mlp-5a02861ba7 cora_smallval M4_mrf_mlp beta=2.0 m=2 seed=2 test_acc=0.5340
+M4_mrf_gcn-83a90e3b22 cora_smallval M4_mrf_gcn beta=2.0 m=2 seed=2 test_acc=0.6010
+M0_mlp-a6c4d9ee00 cora_smallval M0_mlp m=2 seed=3 test_acc=0.2910
+M1_gcn-45f66a262a cora_smallval M1_gcn m=2 seed=3 test_acc=0.4290
+M4_mrf_mlp-08a56dce22 cora_smallval M4_mrf_mlp beta=0.05 m=2 seed=3 test_acc=0.2940
+M4_mrf_gcn-7f2a2529ac cora_smallval M4_mrf_gcn beta=0.05 m=2 seed=3 test_acc=0.4270
+M4_mrf_mlp-4e946688ff cora_smallval M4_mrf_mlp beta=0.1 m=2 seed=3 test_acc=0.2970
+M4_mrf_gcn-93d40f3c59 cora_smallval M4_mrf_gcn beta=0.1 m=2 seed=3 test_acc=0.4270
+M4_mrf_mlp-2a72cf4cbb cora_smallval M4_mrf_mlp beta=0.25 m=2 seed=3 test_acc=0.3150
+M4_mrf_gcn-31ad00a426 cora_smallval M4_mrf_gcn beta=0.25 m=2 seed=3 test_acc=0.4290
+M4_mrf_mlp-9f4225ed5f cora_smallval M4_mrf_mlp beta=0.5 m=2 seed=3 test_acc=0.2950
+M4_mrf_gcn-4c0d20ead0 cora_smallval M4_mrf_gcn beta=0.5 m=2 seed=3 test_acc=0.4150
+M4_mrf_mlp-0a9efb78ed cora_smallval M4_mrf_mlp beta=1.0 m=2 seed=3 test_acc=0.3400
+M4_mrf_gcn-47d576abd1 cora_smallval M4_mrf_gcn beta=1.0 m=2 seed=3 test_acc=0.4090
+M4_mrf_mlp-f337be504c cora_smallval M4_mrf_mlp beta=2.0 m=2 seed=3 test_acc=0.3460
+M4_mrf_gcn-0680b70132 cora_smallval M4_mrf_gcn beta=2.0 m=2 seed=3 test_acc=0.4140
+M0_mlp-2562dd6c12 cora_smallval M0_mlp m=2 seed=4 test_acc=0.3360
+M1_gcn-d7d88c7d47 cora_smallval M1_gcn m=2 seed=4 test_acc=0.5900
+M4_mrf_mlp-b31ed7bc23 cora_smallval M4_mrf_mlp beta=0.05 m=2 seed=4 test_acc=0.3420
+M4_mrf_gcn-40b77825d6 cora_smallval M4_mrf_gcn beta=0.05 m=2 seed=4 test_acc=0.5970
+M4_mrf_mlp-8ad4900e1c cora_smallval M4_mrf_mlp beta=0.1 m=2 seed=4 test_acc=0.3470
+M4_mrf_gcn-c3a7f3cf82 cora_smallval M4_mrf_gcn beta=0.1 m=2 seed=4 test_acc=0.6000
+M4_mrf_mlp-90230e5289 cora_smallval M4_mrf_mlp beta=0.25 m=2 seed=4 test_acc=0.3720
+M4_mrf_gcn-8dc71f2287 cora_smallval M4_mrf_gcn beta=0.25 m=2 seed=4 test_acc=0.6130
+M4_mrf_mlp-dab4c5569c cora_smallval M4_mrf_mlp beta=0.5 m=2 seed=4 test_acc=0.4380
+M4_mrf_gcn-956e66c227 cora_smallval M4_mrf_gcn beta=0.5 m=2 seed=4 test_acc=0.6350
+M4_mrf_mlp-8d0efb27e4 cora_smallval M4_mrf_mlp beta=1.0 m=2 seed=4 test_acc=0.5340
+M4_mrf_gcn-554b6a866f cora_smallval M4_mrf_gcn beta=1.0 m=2 seed=4 test_acc=0.6300
+M4_mrf_mlp-e94be86f60 cora_smallval M4_mrf_mlp beta=2.0 m=2 seed=4 test_acc=0.5450
+M4_mrf_gcn-5bf72e67bb cora_smallval M4_mrf_gcn beta=2.0 m=2 seed=4 test_acc=0.6420
+M0_mlp-3e3a135155 cora_smallval M0_mlp m=2 seed=5 test_acc=0.2470
+M1_gcn-c96ec3dcef cora_smallval M1_gcn m=2 seed=5 test_acc=0.4150
+M4_mrf_mlp-9f9b2bd656 cora_smallval M4_mrf_mlp beta=0.05 m=2 seed=5 test_acc=0.2500
+M4_mrf_gcn-ddd4193d10 cora_smallval M4_mrf_gcn beta=0.05 m=2 seed=5 test_acc=0.4140
+M4_mrf_mlp-3f516ec827 cora_smallval M4_mrf_mlp beta=0.1 m=2 seed=5 test_acc=0.2560
+M4_mrf_gcn-5f73caeda5 cora_smallval M4_mrf_gcn beta=0.1 m=2 seed=5 test_acc=0.4170
+M4_mrf_mlp-c01f7f237f cora_smallval M4_mrf_mlp beta=0.25 m=2 seed=5 test_acc=0.2720
+M4_mrf_gcn-744e7d194f cora_smallval M4_mrf_gcn beta=0.25 m=2 seed=5 test_acc=0.4240
+M4_mrf_mlp-0ef6027560 cora_smallval M4_mrf_mlp beta=0.5 m=2 seed=5 test_acc=0.3100
+M4_mrf_gcn-75dd8603c8 cora_smallval M4_mrf_gcn beta=0.5 m=2 seed=5 test_acc=0.4280
+M4_mrf_mlp-977a56d848 cora_smallval M4_mrf_mlp beta=1.0 m=2 seed=5 test_acc=0.3320
+M4_mrf_gcn-9edd1bee34 cora_smallval M4_mrf_gcn beta=1.0 m=2 seed=5 test_acc=0.4420
+M4_mrf_mlp-f50dfa3d89 cora_smallval M4_mrf_mlp beta=2.0 m=2 seed=5 test_acc=0.3330
+M4_mrf_gcn-ff466d00c7 cora_smallval M4_mrf_gcn beta=2.0 m=2 seed=5 test_acc=0.4350
+M0_mlp-a1a8baebb3 cora_smallval M0_mlp m=2 seed=6 test_acc=0.2710
+M1_gcn-3c8dd62885 cora_smallval M1_gcn m=2 seed=6 test_acc=0.4390
+M4_mrf_mlp-c9be053152 cora_smallval M4_mrf_mlp beta=0.05 m=2 seed=6 test_acc=0.2730
+M4_mrf_gcn-91de3a483e cora_smallval M4_mrf_gcn beta=0.05 m=2 seed=6 test_acc=0.4370
+M4_mrf_mlp-0f6d3f0689 cora_smallval M4_mrf_mlp beta=0.1 m=2 seed=6 test_acc=0.2740
+M4_mrf_gcn-175959b037 cora_smallval M4_mrf_gcn beta=0.1 m=2 seed=6 test_acc=0.4350
+M4_mrf_mlp-17f0c27c98 cora_smallval M4_mrf_mlp beta=0.25 m=2 seed=6 test_acc=0.2860
+M4_mrf_gcn-a1a1c37dc1 cora_smallval M4_mrf_gcn beta=0.25 m=2 seed=6 test_acc=0.4430
+M4_mrf_mlp-85affcb301 cora_smallval M4_mrf_mlp beta=0.5 m=2 seed=6 test_acc=0.2920
+M4_mrf_gcn-2d6b38ef74 cora_smallval M4_mrf_gcn beta=0.5 m=2 seed=6 test_acc=0.4340
+M4_mrf_mlp-cab2be76d0 cora_smallval M4_mrf_mlp beta=1.0 m=2 seed=6 test_acc=0.3030
+M4_mrf_gcn-7a273b4e4d cora_smallval M4_mrf_gcn beta=1.0 m=2 seed=6 test_acc=0.4660
+M4_mrf_mlp-04c0138c33 cora_smallval M4_mrf_mlp beta=2.0 m=2 seed=6 test_acc=0.3240
+M4_mrf_gcn-5855e33137 cora_smallval M4_mrf_gcn beta=2.0 m=2 seed=6 test_acc=0.4920
+M0_mlp-a73c6c94a9 cora_smallval M0_mlp m=2 seed=7 test_acc=0.2950
+M1_gcn-8940e1544d cora_smallval M1_gcn m=2 seed=7 test_acc=0.5120
+M4_mrf_mlp-f8a107e62d cora_smallval M4_mrf_mlp beta=0.05 m=2 seed=7 test_acc=0.2930
+M4_mrf_gcn-c09e058e7d cora_smallval M4_mrf_gcn beta=0.05 m=2 seed=7 test_acc=0.5110
+M4_mrf_mlp-2477ed5b8b cora_smallval M4_mrf_mlp beta=0.1 m=2 seed=7 test_acc=0.2980
+M4_mrf_gcn-97ec42c766 cora_smallval M4_mrf_gcn beta=0.1 m=2 seed=7 test_acc=0.5080
+M4_mrf_mlp-ce373e6d4e cora_smallval M4_mrf_mlp beta=0.25 m=2 seed=7 test_acc=0.3180
+M4_mrf_gcn-320c046b84 cora_smallval M4_mrf_gcn beta=0.25 m=2 seed=7 test_acc=0.4970
+M4_mrf_mlp-86a2250e39 cora_smallval M4_mrf_mlp beta=0.5 m=2 seed=7 test_acc=0.3440
+M4_mrf_gcn-9fb2bcfc35 cora_smallval M4_mrf_gcn beta=0.5 m=2 seed=7 test_acc=0.4330
+M4_mrf_mlp-069e154f1c cora_smallval M4_mrf_mlp beta=1.0 m=2 seed=7 test_acc=0.3470
+M4_mrf_gcn-61f108bcf6 cora_smallval M4_mrf_gcn beta=1.0 m=2 seed=7 test_acc=0.4670
+M4_mrf_mlp-c99d8db5b6 cora_smallval M4_mrf_mlp beta=2.0 m=2 seed=7 test_acc=0.3630
+M4_mrf_gcn-3ba9e98882 cora_smallval M4_mrf_gcn beta=2.0 m=2 seed=7 test_acc=0.5140
+M0_mlp-6153aa51ef cora_smallval M0_mlp m=2 seed=8 test_acc=0.1870
+M1_gcn-756cc0d09d cora_smallval M1_gcn m=2 seed=8 test_acc=0.4570
+M4_mrf_mlp-0eed9beb2c cora_smallval M4_mrf_mlp beta=0.05 m=2 seed=8 test_acc=0.1870
+M4_mrf_gcn-ea0afea262 cora_smallval M4_mrf_gcn beta=0.05 m=2 seed=8 test_acc=0.4620
+M4_mrf_mlp-6096e7982b cora_smallval M4_mrf_mlp beta=0.1 m=2 seed=8 test_acc=0.1890
+M4_mrf_gcn-8d86694d10 cora_smallval M4_mrf_gcn beta=0.1 m=2 seed=8 test_acc=0.4650
+M4_mrf_mlp-0d67615c2b cora_smallval M4_mrf_mlp beta=0.25 m=2 seed=8 test_acc=0.1930
+M4_mrf_gcn-53cd153ee2 cora_smallval M4_mrf_gcn beta=0.25 m=2 seed=8 test_acc=0.4680
+M4_mrf_mlp-e7b1dd07a0 cora_smallval M4_mrf_mlp beta=0.5 m=2 seed=8 test_acc=0.1450
+M4_mrf_gcn-1fada9a5b0 cora_smallval M4_mrf_gcn beta=0.5 m=2 seed=8 test_acc=0.4760
+M4_mrf_mlp-8046921b60 cora_smallval M4_mrf_mlp beta=1.0 m=2 seed=8 test_acc=0.1350
+M4_mrf_gcn-7d1403777f cora_smallval M4_mrf_gcn beta=1.0 m=2 seed=8 test_acc=0.5020
+M4_mrf_mlp-ae484c0fe5 cora_smallval M4_mrf_mlp beta=2.0 m=2 seed=8 test_acc=0.1370
+M4_mrf_gcn-429817412c cora_smallval M4_mrf_gcn beta=2.0 m=2 seed=8 test_acc=0.5060
+M0_mlp-bdcf6f98b0 cora_smallval M0_mlp m=2 seed=9 test_acc=0.3460
+M1_gcn-0a1dd4c81d cora_smallval M1_gcn m=2 seed=9 test_acc=0.5760
+M4_mrf_mlp-f6cfa9556b cora_smallval M4_mrf_mlp beta=0.05 m=2 seed=9 test_acc=0.3540
+M4_mrf_gcn-9300aeea40 cora_smallval M4_mrf_gcn beta=0.05 m=2 seed=9 test_acc=0.5770
+M4_mrf_mlp-6392c93812 cora_smallval M4_mrf_mlp beta=0.1 m=2 seed=9 test_acc=0.3650
+M4_mrf_gcn-39cb7e5272 cora_smallval M4_mrf_gcn beta=0.1 m=2 seed=9 test_acc=0.5740
+M4_mrf_mlp-1a1ac4c686 cora_smallval M4_mrf_mlp beta=0.25 m=2 seed=9 test_acc=0.4040
+M4_mrf_gcn-95c2ebffa4 cora_smallval M4_mrf_gcn beta=0.25 m=2 seed=9 test_acc=0.5710
+M4_mrf_mlp-33c39c8b63 cora_smallval M4_mrf_mlp beta=0.5 m=2 seed=9 test_acc=0.5010
+M4_mrf_gcn-8b5de5cfd0 cora_smallval M4_mrf_gcn beta=0.5 m=2 seed=9 test_acc=0.5640
+M4_mrf_mlp-e96eb790fc cora_smallval M4_mrf_mlp beta=1.0 m=2 seed=9 test_acc=0.5990
+M4_mrf_gcn-712bd095f2 cora_smallval M4_mrf_gcn beta=1.0 m=2 seed=9 test_acc=0.5620
+M4_mrf_mlp-00ecb48f4f cora_smallval M4_mrf_mlp beta=2.0 m=2 seed=9 test_acc=0.6210
+M4_mrf_gcn-63d3b10c44 cora_smallval M4_mrf_gcn beta=2.0 m=2 seed=9 test_acc=0.6000

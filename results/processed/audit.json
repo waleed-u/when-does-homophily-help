@@ -1,0 +1,67 @@
+[
+  {
+    "check": "Splits: train/val/test disjoint and stratified on every real-data seed",
+    "status": "PASS",
+    "detail": "verified for m in {1,2,5,10,20} x seeds 0-9"
+  },
+  {
+    "check": "Pairing: descriptive comparisons use one common seed set; endpoints use their own",
+    "status": "PASS",
+    "detail": "all models matched on common seeds 0-9; endpoint pair matched on 30 seeds"
+  },
+  {
+    "check": "Selection used validation only (no test column reachable by the selector)",
+    "status": "PASS",
+    "detail": "selector references only validation columns"
+  },
+  {
+    "check": "Seed counts: 10 for main cells, 30 for confirmatory endpoint cells",
+    "status": "PASS",
+    "detail": "m=2: 30 seeds; m=20: 30 seeds; all other cells >= 10"
+  },
+  {
+    "check": "Hyperparameter grids fully explored (no silently truncated sweeps)",
+    "status": "PASS",
+    "detail": "full lambda and beta grids present"
+  },
+  {
+    "check": "Test evaluations are recorded in the audit log",
+    "status": "PASS",
+    "detail": "7089 test evaluations logged across 21 audit files"
+  },
+  {
+    "check": "Inference gates: BP exact on trees, beta=0 identity, enumeration == VE",
+    "status": "PASS",
+    "detail": "max TV on trees (LBP, operational tol) = 4.75e-07; max TV at beta=0 = 2.14e-14"
+  },
+  {
+    "check": "Gibbs results used as a reference only where R-hat/ESS gates passed",
+    "status": "PASS",
+    "detail": "4/10 checksum cells passed gates; ungated cells are reported as non-converged, not silently used"
+  },
+  {
+    "check": "No NaN/missing accuracy in analysed cells",
+    "status": "PASS",
+    "detail": "0 missing test_acc among 6280 core rows"
+  },
+  {
+    "check": "CSBM generator met its pre-registered acceptance checks at every h",
+    "status": "PASS",
+    "detail": "empirical homophily within 0.02 of target at every h"
+  },
+  {
+    "check": "sigma_x frozen before any model comparison (pilot seeds quarantined)",
+    "status": "PASS",
+    "detail": "pilot seeds [100, 101, 102]... never used in results; result seeds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+  },
+  {
+    "check": "Every reported figure/table is regenerable from raw CSVs",
+    "status": "PASS",
+    "detail": "32 raw shards -> 7 tables, 6 figures"
+  },
+  {
+    "check": "Clamped (collective-classification) variant kept out of headline comparisons",
+    "status": "PASS",
+    "detail": "confirmatory endpoints do not reference the clamped variant"
+  }
+]

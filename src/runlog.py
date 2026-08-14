@@ -61,21 +61,43 @@ def _append(row: dict, columns: list[str], path: Path):
         w.writerow({c: row.get(c, "") for c in columns})
 
 
-def append_run(row: dict, path: str | Path = ROOT / "results" / "runs.csv"):
+def default_runs_path() -> Path:
+    """RUNS_CSV lets parallel workers write to separate shards; merge_shards() combines them."""
+    return Path(os.environ.get("RUNS_CSV", ROOT / "results" / "runs.csv"))
+
+
+def append_run(row: dict, path: str | Path | None = None):
     row = dict(row)
     row.setdefault("git_commit", git_commit())
     row.setdefault("protocol_hash", protocol_hash())
-    _append(row, RUN_COLUMNS, Path(path))
+    _append(row, RUN_COLUMNS, Path(path) if path else default_runs_path())
 
 
 def append_fidelity(row: dict, path: str | Path = ROOT / "results" / "fidelity.csv"):
+    """row may be passed positionally or as row=..., path=..."""
     _append(row, FIDELITY_COLUMNS, Path(path))
 
 
-def audit_final_eval(message: str, path: str | Path = ROOT / "results" / "final_eval_audit.log"):
+def merge_shards(pattern: str, out: str | Path, columns: list[str]):
+    """Concatenate worker shards into one canonical CSV (header once)."""
+    import glob
+    rows = []
+    for f in sorted(glob.glob(str(ROOT / pattern))):
+        with open(f) as fh:
+            rows.extend(list(csv.DictReader(fh)))
+    outp = Path(out)
+    outp.parent.mkdir(parents=True, exist_ok=True)
+    with open(outp, "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=columns)
+        w.writeheader()
+        w.writerows(rows)
+    return len(rows)
+
+
+def audit_final_eval(message: str, path: str | Path | None = None):
     """Every test-set evaluation appends here (PROTOCOL.md §L.6): the record that test metrics
     were computed once, after selection."""
-    p = Path(path)
+    p = Path(path or os.environ.get("AUDIT_LOG", ROOT / "results" / "final_eval_audit.log"))
     p.parent.mkdir(parents=True, exist_ok=True)
     with open(p, "a") as f:
         f.write(message.rstrip() + "\n")

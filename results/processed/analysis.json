@@ -1,0 +1,224 @@
+{
+  "confirmatory": {
+    "C1": {
+      "hypothesis": "H1 scarcity: benefit larger at m=2 than m=20 (MRF on MLP vs MLP)",
+      "n_seeds": 30,
+      "theta_mean_pts": -7.073333333333339,
+      "ci_pts": [
+        -10.26292822853497,
+        -3.9063331721014576
+      ],
+      "seeds_positive": "7/30",
+      "p": 0.0006637025355400475,
+      "delta_m2_pts": 12.583333333333332,
+      "delta_m20_pts": 19.656666666666673,
+      "holm": {
+        "p": 0.0006637025355400475,
+        "threshold": 0.016666666666666666,
+        "reject_null": true
+      },
+      "direction_as_predicted": false,
+      "verdict": "NOT SUPPORTED"
+    },
+    "C2": {
+      "hypothesis": "H2-benefit: dogmatic-prior benefit larger at h=0.9 than h=0.5",
+      "beta_dogmatic": 2.0,
+      "n_seeds": 10,
+      "theta_mean_pts": 78.77000000000001,
+      "ci_pts": [
+        55.52613639426362,
+        84.87000000000002
+      ],
+      "seeds_positive": "10/10",
+      "p": 0.001953125,
+      "delta_h09_pts": 54.690000000000005,
+      "delta_h05_pts": -24.080000000000005,
+      "holm": {
+        "p": 0.001953125,
+        "threshold": 0.025,
+        "reject_null": true
+      },
+      "direction_as_predicted": true,
+      "verdict": "SUPPORTED"
+    },
+    "C3": {
+      "hypothesis": "H2-harm: dogmatic prior HURTS at h=0.05 (delta < 0)",
+      "beta_dogmatic": 2.0,
+      "n_seeds": 10,
+      "theta_mean_pts": -29.720000000000002,
+      "ci_pts": [
+        -31.81,
+        -28.15970960022325
+      ],
+      "seeds_negative": "10/10",
+      "p": 0.001953125,
+      "holm": {
+        "p": 0.001953125,
+        "threshold": 0.05,
+        "reject_null": true
+      },
+      "direction_as_predicted": true,
+      "verdict": "SUPPORTED"
+    }
+  },
+  "beta_dogmatic": 2.0,
+  "crossover": {
+    "1.0": {
+      "median": 0.7642333192269712,
+      "min": 0.5219895287958115,
+      "max": 0.8708029197080293,
+      "n_seeds_with_crossover": 10
+    },
+    "5.0": {
+      "median": 0.5718874315648509,
+      "min": 0.4001841620626151,
+      "max": 0.587007299270073,
+      "n_seeds_with_crossover": 10
+    },
+    "20.0": {
+      "median": 0.42600639829378834,
+      "min": 0.4196923076923077,
+      "max": 0.43369418132611637,
+      "n_seeds_with_crossover": 10
+    }
+  },
+  "controls": {
+    "rewired": {
+      "m=2.0 M2_lap": {
+        "delta_pts": 3.2399999999999998,
+        "ci": [
+          1.8200000000000005,
+          5.169999999999999
+        ],
+        "signs": "9/10"
+      },
+      "m=2.0 M4_mrf_gcn": {
+        "delta_pts": 0.1099999999999998,
+        "ci": [
+          -0.15000000000000013,
+          0.7400000000000005
+        ],
+        "signs": "4/10"
+      },
+      "m=5.0 M2_lap": {
+        "delta_pts": 2.2200000000000006,
+        "ci": [
+          0.5167515285078942,
+          4.398226122120687
+        ],
+        "signs": "7/10"
+      },
+      "m=5.0 M4_mrf_gcn": {
+        "delta_pts": -0.060000000000000046,
+        "ci": [
+          -0.2300000000000002,
+          0.15000000000000013
+        ],
+        "signs": "3/10"
+      }
+    },
+    "deeper_gcn": {
+      "m=1.0": {
+        "delta_vs_2layer_pts": 2.9100000000000006,
+        "ci": [
+          0.1779503210418031,
+          6.530000000000001
+        ]
+      },
+      "m=2.0": {
+        "delta_vs_2layer_pts": 3.6900000000000004,
+        "ci": [
+          1.4900000000000007,
+          5.949999999999999
+        ]
+      },
+      "m=5.0": {
+        "delta_vs_2layer_pts": 0.5799999999999961,
+        "ci": [
+          -1.6400000000000046,
+          2.3499999999999974
+        ]
+      }
+    },
+    "retrain_floor": {
+      "m=2": 0.1622,
+      "m=5": 0.1416,
+      "m=20": 0.0651
+    },
+    "small_validation": {
+      "m=1.0 MRF(MLP)-MLP": {
+        "delta_pts": 5.640000000000001,
+        "ci": [
+          2.510000000000001,
+          10.68
+        ],
+        "signs": "8/10"
+      },
+      "m=2.0 MRF(MLP)-MLP": {
+        "delta_pts": 7.820000000000002,
+        "ci": [
+          2.99,
+          15.226249860740538
+        ],
+        "signs": "9/10"
+      }
+    },
+    "mf_vs_gibbs": {
+      "mean_TV_marginals": 0.10937100000000002,
+      "max_TV": 0.22087,
+      "mean_acc_gibbs": 0.6938999999999999,
+      "mean_acc_mf": 0.7191,
+      "n_gates_passed": 4,
+      "n_cells": 10,
+      "gated_mean_TV": 0.0347875,
+      "gated_betas": [
+        0.25,
+        1.0
+      ],
+      "ungated_mean_TV": 0.15909333333333334,
+      "ungated_betas": [
+        1.0,
+        2.0
+      ],
+      "ungated_rhat_max": 2.5766,
+      "ungated_ess_min": 4.7,
+      "gated_acc_gap_mf_minus_gibbs": 0.016249999999999987
+    }
+  },
+  "fidelity": {
+    "lbp_convergence_by_beta": {
+      "0.0": 1.0,
+      "0.1": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 1.0,
+      "1.0": 1.0,
+      "1.3": 1.0,
+      "1.75": 1.0,
+      "2.5": 0.9964285714285714,
+      "4.0": 1.0
+    },
+    "lbp_max_tv_on_trees": 4.753714699579494e-07,
+    "structures": [
+      "chain",
+      "cycle",
+      "dense",
+      "grid",
+      "grid7",
+      "star",
+      "tree"
+    ],
+    "gibbs_tv_by_budget": {
+      "10": 0.07686962736808188,
+      "30": 0.05007890622696828,
+      "100": 0.034299996825461046,
+      "300": 0.03398007508991646,
+      "1000": 0.01244483712193752,
+      "3000": 0.00713078674523876
+    },
+    "mf_bias_floor": 0.1757987825249339,
+    "lbp_bias_floor": 0.059767482385641515
+  },
+  "n_runs": 7744,
+  "n_fidelity_rows": 11280
+}

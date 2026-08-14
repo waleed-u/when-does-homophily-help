@@ -1,0 +1,40 @@
+  dense: draw 1/20 done
+/Users/asfand/Documents/waleed/Code/.venv/lib/python3.13/site-packages/arviz_stats/base/diagnostics.py:90: RuntimeWarning: invalid value encountered in scalar divide
+  (between_chain_variance / within_chain_variance + num_samples - 1) / (num_samples)
+/Users/asfand/Documents/waleed/Code/.venv/lib/python3.13/site-packages/arviz_stats/base/diagnostics.py:90: RuntimeWarning: invalid value encountered in scalar divide
+  (between_chain_variance / within_chain_variance + num_samples - 1) / (num_samples)
+/Users/asfand/Documents/waleed/Code/.venv/lib/python3.13/site-packages/arviz_stats/base/diagnostics.py:90: RuntimeWarning: invalid value encountered in scalar divide
+  (between_chain_variance / within_chain_variance + num_samples - 1) / (num_samples)
+/Users/asfand/Documents/waleed/Code/.venv/lib/python3.13/site-packages/arviz_stats/base/diagnostics.py:90: RuntimeWarning: invalid value encountered in scalar divide
+  (between_chain_variance / within_chain_variance + num_samples - 1) / (num_samples)
+  dense: draw 2/20 done
+  dense: draw 3/20 done
+  dense: draw 4/20 done
+  dense: draw 5/20 done
+/Users/asfand/Documents/waleed/Code/.venv/lib/python3.13/site-packages/arviz_stats/base/diagnostics.py:90: RuntimeWarning: invalid value encountered in scalar divide
+  (between_chain_variance / within_chain_variance + num_samples - 1) / (num_samples)
+/Users/asfand/Documents/waleed/Code/.venv/lib/python3.13/site-packages/arviz_stats/base/diagnostics.py:90: RuntimeWarning: invalid value encountered in scalar divide
+  (between_chain_variance / within_chain_variance + num_samples - 1) / (num_samples)
+  dense: draw 6/20 done
+/Users/asfand/Documents/waleed/Code/.venv/lib/python3.13/site-packages/arviz_stats/base/diagnostics.py:90: RuntimeWarning: invalid value encountered in scalar divide
+  (between_chain_variance / within_chain_variance + num_samples - 1) / (num_samples)
+  dense: draw 7/20 done
+  dense: draw 8/20 done
+/Users/asfand/Documents/waleed/Code/.venv/lib/python3.13/site-packages/arviz_stats/base/diagnostics.py:90: RuntimeWarning: invalid value encountered in scalar divide
+  (between_chain_variance / within_chain_variance + num_samples - 1) / (num_samples)
+  dense: draw 9/20 done
+  dense: draw 10/20 done
+  dense: draw 11/20 done
+  dense: draw 12/20 done
+/Users/asfand/Documents/waleed/Code/.venv/lib/python3.13/site-packages/arviz_stats/base/diagnostics.py:90: RuntimeWarning: invalid value encountered in scalar divide
+  (between_chain_variance / within_chain_variance + num_samples - 1) / (num_samples)
+  dense: draw 13/20 done
+  dense: draw 14/20 done
+  dense: draw 15/20 done
+  dense: draw 16/20 done
+/Users/asfand/Documents/waleed/Code/.venv/lib/python3.13/site-packages/arviz_stats/base/diagnostics.py:90: RuntimeWarning: invalid value encountered in scalar divide
+  (between_chain_variance / within_chain_variance + num_samples - 1) / (num_samples)
+  dense: draw 17/20 done
+  dense: draw 18/20 done
+  dense: draw 19/20 done
+  dense: draw 20/20 done

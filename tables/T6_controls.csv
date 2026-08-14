@@ -1,0 +1,14 @@
+control,condition,quantity,value,95% CI,seeds +
+Degree-preserving rewiring (Cora),m=2.0 M2_lap,Δ vs GCN on rewired graph (pts),+3.24,"[+1.82, +5.17]",9/10
+Degree-preserving rewiring (Cora),m=2.0 M4_mrf_gcn,Δ vs GCN on rewired graph (pts),+0.11,"[-0.15, +0.74]",4/10
+Degree-preserving rewiring (Cora),m=5.0 M2_lap,Δ vs GCN on rewired graph (pts),+2.22,"[+0.52, +4.40]",7/10
+Degree-preserving rewiring (Cora),m=5.0 M4_mrf_gcn,Δ vs GCN on rewired graph (pts),-0.06,"[-0.23, +0.15]",3/10
+3-layer GCN (propagation depth),m=1.0,Δ vs 2-layer GCN (pts),+2.91,"[+0.18, +6.53]",
+3-layer GCN (propagation depth),m=2.0,Δ vs 2-layer GCN (pts),+3.69,"[+1.49, +5.95]",
+3-layer GCN (propagation depth),m=5.0,Δ vs 2-layer GCN (pts),+0.58,"[-1.64, +2.35]",
+Retrain-noise floor (seed only),m=2,test-prediction disagreement,0.162,,
+Retrain-noise floor (seed only),m=5,test-prediction disagreement,0.142,,
+Retrain-noise floor (seed only),m=20,test-prediction disagreement,0.065,,
+Small validation (5 labels/class),m=1.0 MRF(MLP)-MLP,Δ (pts),+5.64,"[+2.51, +10.68]",8/10
+Small validation (5 labels/class),m=2.0 MRF(MLP)-MLP,Δ (pts),+7.82,"[+2.99, +15.23]",9/10
+Mean-field vs gated Gibbs (Cora),"m=5, tuned β",mean TV between marginals,0.1094,acc MF 0.719 vs Gibbs 0.694,gates passed: 4/10

@@ -1,0 +1,5 @@
+run_id,dataset,model,regime,inference_method,label_per_class,split_seed,lambda,beta,weighted_prior,clamped,best_epoch,val_acc,val_f1,val_nll,val_brier,test_acc,test_f1,test_nll,test_brier,ece,rule_score,edge_agreement,converged,iters,final_residual,ess_min,ess_median,rhat_max,target_h,empirical_h,adjusted_h,label_informativeness,sigma_x,beta_gen,lr,weight_decay,hidden,dropout,train_seconds,infer_seconds,logits_path,git_commit,protocol_hash,notes
+SIM-dab538d803,cora,M5_precheck,control,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4225688,9f9bb01aee1b,same=0.1758 cross=0.1329 sep=0.0429
+SIM-026c8af8a3,sbm_h0.05,M5_precheck,control,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4225688,9f9bb01aee1b,same=0.1450 cross=0.0710 sep=0.0739
+SIM-3b491a64c3,sbm_h0.5,M5_precheck,control,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4225688,9f9bb01aee1b,same=0.1401 cross=0.0725 sep=0.0676
+SIM-48434057ed,sbm_h0.9,M5_precheck,control,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4225688,9f9bb01aee1b,same=0.1400 cross=0.0649 sep=0.0751

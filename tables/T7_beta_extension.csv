@@ -1,0 +1,6 @@
+dataset,m,model,best β in pre-registered grid,acc there (%),best β overall,acc there (%) ,gain from extension (pts)
+cora,2,MRF on MLP (mean-field),2,45.49,2,45.49,0.0
+cora,2,MRF on GCN (mean-field),2,53.44,6,54.54,1.1
+cora,20,MRF on MLP (mean-field),2,78.11,2,78.11,0.0
+cora,20,MRF on GCN (mean-field),0.5,80.27,0.5,80.27,0.0
+sbm,5,MRF on MLP (mean-field),0.5,54.04,6,99.77,45.73

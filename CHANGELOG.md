@@ -40,5 +40,9 @@ Pre-declared addenda slots (filled by their pre-registered procedures; not free 
       β_gen = −1.15, i.e. the generator implies an *anti*-homophily coupling — a positive-β
       Potts prior is not merely weak there, it has the wrong sign.
 - [ ] **M2** fidelity-suite unary α calibration factor (matched to Cora GCN margins at m=5)
-- [ ] **M3** Stage-1 selected backbone hyperparameters (per dataset, per architecture)
+- [x] **M3** Stage-1 backbone hyperparameters, selected on validation accuracy at m=5 (seeds 0-4),
+      per dataset AND per architecture (`results/logs/stage1_tuning.log`), then frozen:
+      Cora mlp lr=0.01 wd=1e-3 · Cora gcn lr=0.01 wd=1e-3 · CiteSeer mlp lr=0.01 wd=1e-3 ·
+      CiteSeer gcn lr=0.01 wd=5e-4 · CSBM mlp lr=0.01 wd=5e-4 · CSBM gcn lr=0.005 wd=1e-3.
+      Recorded in `src/config.py:STAGE1`.
 - [ ] **M4** dogmatic-transfer values β^dog, λ^dog (median tuned value at h=0.9, m=5)

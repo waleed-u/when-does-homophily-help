@@ -1,0 +1,600 @@
+M0_mlp-5e0e075e45 sbm M0_mlp m=1 seed=0 test_acc=0.2710
+M1_gcn-0bce11755a sbm M1_gcn m=1 seed=0 test_acc=0.5360
+M2_lap-f135df006b sbm M2_lap m=1 seed=0 test_acc=0.5360
+M2_lap-7dc60b1f45 sbm M2_lap m=1 seed=0 test_acc=0.5400
+M2_lap-eec6ed5bec sbm M2_lap m=1 seed=0 test_acc=0.5270
+M2_lap-852c5b56cb sbm M2_lap m=1 seed=0 test_acc=0.5190
+M2_lap-c3d68b8d2a sbm M2_lap m=1 seed=0 test_acc=0.5150
+M2_lap-2e28a9e09b sbm M2_lap m=1 seed=0 test_acc=0.5150
+M4_mrf_gcn-c93dacf23b sbm M4_mrf_gcn beta=0.05 m=1 seed=0 test_acc=0.5420
+M4_mrf_mlp-caefc39ceb sbm M4_mrf_mlp beta=0.05 m=1 seed=0 test_acc=0.2760
+M4_mrf_gcn-55522c520d sbm M4_mrf_gcn beta=0.1 m=1 seed=0 test_acc=0.5400
+M4_mrf_mlp-eb6c977c52 sbm M4_mrf_mlp beta=0.1 m=1 seed=0 test_acc=0.2740
+M4_mrf_gcn-8b50695342 sbm M4_mrf_gcn beta=0.25 m=1 seed=0 test_acc=0.5540
+M4_mrf_mlp-b498cc98f4 sbm M4_mrf_mlp beta=0.25 m=1 seed=0 test_acc=0.2810
+M4_mrf_gcn-487e8a0313 sbm M4_mrf_gcn beta=0.5 m=1 seed=0 test_acc=0.5510
+M4_mrf_mlp-52fa91b1dd sbm M4_mrf_mlp beta=0.5 m=1 seed=0 test_acc=0.1610
+M4_mrf_gcn-a775e040e9 sbm M4_mrf_gcn beta=1.0 m=1 seed=0 test_acc=0.1910
+M4_mrf_mlp-b248855122 sbm M4_mrf_mlp beta=1.0 m=1 seed=0 test_acc=0.1540
+M4_mrf_gcn-c90bd57446 sbm M4_mrf_gcn beta=2.0 m=1 seed=0 test_acc=0.1600
+M4_mrf_mlp-c6021dadd4 sbm M4_mrf_mlp beta=2.0 m=1 seed=0 test_acc=0.1540
+M0_mlp-dd144673c4 sbm M0_mlp m=5 seed=0 test_acc=0.4460
+M1_gcn-2ec7174eb6 sbm M1_gcn m=5 seed=0 test_acc=0.8050
+M2_lap-8ea3122b42 sbm M2_lap m=5 seed=0 test_acc=0.8050
+M2_lap-0dad26097b sbm M2_lap m=5 seed=0 test_acc=0.8050
+M2_lap-0374ed5c08 sbm M2_lap m=5 seed=0 test_acc=0.8060
+M2_lap-68829a0340 sbm M2_lap m=5 seed=0 test_acc=0.8000
+M2_lap-4be0801f5d sbm M2_lap m=5 seed=0 test_acc=0.7980
+M2_lap-ed0e25e7f2 sbm M2_lap m=5 seed=0 test_acc=0.7790
+M4_mrf_gcn-8ba359fc74 sbm M4_mrf_gcn beta=0.05 m=5 seed=0 test_acc=0.8090
+M4_mrf_mlp-d354f95862 sbm M4_mrf_mlp beta=0.05 m=5 seed=0 test_acc=0.4550
+M4_mrf_gcn-3adb7d7e21 sbm M4_mrf_gcn beta=0.1 m=5 seed=0 test_acc=0.8120
+M4_mrf_mlp-ab9e7c633c sbm M4_mrf_mlp beta=0.1 m=5 seed=0 test_acc=0.4640
+M4_mrf_gcn-4288dce775 sbm M4_mrf_gcn beta=0.25 m=5 seed=0 test_acc=0.8240
+M4_mrf_mlp-6dd23c4091 sbm M4_mrf_mlp beta=0.25 m=5 seed=0 test_acc=0.4830
+M4_mrf_gcn-dd1f4fab5e sbm M4_mrf_gcn beta=0.5 m=5 seed=0 test_acc=0.8420
+M4_mrf_mlp-b8027ec34f sbm M4_mrf_mlp beta=0.5 m=5 seed=0 test_acc=0.5140
+M4_mrf_gcn-03c5e4e560 sbm M4_mrf_gcn beta=1.0 m=5 seed=0 test_acc=0.8440
+M4_mrf_mlp-f08129bd07 sbm M4_mrf_mlp beta=1.0 m=5 seed=0 test_acc=0.5960
+M4_mrf_gcn-75d58cdaf0 sbm M4_mrf_gcn beta=2.0 m=5 seed=0 test_acc=0.8280
+M4_mrf_mlp-f797585b3a sbm M4_mrf_mlp beta=2.0 m=5 seed=0 test_acc=0.7170
+M0_mlp-ec852f7831 sbm M0_mlp m=20 seed=0 test_acc=0.6560
+M1_gcn-4fb3734996 sbm M1_gcn m=20 seed=0 test_acc=0.8610
+M2_lap-ed0d2acf3b sbm M2_lap m=20 seed=0 test_acc=0.8610
+M2_lap-67e5cf69b9 sbm M2_lap m=20 seed=0 test_acc=0.8610
+M2_lap-72d0f9f6dc sbm M2_lap m=20 seed=0 test_acc=0.8620
+M2_lap-0ea52279aa sbm M2_lap m=20 seed=0 test_acc=0.8550
+M2_lap-66e32934d1 sbm M2_lap m=20 seed=0 test_acc=0.8470
+M2_lap-4704659683 sbm M2_lap m=20 seed=0 test_acc=0.8340
+M4_mrf_gcn-2606d84e29 sbm M4_mrf_gcn beta=0.05 m=20 seed=0 test_acc=0.8620
+M4_mrf_mlp-fbb64f894c sbm M4_mrf_mlp beta=0.05 m=20 seed=0 test_acc=0.6610
+M4_mrf_gcn-16694f200b sbm M4_mrf_gcn beta=0.1 m=20 seed=0 test_acc=0.8600
+M4_mrf_mlp-6e0143e5d0 sbm M4_mrf_mlp beta=0.1 m=20 seed=0 test_acc=0.6700
+M4_mrf_gcn-5638d1a42c sbm M4_mrf_gcn beta=0.25 m=20 seed=0 test_acc=0.8620
+M4_mrf_mlp-3a18a54036 sbm M4_mrf_mlp beta=0.25 m=20 seed=0 test_acc=0.7080
+M4_mrf_gcn-118552b595 sbm M4_mrf_gcn beta=0.5 m=20 seed=0 test_acc=0.8630
+M4_mrf_mlp-a7e9108c00 sbm M4_mrf_mlp beta=0.5 m=20 seed=0 test_acc=0.7750
+M4_mrf_gcn-6d62926bfa sbm M4_mrf_gcn beta=1.0 m=20 seed=0 test_acc=0.8610
+M4_mrf_mlp-1708a60fa2 sbm M4_mrf_mlp beta=1.0 m=20 seed=0 test_acc=0.8690
+M4_mrf_gcn-9935b7d61b sbm M4_mrf_gcn beta=2.0 m=20 seed=0 test_acc=0.8440
+M4_mrf_mlp-cfc637f40a sbm M4_mrf_mlp beta=2.0 m=20 seed=0 test_acc=0.9010
+M0_mlp-f5018ce52d sbm M0_mlp m=1 seed=1 test_acc=0.2590
+M1_gcn-b8a1ce9de3 sbm M1_gcn m=1 seed=1 test_acc=0.5180
+M2_lap-4cc26b2335 sbm M2_lap m=1 seed=1 test_acc=0.5180
+M2_lap-d359220322 sbm M2_lap m=1 seed=1 test_acc=0.5180
+M2_lap-bdd4478f67 sbm M2_lap m=1 seed=1 test_acc=0.5170
+M2_lap-f792164cfc sbm M2_lap m=1 seed=1 test_acc=0.5170
+M2_lap-5de1f1629e sbm M2_lap m=1 seed=1 test_acc=0.5130
+M2_lap-0d9b55e9f6 sbm M2_lap m=1 seed=1 test_acc=0.5060
+M4_mrf_gcn-389f414429 sbm M4_mrf_gcn beta=0.05 m=1 seed=1 test_acc=0.5160
+M4_mrf_mlp-3aa43d1d70 sbm M4_mrf_mlp beta=0.05 m=1 seed=1 test_acc=0.2610
+M4_mrf_gcn-860f0882f6 sbm M4_mrf_gcn beta=0.1 m=1 seed=1 test_acc=0.5130
+M4_mrf_mlp-2be96465ca sbm M4_mrf_mlp beta=0.1 m=1 seed=1 test_acc=0.2630
+M4_mrf_gcn-acc77fdce7 sbm M4_mrf_gcn beta=0.25 m=1 seed=1 test_acc=0.4960
+M4_mrf_mlp-1ae368f613 sbm M4_mrf_mlp beta=0.25 m=1 seed=1 test_acc=0.2800
+M4_mrf_gcn-306408c985 sbm M4_mrf_gcn beta=0.5 m=1 seed=1 test_acc=0.1400
+M4_mrf_mlp-0cab9cb2bc sbm M4_mrf_mlp beta=0.5 m=1 seed=1 test_acc=0.3140
+M4_mrf_gcn-5fd83ce6de sbm M4_mrf_gcn beta=1.0 m=1 seed=1 test_acc=0.1300
+M4_mrf_mlp-daa2e12f2c sbm M4_mrf_mlp beta=1.0 m=1 seed=1 test_acc=0.1510
+M4_mrf_gcn-27ae6f7bd5 sbm M4_mrf_gcn beta=2.0 m=1 seed=1 test_acc=0.1290
+M4_mrf_mlp-ab3b966666 sbm M4_mrf_mlp beta=2.0 m=1 seed=1 test_acc=0.1490
+M0_mlp-d695a3d614 sbm M0_mlp m=5 seed=1 test_acc=0.4940
+M1_gcn-ed2c5ed5da sbm M1_gcn m=5 seed=1 test_acc=0.8020
+M2_lap-c5303891d5 sbm M2_lap m=5 seed=1 test_acc=0.8020
+M2_lap-ff1d944cce sbm M2_lap m=5 seed=1 test_acc=0.8020
+M2_lap-9c5108bc0a sbm M2_lap m=5 seed=1 test_acc=0.8020
+M2_lap-6f69f3c5e5 sbm M2_lap m=5 seed=1 test_acc=0.8030
+M2_lap-9785b13437 sbm M2_lap m=5 seed=1 test_acc=0.8000
+M2_lap-274d0b8c82 sbm M2_lap m=5 seed=1 test_acc=0.7970
+M4_mrf_gcn-390ed55424 sbm M4_mrf_gcn beta=0.05 m=5 seed=1 test_acc=0.8090
+M4_mrf_mlp-551261abaa sbm M4_mrf_mlp beta=0.05 m=5 seed=1 test_acc=0.5000
+M4_mrf_gcn-c14e3517ad sbm M4_mrf_gcn beta=0.1 m=5 seed=1 test_acc=0.8140
+M4_mrf_mlp-b5aa6da136 sbm M4_mrf_mlp beta=0.1 m=5 seed=1 test_acc=0.5130
+M4_mrf_gcn-6dc59d3479 sbm M4_mrf_gcn beta=0.25 m=5 seed=1 test_acc=0.8240
+M4_mrf_mlp-e744a56fac sbm M4_mrf_mlp beta=0.25 m=5 seed=1 test_acc=0.5320
+M4_mrf_gcn-bec7985b40 sbm M4_mrf_gcn beta=0.5 m=5 seed=1 test_acc=0.8450
+M4_mrf_mlp-12d90aad27 sbm M4_mrf_mlp beta=0.5 m=5 seed=1 test_acc=0.5150
+M4_mrf_gcn-0cb9645c33 sbm M4_mrf_gcn beta=1.0 m=5 seed=1 test_acc=0.8370
+M4_mrf_mlp-01a60b5f03 sbm M4_mrf_mlp beta=1.0 m=5 seed=1 test_acc=0.1600
+M4_mrf_gcn-fd5023fb8b sbm M4_mrf_gcn beta=2.0 m=5 seed=1 test_acc=0.8200
+M4_mrf_mlp-fceebeba56 sbm M4_mrf_mlp beta=2.0 m=5 seed=1 test_acc=0.1530
+M0_mlp-867aa7ce57 sbm M0_mlp m=20 seed=1 test_acc=0.5920
+M1_gcn-0afd168569 sbm M1_gcn m=20 seed=1 test_acc=0.8370
+M2_lap-2e5a01de5a sbm M2_lap m=20 seed=1 test_acc=0.8370
+M2_lap-143928d2f3 sbm M2_lap m=20 seed=1 test_acc=0.8370
+M2_lap-74423d421c sbm M2_lap m=20 seed=1 test_acc=0.8370
+M2_lap-ae4a328a80 sbm M2_lap m=20 seed=1 test_acc=0.8420
+M2_lap-a02c303453 sbm M2_lap m=20 seed=1 test_acc=0.8360
+M2_lap-4acd3812ce sbm M2_lap m=20 seed=1 test_acc=0.8380
+M4_mrf_gcn-51fc793c8b sbm M4_mrf_gcn beta=0.05 m=20 seed=1 test_acc=0.8370
+M4_mrf_mlp-8a93ef9957 sbm M4_mrf_mlp beta=0.05 m=20 seed=1 test_acc=0.6040
+M4_mrf_gcn-cf66eeb9a6 sbm M4_mrf_gcn beta=0.1 m=20 seed=1 test_acc=0.8400
+M4_mrf_mlp-77e6408c8e sbm M4_mrf_mlp beta=0.1 m=20 seed=1 test_acc=0.6260
+M4_mrf_gcn-6ed5f2a922 sbm M4_mrf_gcn beta=0.25 m=20 seed=1 test_acc=0.8470
+M4_mrf_mlp-c0546620a3 sbm M4_mrf_mlp beta=0.25 m=20 seed=1 test_acc=0.6800
+M4_mrf_gcn-7fe910ba6a sbm M4_mrf_gcn beta=0.5 m=20 seed=1 test_acc=0.8540
+M4_mrf_mlp-5ca0fc30f7 sbm M4_mrf_mlp beta=0.5 m=20 seed=1 test_acc=0.7420
+M4_mrf_gcn-c322af60ff sbm M4_mrf_gcn beta=1.0 m=20 seed=1 test_acc=0.8490
+M4_mrf_mlp-42c448d7f0 sbm M4_mrf_mlp beta=1.0 m=20 seed=1 test_acc=0.8400
+M4_mrf_gcn-8610840a94 sbm M4_mrf_gcn beta=2.0 m=20 seed=1 test_acc=0.8230
+M4_mrf_mlp-76f3674fcc sbm M4_mrf_mlp beta=2.0 m=20 seed=1 test_acc=0.8630
+M0_mlp-e82d10492c sbm M0_mlp m=1 seed=2 test_acc=0.2840
+M1_gcn-83cdae1880 sbm M1_gcn m=1 seed=2 test_acc=0.5970
+M2_lap-926cf7fe41 sbm M2_lap m=1 seed=2 test_acc=0.5970
+M2_lap-f9d39f80f1 sbm M2_lap m=1 seed=2 test_acc=0.5970
+M2_lap-8a04afb275 sbm M2_lap m=1 seed=2 test_acc=0.5980
+M2_lap-79bffe8baa sbm M2_lap m=1 seed=2 test_acc=0.6030
+M2_lap-63d5ecb4fe sbm M2_lap m=1 seed=2 test_acc=0.6050
+M2_lap-40ab8ca8f4 sbm M2_lap m=1 seed=2 test_acc=0.5840
+M4_mrf_gcn-bc61bcbb36 sbm M4_mrf_gcn beta=0.05 m=1 seed=2 test_acc=0.6010
+M4_mrf_mlp-9b6c267931 sbm M4_mrf_mlp beta=0.05 m=1 seed=2 test_acc=0.2880
+M4_mrf_gcn-c5d2056eb2 sbm M4_mrf_gcn beta=0.1 m=1 seed=2 test_acc=0.6050
+M4_mrf_mlp-4f19bf1361 sbm M4_mrf_mlp beta=0.1 m=1 seed=2 test_acc=0.2840
+M4_mrf_gcn-2da22f0241 sbm M4_mrf_gcn beta=0.25 m=1 seed=2 test_acc=0.6120
+M4_mrf_mlp-a3289c84aa sbm M4_mrf_mlp beta=0.25 m=1 seed=2 test_acc=0.2770
+M4_mrf_gcn-1d03beb4d5 sbm M4_mrf_gcn beta=0.5 m=1 seed=2 test_acc=0.1970
+M4_mrf_mlp-793c83c61c sbm M4_mrf_mlp beta=0.5 m=1 seed=2 test_acc=0.1450
+M4_mrf_gcn-c8426b79d0 sbm M4_mrf_gcn beta=1.0 m=1 seed=2 test_acc=0.1670
+M4_mrf_mlp-0636e38b11 sbm M4_mrf_mlp beta=1.0 m=1 seed=2 test_acc=0.1430
+M4_mrf_gcn-6605d58c71 sbm M4_mrf_gcn beta=2.0 m=1 seed=2 test_acc=0.1670
+M4_mrf_mlp-d9fcbf5ea5 sbm M4_mrf_mlp beta=2.0 m=1 seed=2 test_acc=0.1430
+M0_mlp-69f4f47278 sbm M0_mlp m=5 seed=2 test_acc=0.4330
+M1_gcn-649ec8d6bc sbm M1_gcn m=5 seed=2 test_acc=0.7620
+M2_lap-b96cd17855 sbm M2_lap m=5 seed=2 test_acc=0.7620
+M2_lap-c7462d9806 sbm M2_lap m=5 seed=2 test_acc=0.7620
+M2_lap-350fd105e5 sbm M2_lap m=5 seed=2 test_acc=0.7590
+M2_lap-7b580613a3 sbm M2_lap m=5 seed=2 test_acc=0.7570
+M2_lap-d99cfc10e0 sbm M2_lap m=5 seed=2 test_acc=0.7450
+M2_lap-c6bcff263b sbm M2_lap m=5 seed=2 test_acc=0.7350
+M4_mrf_gcn-bc708f845a sbm M4_mrf_gcn beta=0.05 m=5 seed=2 test_acc=0.7600
+M4_mrf_mlp-08db6f03a0 sbm M4_mrf_mlp beta=0.05 m=5 seed=2 test_acc=0.4390
+M4_mrf_gcn-89900f1cb6 sbm M4_mrf_gcn beta=0.1 m=5 seed=2 test_acc=0.7600
+M4_mrf_mlp-3ce2e0c7fc sbm M4_mrf_mlp beta=0.1 m=5 seed=2 test_acc=0.4420
+M4_mrf_gcn-b3d7a80d3a sbm M4_mrf_gcn beta=0.25 m=5 seed=2 test_acc=0.7680
+M4_mrf_mlp-d0cc418f29 sbm M4_mrf_mlp beta=0.25 m=5 seed=2 test_acc=0.4570
+M4_mrf_gcn-7af81a45b2 sbm M4_mrf_gcn beta=0.5 m=5 seed=2 test_acc=0.7700
+M4_mrf_mlp-aa7435ec0b sbm M4_mrf_mlp beta=0.5 m=5 seed=2 test_acc=0.4770
+M4_mrf_gcn-fedd403874 sbm M4_mrf_gcn beta=1.0 m=5 seed=2 test_acc=0.1420
+M4_mrf_mlp-c0eb62892a sbm M4_mrf_mlp beta=1.0 m=5 seed=2 test_acc=0.5330
+M4_mrf_gcn-f7d63be133 sbm M4_mrf_gcn beta=2.0 m=5 seed=2 test_acc=0.1410
+M4_mrf_mlp-d702465cdb sbm M4_mrf_mlp beta=2.0 m=5 seed=2 test_acc=0.1750
+M0_mlp-3fa1d8a947 sbm M0_mlp m=20 seed=2 test_acc=0.6040
+M1_gcn-7601cfb2cb sbm M1_gcn m=20 seed=2 test_acc=0.8400
+M2_lap-d3bb209ed7 sbm M2_lap m=20 seed=2 test_acc=0.8400
+M2_lap-78bac46a29 sbm M2_lap m=20 seed=2 test_acc=0.8400
+M2_lap-433340fc0d sbm M2_lap m=20 seed=2 test_acc=0.8390
+M2_lap-a25d9bb0cd sbm M2_lap m=20 seed=2 test_acc=0.8380
+M2_lap-29b52775c5 sbm M2_lap m=20 seed=2 test_acc=0.8290
+M2_lap-1b0e8d1ff4 sbm M2_lap m=20 seed=2 test_acc=0.8100
+M4_mrf_gcn-0d82615ccb sbm M4_mrf_gcn beta=0.05 m=20 seed=2 test_acc=0.8390
+M4_mrf_mlp-a1383b2405 sbm M4_mrf_mlp beta=0.05 m=20 seed=2 test_acc=0.6160
+M4_mrf_gcn-2dc28e8056 sbm M4_mrf_gcn beta=0.1 m=20 seed=2 test_acc=0.8400
+M4_mrf_mlp-5a8af88083 sbm M4_mrf_mlp beta=0.1 m=20 seed=2 test_acc=0.6260
+M4_mrf_gcn-754f81c630 sbm M4_mrf_gcn beta=0.25 m=20 seed=2 test_acc=0.8390
+M4_mrf_mlp-a45ddeef4d sbm M4_mrf_mlp beta=0.25 m=20 seed=2 test_acc=0.6690
+M4_mrf_gcn-ce20d81dc9 sbm M4_mrf_gcn beta=0.5 m=20 seed=2 test_acc=0.8470
+M4_mrf_mlp-9966196496 sbm M4_mrf_mlp beta=0.5 m=20 seed=2 test_acc=0.7240
+M4_mrf_gcn-7a97d68f9b sbm M4_mrf_gcn beta=1.0 m=20 seed=2 test_acc=0.8350
+M4_mrf_mlp-1b3b71153f sbm M4_mrf_mlp beta=1.0 m=20 seed=2 test_acc=0.8280
+M4_mrf_gcn-ed0ca03451 sbm M4_mrf_gcn beta=2.0 m=20 seed=2 test_acc=0.8180
+M4_mrf_mlp-0520acdcb7 sbm M4_mrf_mlp beta=2.0 m=20 seed=2 test_acc=0.8740
+M0_mlp-4255cf8b57 sbm M0_mlp m=1 seed=3 test_acc=0.3440
+M1_gcn-5a09dc1710 sbm M1_gcn m=1 seed=3 test_acc=0.4850
+M2_lap-7b59f1d995 sbm M2_lap m=1 seed=3 test_acc=0.4840
+M2_lap-3dd6368d58 sbm M2_lap m=1 seed=3 test_acc=0.4840
+M2_lap-dcc9a22e61 sbm M2_lap m=1 seed=3 test_acc=0.4660
+M2_lap-690f040197 sbm M2_lap m=1 seed=3 test_acc=0.4650
+M2_lap-119d428426 sbm M2_lap m=1 seed=3 test_acc=0.4680
+M2_lap-9573937cd2 sbm M2_lap m=1 seed=3 test_acc=0.4530
+M4_mrf_gcn-f661c1725e sbm M4_mrf_gcn beta=0.05 m=1 seed=3 test_acc=0.4860
+M4_mrf_mlp-54871c9628 sbm M4_mrf_mlp beta=0.05 m=1 seed=3 test_acc=0.3470
+M4_mrf_gcn-6fca9529c2 sbm M4_mrf_gcn beta=0.1 m=1 seed=3 test_acc=0.4850
+M4_mrf_mlp-a8fe966948 sbm M4_mrf_mlp beta=0.1 m=1 seed=3 test_acc=0.3500
+M4_mrf_gcn-718163caa2 sbm M4_mrf_gcn beta=0.25 m=1 seed=3 test_acc=0.4750
+M4_mrf_mlp-3317fbdb51 sbm M4_mrf_mlp beta=0.25 m=1 seed=3 test_acc=0.3620
+M4_mrf_gcn-fc993099cf sbm M4_mrf_gcn beta=0.5 m=1 seed=3 test_acc=0.4720
+M4_mrf_mlp-6f81d192db sbm M4_mrf_mlp beta=0.5 m=1 seed=3 test_acc=0.3770
+M4_mrf_gcn-8f9fc1184b sbm M4_mrf_gcn beta=1.0 m=1 seed=3 test_acc=0.2100
+M4_mrf_mlp-9178e7012a sbm M4_mrf_mlp beta=1.0 m=1 seed=3 test_acc=0.1530
+M4_mrf_gcn-83a644094a sbm M4_mrf_gcn beta=2.0 m=1 seed=3 test_acc=0.1510
+M4_mrf_mlp-196067bebd sbm M4_mrf_mlp beta=2.0 m=1 seed=3 test_acc=0.1310
+M0_mlp-546a8859f5 sbm M0_mlp m=5 seed=3 test_acc=0.4730
+M1_gcn-18ab4a3f6b sbm M1_gcn m=5 seed=3 test_acc=0.7950
+M2_lap-19f8d580d1 sbm M2_lap m=5 seed=3 test_acc=0.7950
+M2_lap-f4975f291a sbm M2_lap m=5 seed=3 test_acc=0.7950
+M2_lap-60667a65cf sbm M2_lap m=5 seed=3 test_acc=0.7960
+M2_lap-d280d37008 sbm M2_lap m=5 seed=3 test_acc=0.7850
+M2_lap-bcce02bde0 sbm M2_lap m=5 seed=3 test_acc=0.7710
+M2_lap-885b256f45 sbm M2_lap m=5 seed=3 test_acc=0.7630
+M4_mrf_gcn-5f393e0c79 sbm M4_mrf_gcn beta=0.05 m=5 seed=3 test_acc=0.7980
+M4_mrf_mlp-ce0227f971 sbm M4_mrf_mlp beta=0.05 m=5 seed=3 test_acc=0.4790
+M4_mrf_gcn-1e6c6db021 sbm M4_mrf_gcn beta=0.1 m=5 seed=3 test_acc=0.8020
+M4_mrf_mlp-abb2821e3f sbm M4_mrf_mlp beta=0.1 m=5 seed=3 test_acc=0.4910
+M4_mrf_gcn-842b738ea5 sbm M4_mrf_gcn beta=0.25 m=5 seed=3 test_acc=0.8100
+M4_mrf_mlp-a8cb7da835 sbm M4_mrf_mlp beta=0.25 m=5 seed=3 test_acc=0.5230
+M4_mrf_gcn-2e189f60c5 sbm M4_mrf_gcn beta=0.5 m=5 seed=3 test_acc=0.8210
+M4_mrf_mlp-a2447911b1 sbm M4_mrf_mlp beta=0.5 m=5 seed=3 test_acc=0.5860
+M4_mrf_gcn-d5ffba2dee sbm M4_mrf_gcn beta=1.0 m=5 seed=3 test_acc=0.8150
+M4_mrf_mlp-605532896e sbm M4_mrf_mlp beta=1.0 m=5 seed=3 test_acc=0.1930
+M4_mrf_gcn-c3948d1238 sbm M4_mrf_gcn beta=2.0 m=5 seed=3 test_acc=0.7990
+M4_mrf_mlp-1cc1e8183d sbm M4_mrf_mlp beta=2.0 m=5 seed=3 test_acc=0.1540
+M0_mlp-0dba118f6f sbm M0_mlp m=20 seed=3 test_acc=0.5730
+M1_gcn-91a6ed1430 sbm M1_gcn m=20 seed=3 test_acc=0.8340
+M2_lap-c24f81a0d9 sbm M2_lap m=20 seed=3 test_acc=0.8340
+M2_lap-791957d36c sbm M2_lap m=20 seed=3 test_acc=0.8310
+M2_lap-d27f9d86ee sbm M2_lap m=20 seed=3 test_acc=0.8270
+M2_lap-a0d5af4859 sbm M2_lap m=20 seed=3 test_acc=0.8320
+M2_lap-d20b35532b sbm M2_lap m=20 seed=3 test_acc=0.8290
+M2_lap-6e6723c25f sbm M2_lap m=20 seed=3 test_acc=0.8240
+M4_mrf_gcn-838c7b802d sbm M4_mrf_gcn beta=0.05 m=20 seed=3 test_acc=0.8410
+M4_mrf_mlp-df81b46f5c sbm M4_mrf_mlp beta=0.05 m=20 seed=3 test_acc=0.5810
+M4_mrf_gcn-b3e67bb39a sbm M4_mrf_gcn beta=0.1 m=20 seed=3 test_acc=0.8460
+M4_mrf_mlp-5be0cc4d34 sbm M4_mrf_mlp beta=0.1 m=20 seed=3 test_acc=0.5900
+M4_mrf_gcn-5bae3e594d sbm M4_mrf_gcn beta=0.25 m=20 seed=3 test_acc=0.8450
+M4_mrf_mlp-b872a91878 sbm M4_mrf_mlp beta=0.25 m=20 seed=3 test_acc=0.6170
+M4_mrf_gcn-6caff8aad0 sbm M4_mrf_gcn beta=0.5 m=20 seed=3 test_acc=0.8510
+M4_mrf_mlp-d7ad50696b sbm M4_mrf_mlp beta=0.5 m=20 seed=3 test_acc=0.6610
+M4_mrf_gcn-7e94b74dab sbm M4_mrf_gcn beta=1.0 m=20 seed=3 test_acc=0.8510
+M4_mrf_mlp-b92da822e1 sbm M4_mrf_mlp beta=1.0 m=20 seed=3 test_acc=0.7560
+M4_mrf_gcn-fe1dde986a sbm M4_mrf_gcn beta=2.0 m=20 seed=3 test_acc=0.8130
+M4_mrf_mlp-50235e6ca7 sbm M4_mrf_mlp beta=2.0 m=20 seed=3 test_acc=0.8340
+M0_mlp-30e655fd43 sbm M0_mlp m=1 seed=4 test_acc=0.3630
+M1_gcn-182e0da2bb sbm M1_gcn m=1 seed=4 test_acc=0.6860
+M2_lap-72ac12ed3a sbm M2_lap m=1 seed=4 test_acc=0.6860
+M2_lap-a59d7e8010 sbm M2_lap m=1 seed=4 test_acc=0.6860
+M2_lap-de77930c23 sbm M2_lap m=1 seed=4 test_acc=0.6800
+M2_lap-42a669d805 sbm M2_lap m=1 seed=4 test_acc=0.6730
+M2_lap-e1bc90430a sbm M2_lap m=1 seed=4 test_acc=0.6560
+M2_lap-4fe57b8bb6 sbm M2_lap m=1 seed=4 test_acc=0.6180
+M4_mrf_gcn-b9f80b1951 sbm M4_mrf_gcn beta=0.05 m=1 seed=4 test_acc=0.6850
+M4_mrf_mlp-0cc0edbd66 sbm M4_mrf_mlp beta=0.05 m=1 seed=4 test_acc=0.3680
+M4_mrf_gcn-ec2507b05c sbm M4_mrf_gcn beta=0.1 m=1 seed=4 test_acc=0.6890
+M4_mrf_mlp-a667419fa3 sbm M4_mrf_mlp beta=0.1 m=1 seed=4 test_acc=0.3730
+M4_mrf_gcn-5a9d910ac2 sbm M4_mrf_gcn beta=0.25 m=1 seed=4 test_acc=0.6940
+M4_mrf_mlp-8391101872 sbm M4_mrf_mlp beta=0.25 m=1 seed=4 test_acc=0.3940
+M4_mrf_gcn-c89ad62f08 sbm M4_mrf_gcn beta=0.5 m=1 seed=4 test_acc=0.6990
+M4_mrf_mlp-ad471d8d34 sbm M4_mrf_mlp beta=0.5 m=1 seed=4 test_acc=0.4160
+M4_mrf_gcn-d3eb526987 sbm M4_mrf_gcn beta=1.0 m=1 seed=4 test_acc=0.6440
+M4_mrf_mlp-218f7e28a5 sbm M4_mrf_mlp beta=1.0 m=1 seed=4 test_acc=0.1780
+M4_mrf_gcn-b07df3c30d sbm M4_mrf_gcn beta=2.0 m=1 seed=4 test_acc=0.1240
+M4_mrf_mlp-27b69d8fa3 sbm M4_mrf_mlp beta=2.0 m=1 seed=4 test_acc=0.1600
+M0_mlp-81920b2c5e sbm M0_mlp m=5 seed=4 test_acc=0.4450
+M1_gcn-f6de53aebc sbm M1_gcn m=5 seed=4 test_acc=0.7910
+M2_lap-0e4c6896ab sbm M2_lap m=5 seed=4 test_acc=0.7910
+M2_lap-a7833d22e3 sbm M2_lap m=5 seed=4 test_acc=0.7910
+M2_lap-d3f3b26798 sbm M2_lap m=5 seed=4 test_acc=0.7980
+M2_lap-01a15eeda9 sbm M2_lap m=5 seed=4 test_acc=0.7980
+M2_lap-f40366bfba sbm M2_lap m=5 seed=4 test_acc=0.7910
+M2_lap-5b8b713174 sbm M2_lap m=5 seed=4 test_acc=0.7870
+M4_mrf_gcn-0393f56e43 sbm M4_mrf_gcn beta=0.05 m=5 seed=4 test_acc=0.7930
+M4_mrf_mlp-3c87711c00 sbm M4_mrf_mlp beta=0.05 m=5 seed=4 test_acc=0.4530
+M4_mrf_gcn-305fc4c317 sbm M4_mrf_gcn beta=0.1 m=5 seed=4 test_acc=0.7940
+M4_mrf_mlp-3bcbdf92be sbm M4_mrf_mlp beta=0.1 m=5 seed=4 test_acc=0.4600
+M4_mrf_gcn-1bdbc36165 sbm M4_mrf_gcn beta=0.25 m=5 seed=4 test_acc=0.8060
+M4_mrf_mlp-89c0e68bed sbm M4_mrf_mlp beta=0.25 m=5 seed=4 test_acc=0.4820
+M4_mrf_gcn-d907ebc06f sbm M4_mrf_gcn beta=0.5 m=5 seed=4 test_acc=0.8200
+M4_mrf_mlp-1d2a06ca5e sbm M4_mrf_mlp beta=0.5 m=5 seed=4 test_acc=0.5210
+M4_mrf_gcn-5cf6f06576 sbm M4_mrf_gcn beta=1.0 m=5 seed=4 test_acc=0.8230
+M4_mrf_mlp-4204f55974 sbm M4_mrf_mlp beta=1.0 m=5 seed=4 test_acc=0.1890
+M4_mrf_gcn-ce98633dd1 sbm M4_mrf_gcn beta=2.0 m=5 seed=4 test_acc=0.8140
+M4_mrf_mlp-7c84719a8c sbm M4_mrf_mlp beta=2.0 m=5 seed=4 test_acc=0.1500
+M0_mlp-ecdfa243f9 sbm M0_mlp m=20 seed=4 test_acc=0.6280
+M1_gcn-7ae62547df sbm M1_gcn m=20 seed=4 test_acc=0.8480
+M2_lap-b78aef9eec sbm M2_lap m=20 seed=4 test_acc=0.8480
+M2_lap-368b305472 sbm M2_lap m=20 seed=4 test_acc=0.8490
+M2_lap-f1cb112a93 sbm M2_lap m=20 seed=4 test_acc=0.8460
+M2_lap-a17de1aab1 sbm M2_lap m=20 seed=4 test_acc=0.8490
+M2_lap-651e4ab002 sbm M2_lap m=20 seed=4 test_acc=0.8460
+M2_lap-ee35cd2f03 sbm M2_lap m=20 seed=4 test_acc=0.8250
+M4_mrf_gcn-108e6e288f sbm M4_mrf_gcn beta=0.05 m=20 seed=4 test_acc=0.8530
+M4_mrf_mlp-af746e5db6 sbm M4_mrf_mlp beta=0.05 m=20 seed=4 test_acc=0.6390
+M4_mrf_gcn-4d111f5ab2 sbm M4_mrf_gcn beta=0.1 m=20 seed=4 test_acc=0.8520
+M4_mrf_mlp-758583ea9c sbm M4_mrf_mlp beta=0.1 m=20 seed=4 test_acc=0.6570
+M4_mrf_gcn-5fa2e25bcc sbm M4_mrf_gcn beta=0.25 m=20 seed=4 test_acc=0.8520
+M4_mrf_mlp-2b51c9ad3a sbm M4_mrf_mlp beta=0.25 m=20 seed=4 test_acc=0.6960
+M4_mrf_gcn-56567ab0ec sbm M4_mrf_gcn beta=0.5 m=20 seed=4 test_acc=0.8480
+M4_mrf_mlp-5be403ef86 sbm M4_mrf_mlp beta=0.5 m=20 seed=4 test_acc=0.7540
+M4_mrf_gcn-4638c71cb1 sbm M4_mrf_gcn beta=1.0 m=20 seed=4 test_acc=0.8430
+M4_mrf_mlp-2fa6b1f8dd sbm M4_mrf_mlp beta=1.0 m=20 seed=4 test_acc=0.8530
+M4_mrf_gcn-37a00b9b27 sbm M4_mrf_gcn beta=2.0 m=20 seed=4 test_acc=0.8240
+M4_mrf_mlp-dab0d2c05b sbm M4_mrf_mlp beta=2.0 m=20 seed=4 test_acc=0.8840
+M0_mlp-1f5a7e9cc7 sbm M0_mlp m=1 seed=5 test_acc=0.3130
+M1_gcn-c1fad92319 sbm M1_gcn m=1 seed=5 test_acc=0.5120
+M2_lap-e38ca47408 sbm M2_lap m=1 seed=5 test_acc=0.5130
+M2_lap-bf52453643 sbm M2_lap m=1 seed=5 test_acc=0.5130
+M2_lap-ca098d9d66 sbm M2_lap m=1 seed=5 test_acc=0.5230
+M2_lap-42555d7a5e sbm M2_lap m=1 seed=5 test_acc=0.4950
+M2_lap-4ec9f77943 sbm M2_lap m=1 seed=5 test_acc=0.4740
+M2_lap-4745e434a5 sbm M2_lap m=1 seed=5 test_acc=0.4310
+M4_mrf_gcn-efb453373c sbm M4_mrf_gcn beta=0.05 m=1 seed=5 test_acc=0.5170
+M4_mrf_mlp-d90a540a6e sbm M4_mrf_mlp beta=0.05 m=1 seed=5 test_acc=0.3230
+M4_mrf_gcn-54f70cdbdc sbm M4_mrf_gcn beta=0.1 m=1 seed=5 test_acc=0.5140
+M4_mrf_mlp-e365ab0f67 sbm M4_mrf_mlp beta=0.1 m=1 seed=5 test_acc=0.3280
+M4_mrf_gcn-9e9857607d sbm M4_mrf_gcn beta=0.25 m=1 seed=5 test_acc=0.4980
+M4_mrf_mlp-637e2b5395 sbm M4_mrf_mlp beta=0.25 m=1 seed=5 test_acc=0.3490
+M4_mrf_gcn-ce6fcb967f sbm M4_mrf_gcn beta=0.5 m=1 seed=5 test_acc=0.4600
+M4_mrf_mlp-ae1185a2e8 sbm M4_mrf_mlp beta=0.5 m=1 seed=5 test_acc=0.2490
+M4_mrf_gcn-9b268103f0 sbm M4_mrf_gcn beta=1.0 m=1 seed=5 test_acc=0.1560
+M4_mrf_mlp-5a8428088d sbm M4_mrf_mlp beta=1.0 m=1 seed=5 test_acc=0.1650
+M4_mrf_gcn-91196c8bd2 sbm M4_mrf_gcn beta=2.0 m=1 seed=5 test_acc=0.1460
+M4_mrf_mlp-c85f0f3a1d sbm M4_mrf_mlp beta=2.0 m=1 seed=5 test_acc=0.1620
+M0_mlp-7e58c4daad sbm M0_mlp m=5 seed=5 test_acc=0.4330
+M1_gcn-addf071202 sbm M1_gcn m=5 seed=5 test_acc=0.7880
+M2_lap-bd163ce643 sbm M2_lap m=5 seed=5 test_acc=0.7880
+M2_lap-36f0c816b9 sbm M2_lap m=5 seed=5 test_acc=0.7870
+M2_lap-a0723336a8 sbm M2_lap m=5 seed=5 test_acc=0.7870
+M2_lap-83134ba3c9 sbm M2_lap m=5 seed=5 test_acc=0.7830
+M2_lap-2856776d9d sbm M2_lap m=5 seed=5 test_acc=0.7850
+M2_lap-df69bd7efc sbm M2_lap m=5 seed=5 test_acc=0.7680
+M4_mrf_gcn-5897068288 sbm M4_mrf_gcn beta=0.05 m=5 seed=5 test_acc=0.7880
+M4_mrf_mlp-ff3f94659a sbm M4_mrf_mlp beta=0.05 m=5 seed=5 test_acc=0.4360
+M4_mrf_gcn-66fbc1bb36 sbm M4_mrf_gcn beta=0.1 m=5 seed=5 test_acc=0.7860
+M4_mrf_mlp-f862da8a36 sbm M4_mrf_mlp beta=0.1 m=5 seed=5 test_acc=0.4410
+M4_mrf_gcn-d568bbb8b8 sbm M4_mrf_gcn beta=0.25 m=5 seed=5 test_acc=0.7840
+M4_mrf_mlp-3511438f91 sbm M4_mrf_mlp beta=0.25 m=5 seed=5 test_acc=0.4810
+M4_mrf_gcn-31e5ab85ed sbm M4_mrf_gcn beta=0.5 m=5 seed=5 test_acc=0.7860
+M4_mrf_mlp-2b1280b2fa sbm M4_mrf_mlp beta=0.5 m=5 seed=5 test_acc=0.5500
+M4_mrf_gcn-707557b3f9 sbm M4_mrf_gcn beta=1.0 m=5 seed=5 test_acc=0.1510
+M4_mrf_mlp-e2fe4e4d57 sbm M4_mrf_mlp beta=1.0 m=5 seed=5 test_acc=0.1520
+M4_mrf_gcn-0efab4092b sbm M4_mrf_gcn beta=2.0 m=5 seed=5 test_acc=0.1480
+M4_mrf_mlp-7d0081d155 sbm M4_mrf_mlp beta=2.0 m=5 seed=5 test_acc=0.1440
+M0_mlp-50e8bc2f4a sbm M0_mlp m=20 seed=5 test_acc=0.5980
+M1_gcn-7e0d950cda sbm M1_gcn m=20 seed=5 test_acc=0.8910
+M2_lap-19b6f981ce sbm M2_lap m=20 seed=5 test_acc=0.8910
+M2_lap-1d35b97f91 sbm M2_lap m=20 seed=5 test_acc=0.8910
+M2_lap-7baf5298c0 sbm M2_lap m=20 seed=5 test_acc=0.8910
+M2_lap-1c98dad2d3 sbm M2_lap m=20 seed=5 test_acc=0.8910
+M2_lap-2631d5eb5c sbm M2_lap m=20 seed=5 test_acc=0.8820
+M2_lap-cde7faa792 sbm M2_lap m=20 seed=5 test_acc=0.8780
+M4_mrf_gcn-ce9683d6df sbm M4_mrf_gcn beta=0.05 m=20 seed=5 test_acc=0.8920
+M4_mrf_mlp-938ff713fb sbm M4_mrf_mlp beta=0.05 m=20 seed=5 test_acc=0.6150
+M4_mrf_gcn-aa63137cbb sbm M4_mrf_gcn beta=0.1 m=20 seed=5 test_acc=0.8940
+M4_mrf_mlp-6d6aac4785 sbm M4_mrf_mlp beta=0.1 m=20 seed=5 test_acc=0.6350
+M4_mrf_gcn-14b91600f9 sbm M4_mrf_gcn beta=0.25 m=20 seed=5 test_acc=0.8970
+M4_mrf_mlp-91918d90e9 sbm M4_mrf_mlp beta=0.25 m=20 seed=5 test_acc=0.6900
+M4_mrf_gcn-ede5597597 sbm M4_mrf_gcn beta=0.5 m=20 seed=5 test_acc=0.9020
+M4_mrf_mlp-3fb8187023 sbm M4_mrf_mlp beta=0.5 m=20 seed=5 test_acc=0.7670
+M4_mrf_gcn-39984731fa sbm M4_mrf_gcn beta=1.0 m=20 seed=5 test_acc=0.8940
+M4_mrf_mlp-3a9247131e sbm M4_mrf_mlp beta=1.0 m=20 seed=5 test_acc=0.8930
+M4_mrf_gcn-1990dd91e4 sbm M4_mrf_gcn beta=2.0 m=20 seed=5 test_acc=0.8780
+M4_mrf_mlp-0529b1b81a sbm M4_mrf_mlp beta=2.0 m=20 seed=5 test_acc=0.8970
+M0_mlp-3e52eb74b1 sbm M0_mlp m=1 seed=6 test_acc=0.3520
+M1_gcn-386a8ccb73 sbm M1_gcn m=1 seed=6 test_acc=0.5730
+M2_lap-e2bfb4c6e3 sbm M2_lap m=1 seed=6 test_acc=0.5730
+M2_lap-241a4dc065 sbm M2_lap m=1 seed=6 test_acc=0.5750
+M2_lap-e0da860834 sbm M2_lap m=1 seed=6 test_acc=0.5630
+M2_lap-0a5d8c1740 sbm M2_lap m=1 seed=6 test_acc=0.5440
+M2_lap-3867531691 sbm M2_lap m=1 seed=6 test_acc=0.5320
+M2_lap-c9aee13dd3 sbm M2_lap m=1 seed=6 test_acc=0.4890
+M4_mrf_gcn-9a2d7bdb01 sbm M4_mrf_gcn beta=0.05 m=1 seed=6 test_acc=0.5750
+M4_mrf_mlp-dab3f11704 sbm M4_mrf_mlp beta=0.05 m=1 seed=6 test_acc=0.3540
+M4_mrf_gcn-f4d83a7c74 sbm M4_mrf_gcn beta=0.1 m=1 seed=6 test_acc=0.5830
+M4_mrf_mlp-f50ebb5fac sbm M4_mrf_mlp beta=0.1 m=1 seed=6 test_acc=0.3580
+M4_mrf_gcn-cc51d4ce14 sbm M4_mrf_gcn beta=0.25 m=1 seed=6 test_acc=0.5890
+M4_mrf_mlp-13ebb3f5eb sbm M4_mrf_mlp beta=0.25 m=1 seed=6 test_acc=0.3720
+M4_mrf_gcn-b5b61261df sbm M4_mrf_gcn beta=0.5 m=1 seed=6 test_acc=0.5820
+M4_mrf_mlp-bf56564820 sbm M4_mrf_mlp beta=0.5 m=1 seed=6 test_acc=0.3930
+M4_mrf_gcn-4d6ee57ea6 sbm M4_mrf_gcn beta=1.0 m=1 seed=6 test_acc=0.1590
+M4_mrf_mlp-4148b27d1f sbm M4_mrf_mlp beta=1.0 m=1 seed=6 test_acc=0.1720
+M4_mrf_gcn-0e050dd2c2 sbm M4_mrf_gcn beta=2.0 m=1 seed=6 test_acc=0.1430
+M4_mrf_mlp-308bcba506 sbm M4_mrf_mlp beta=2.0 m=1 seed=6 test_acc=0.1490
+M0_mlp-436ef216be sbm M0_mlp m=5 seed=6 test_acc=0.4900
+M1_gcn-09122fc16d sbm M1_gcn m=5 seed=6 test_acc=0.7900
+M2_lap-daee0e623a sbm M2_lap m=5 seed=6 test_acc=0.7890
+M2_lap-75db3dc609 sbm M2_lap m=5 seed=6 test_acc=0.7820
+M2_lap-81ef57a432 sbm M2_lap m=5 seed=6 test_acc=0.7880
+M2_lap-a6595bd7c6 sbm M2_lap m=5 seed=6 test_acc=0.7800
+M2_lap-4306040256 sbm M2_lap m=5 seed=6 test_acc=0.7800
+M2_lap-e0a8fd9669 sbm M2_lap m=5 seed=6 test_acc=0.7540
+M4_mrf_gcn-e3a5106941 sbm M4_mrf_gcn beta=0.05 m=5 seed=6 test_acc=0.7940
+M4_mrf_mlp-0727c97f2e sbm M4_mrf_mlp beta=0.05 m=5 seed=6 test_acc=0.4970
+M4_mrf_gcn-95b1fa5c7e sbm M4_mrf_gcn beta=0.1 m=5 seed=6 test_acc=0.7960
+M4_mrf_mlp-b74d3d39e8 sbm M4_mrf_mlp beta=0.1 m=5 seed=6 test_acc=0.5080
+M4_mrf_gcn-237f869b52 sbm M4_mrf_gcn beta=0.25 m=5 seed=6 test_acc=0.8010
+M4_mrf_mlp-f223bd31c4 sbm M4_mrf_mlp beta=0.25 m=5 seed=6 test_acc=0.5480
+M4_mrf_gcn-bbca8b88f6 sbm M4_mrf_gcn beta=0.5 m=5 seed=6 test_acc=0.8140
+M4_mrf_mlp-bcff1b33b8 sbm M4_mrf_mlp beta=0.5 m=5 seed=6 test_acc=0.6410
+M4_mrf_gcn-f9a929911b sbm M4_mrf_gcn beta=1.0 m=5 seed=6 test_acc=0.8270
+M4_mrf_mlp-dd84a6ed4a sbm M4_mrf_mlp beta=1.0 m=5 seed=6 test_acc=0.1420
+M4_mrf_gcn-33ed8749b0 sbm M4_mrf_gcn beta=2.0 m=5 seed=6 test_acc=0.8210
+M4_mrf_mlp-c7c946dd81 sbm M4_mrf_mlp beta=2.0 m=5 seed=6 test_acc=0.1410
+M0_mlp-3d9e05cea2 sbm M0_mlp m=20 seed=6 test_acc=0.5890
+M1_gcn-f625dc27b1 sbm M1_gcn m=20 seed=6 test_acc=0.8320
+M2_lap-cc1e76407d sbm M2_lap m=20 seed=6 test_acc=0.8320
+M2_lap-b0136632c1 sbm M2_lap m=20 seed=6 test_acc=0.8320
+M2_lap-f4d4656893 sbm M2_lap m=20 seed=6 test_acc=0.8330
+M2_lap-01e4521db3 sbm M2_lap m=20 seed=6 test_acc=0.8340
+M2_lap-17672c2bf9 sbm M2_lap m=20 seed=6 test_acc=0.8310
+M2_lap-695fbd03c2 sbm M2_lap m=20 seed=6 test_acc=0.8260
+M4_mrf_gcn-26063cfbdf sbm M4_mrf_gcn beta=0.05 m=20 seed=6 test_acc=0.8300
+M4_mrf_mlp-603991b958 sbm M4_mrf_mlp beta=0.05 m=20 seed=6 test_acc=0.6090
+M4_mrf_gcn-f1dd6f17cb sbm M4_mrf_gcn beta=0.1 m=20 seed=6 test_acc=0.8340
+M4_mrf_mlp-d86c70f0bc sbm M4_mrf_mlp beta=0.1 m=20 seed=6 test_acc=0.6220
+M4_mrf_gcn-cc8b3207de sbm M4_mrf_gcn beta=0.25 m=20 seed=6 test_acc=0.8360
+M4_mrf_mlp-e82766f587 sbm M4_mrf_mlp beta=0.25 m=20 seed=6 test_acc=0.6820
+M4_mrf_gcn-0fee20c593 sbm M4_mrf_gcn beta=0.5 m=20 seed=6 test_acc=0.8380
+M4_mrf_mlp-1e64cff65b sbm M4_mrf_mlp beta=0.5 m=20 seed=6 test_acc=0.7780
+M4_mrf_gcn-7263f6e095 sbm M4_mrf_gcn beta=1.0 m=20 seed=6 test_acc=0.8380
+M4_mrf_mlp-1ff9c0306c sbm M4_mrf_mlp beta=1.0 m=20 seed=6 test_acc=0.8890
+M4_mrf_gcn-4c21849284 sbm M4_mrf_gcn beta=2.0 m=20 seed=6 test_acc=0.8230
+M4_mrf_mlp-ad6c731769 sbm M4_mrf_mlp beta=2.0 m=20 seed=6 test_acc=0.8440
+M0_mlp-8ebbc6609b sbm M0_mlp m=1 seed=7 test_acc=0.2390
+M1_gcn-39cb91c5e8 sbm M1_gcn m=1 seed=7 test_acc=0.4610
+M2_lap-51f1b63c45 sbm M2_lap m=1 seed=7 test_acc=0.4610
+M2_lap-2e38237ce5 sbm M2_lap m=1 seed=7 test_acc=0.4550
+M2_lap-c5e7379f2f sbm M2_lap m=1 seed=7 test_acc=0.4400
+M2_lap-eaf2c2c805 sbm M2_lap m=1 seed=7 test_acc=0.4110
+M2_lap-5512336197 sbm M2_lap m=1 seed=7 test_acc=0.4020
+M2_lap-1033e14936 sbm M2_lap m=1 seed=7 test_acc=0.3790
+M4_mrf_gcn-08a3e1fc9b sbm M4_mrf_gcn beta=0.05 m=1 seed=7 test_acc=0.4590
+M4_mrf_mlp-26440f9ac2 sbm M4_mrf_mlp beta=0.05 m=1 seed=7 test_acc=0.2410
+M4_mrf_gcn-b70eb78bff sbm M4_mrf_gcn beta=0.1 m=1 seed=7 test_acc=0.4540
+M4_mrf_mlp-1878e6f907 sbm M4_mrf_mlp beta=0.1 m=1 seed=7 test_acc=0.2430
+M4_mrf_gcn-9c81b5ea31 sbm M4_mrf_gcn beta=0.25 m=1 seed=7 test_acc=0.4640
+M4_mrf_mlp-b4500f5e8f sbm M4_mrf_mlp beta=0.25 m=1 seed=7 test_acc=0.2440
+M4_mrf_gcn-b3f12659e7 sbm M4_mrf_gcn beta=0.5 m=1 seed=7 test_acc=0.4520
+M4_mrf_mlp-ac582e3a7c sbm M4_mrf_mlp beta=0.5 m=1 seed=7 test_acc=0.2570
+M4_mrf_gcn-66ae26fb96 sbm M4_mrf_gcn beta=1.0 m=1 seed=7 test_acc=0.1560
+M4_mrf_mlp-0dde29f5bf sbm M4_mrf_mlp beta=1.0 m=1 seed=7 test_acc=0.1380
+M4_mrf_gcn-4e7f31624b sbm M4_mrf_gcn beta=2.0 m=1 seed=7 test_acc=0.1430
+M4_mrf_mlp-ba904e4e16 sbm M4_mrf_mlp beta=2.0 m=1 seed=7 test_acc=0.1260
+M0_mlp-90e080848f sbm M0_mlp m=5 seed=7 test_acc=0.4430
+M1_gcn-0a38aa8403 sbm M1_gcn m=5 seed=7 test_acc=0.8190
+M2_lap-b3e9269efb sbm M2_lap m=5 seed=7 test_acc=0.8200
+M2_lap-711ad8ff46 sbm M2_lap m=5 seed=7 test_acc=0.8200
+M2_lap-c1008a2b61 sbm M2_lap m=5 seed=7 test_acc=0.8150
+M2_lap-442257ae6d sbm M2_lap m=5 seed=7 test_acc=0.8130
+M2_lap-fe0f64853d sbm M2_lap m=5 seed=7 test_acc=0.8120
+M2_lap-da9c9b1bd8 sbm M2_lap m=5 seed=7 test_acc=0.7820
+M4_mrf_gcn-c2d6847135 sbm M4_mrf_gcn beta=0.05 m=5 seed=7 test_acc=0.8210
+M4_mrf_mlp-89d3a3856c sbm M4_mrf_mlp beta=0.05 m=5 seed=7 test_acc=0.4460
+M4_mrf_gcn-d3c29a1003 sbm M4_mrf_gcn beta=0.1 m=5 seed=7 test_acc=0.8230
+M4_mrf_mlp-7f0fbc474e sbm M4_mrf_mlp beta=0.1 m=5 seed=7 test_acc=0.4510
+M4_mrf_gcn-49912cbe3b sbm M4_mrf_gcn beta=0.25 m=5 seed=7 test_acc=0.8280
+M4_mrf_mlp-b0046ba60e sbm M4_mrf_mlp beta=0.25 m=5 seed=7 test_acc=0.4830
+M4_mrf_gcn-333a13e6ac sbm M4_mrf_gcn beta=0.5 m=5 seed=7 test_acc=0.8360
+M4_mrf_mlp-70c1131f29 sbm M4_mrf_mlp beta=0.5 m=5 seed=7 test_acc=0.5420
+M4_mrf_gcn-487e3b95ae sbm M4_mrf_gcn beta=1.0 m=5 seed=7 test_acc=0.8340
+M4_mrf_mlp-179303f6df sbm M4_mrf_mlp beta=1.0 m=5 seed=7 test_acc=0.1460
+M4_mrf_gcn-f41d4548bd sbm M4_mrf_gcn beta=2.0 m=5 seed=7 test_acc=0.8210
+M4_mrf_mlp-aaa909123d sbm M4_mrf_mlp beta=2.0 m=5 seed=7 test_acc=0.1450
+M0_mlp-4c44433a2b sbm M0_mlp m=20 seed=7 test_acc=0.5970
+M1_gcn-81d4656587 sbm M1_gcn m=20 seed=7 test_acc=0.8620
+M2_lap-fe2f57e5f3 sbm M2_lap m=20 seed=7 test_acc=0.8620
+M2_lap-9b0aadfdc8 sbm M2_lap m=20 seed=7 test_acc=0.8620
+M2_lap-9764aa992a sbm M2_lap m=20 seed=7 test_acc=0.8610
+M2_lap-be275f222c sbm M2_lap m=20 seed=7 test_acc=0.8600
+M2_lap-293c576af3 sbm M2_lap m=20 seed=7 test_acc=0.8510
+M2_lap-fad8358138 sbm M2_lap m=20 seed=7 test_acc=0.8540
+M4_mrf_gcn-49e84f6126 sbm M4_mrf_gcn beta=0.05 m=20 seed=7 test_acc=0.8630
+M4_mrf_mlp-f9531d3972 sbm M4_mrf_mlp beta=0.05 m=20 seed=7 test_acc=0.6070
+M4_mrf_gcn-226c6159b3 sbm M4_mrf_gcn beta=0.1 m=20 seed=7 test_acc=0.8600
+M4_mrf_mlp-a3103a6aaf sbm M4_mrf_mlp beta=0.1 m=20 seed=7 test_acc=0.6210
+M4_mrf_gcn-96f07e3e5f sbm M4_mrf_gcn beta=0.25 m=20 seed=7 test_acc=0.8600
+M4_mrf_mlp-b55b736df1 sbm M4_mrf_mlp beta=0.25 m=20 seed=7 test_acc=0.6720
+M4_mrf_gcn-0a14beb413 sbm M4_mrf_gcn beta=0.5 m=20 seed=7 test_acc=0.8680
+M4_mrf_mlp-58fd10b092 sbm M4_mrf_mlp beta=0.5 m=20 seed=7 test_acc=0.7640
+M4_mrf_gcn-3900d16f19 sbm M4_mrf_gcn beta=1.0 m=20 seed=7 test_acc=0.8610
+M4_mrf_mlp-3a1bfb5a3b sbm M4_mrf_mlp beta=1.0 m=20 seed=7 test_acc=0.8680
+M4_mrf_gcn-9bdb76f3c2 sbm M4_mrf_gcn beta=2.0 m=20 seed=7 test_acc=0.8530
+M4_mrf_mlp-c64acb216a sbm M4_mrf_mlp beta=2.0 m=20 seed=7 test_acc=0.8800
+M0_mlp-ae866e68fc sbm M0_mlp m=1 seed=8 test_acc=0.3210
+M1_gcn-3b723447b3 sbm M1_gcn m=1 seed=8 test_acc=0.5980
+M2_lap-3f967e34e8 sbm M2_lap m=1 seed=8 test_acc=0.5970
+M2_lap-dde98534ff sbm M2_lap m=1 seed=8 test_acc=0.5960
+M2_lap-51556aec59 sbm M2_lap m=1 seed=8 test_acc=0.5680
+M2_lap-ef3609dcd5 sbm M2_lap m=1 seed=8 test_acc=0.5610
+M2_lap-48e2a3a551 sbm M2_lap m=1 seed=8 test_acc=0.5550
+M2_lap-938510acc6 sbm M2_lap m=1 seed=8 test_acc=0.5290
+M4_mrf_gcn-e692e065d3 sbm M4_mrf_gcn beta=0.05 m=1 seed=8 test_acc=0.5990
+M4_mrf_mlp-a6b3686504 sbm M4_mrf_mlp beta=0.05 m=1 seed=8 test_acc=0.3270
+M4_mrf_gcn-9980e1aba5 sbm M4_mrf_gcn beta=0.1 m=1 seed=8 test_acc=0.5980
+M4_mrf_mlp-1deda1d007 sbm M4_mrf_mlp beta=0.1 m=1 seed=8 test_acc=0.3330
+M4_mrf_gcn-14a3984edb sbm M4_mrf_gcn beta=0.25 m=1 seed=8 test_acc=0.6030
+M4_mrf_mlp-a29267b3ee sbm M4_mrf_mlp beta=0.25 m=1 seed=8 test_acc=0.3480
+M4_mrf_gcn-9e41c5a197 sbm M4_mrf_gcn beta=0.5 m=1 seed=8 test_acc=0.5900
+M4_mrf_mlp-cf40e96550 sbm M4_mrf_mlp beta=0.5 m=1 seed=8 test_acc=0.3860
+M4_mrf_gcn-b4a2e1bd7c sbm M4_mrf_gcn beta=1.0 m=1 seed=8 test_acc=0.1510
+M4_mrf_mlp-261fc8bbeb sbm M4_mrf_mlp beta=1.0 m=1 seed=8 test_acc=0.1850
+M4_mrf_gcn-8a99992309 sbm M4_mrf_gcn beta=2.0 m=1 seed=8 test_acc=0.1300
+M4_mrf_mlp-91d7f439ff sbm M4_mrf_mlp beta=2.0 m=1 seed=8 test_acc=0.2580
+M0_mlp-f0db6f4b3d sbm M0_mlp m=5 seed=8 test_acc=0.4140
+M1_gcn-bf99719732 sbm M1_gcn m=5 seed=8 test_acc=0.7780
+M2_lap-6706fc8164 sbm M2_lap m=5 seed=8 test_acc=0.7780
+M2_lap-47f2a36836 sbm M2_lap m=5 seed=8 test_acc=0.7780
+M2_lap-131d23180d sbm M2_lap m=5 seed=8 test_acc=0.7690
+M2_lap-31592215e7 sbm M2_lap m=5 seed=8 test_acc=0.7740
+M2_lap-4f31731619 sbm M2_lap m=5 seed=8 test_acc=0.7670
+M2_lap-958ece6217 sbm M2_lap m=5 seed=8 test_acc=0.7640
+M4_mrf_gcn-aaf3653247 sbm M4_mrf_gcn beta=0.05 m=5 seed=8 test_acc=0.7780
+M4_mrf_mlp-7ceba2ed10 sbm M4_mrf_mlp beta=0.05 m=5 seed=8 test_acc=0.4150
+M4_mrf_gcn-9c4f15b755 sbm M4_mrf_gcn beta=0.1 m=5 seed=8 test_acc=0.7790
+M4_mrf_mlp-60b1d4fa5c sbm M4_mrf_mlp beta=0.1 m=5 seed=8 test_acc=0.4220
+M4_mrf_gcn-68453c71b6 sbm M4_mrf_gcn beta=0.25 m=5 seed=8 test_acc=0.7860
+M4_mrf_mlp-0c91067d5f sbm M4_mrf_mlp beta=0.25 m=5 seed=8 test_acc=0.4410
+M4_mrf_gcn-00747b9f91 sbm M4_mrf_gcn beta=0.5 m=5 seed=8 test_acc=0.7900
+M4_mrf_mlp-82da94670c sbm M4_mrf_mlp beta=0.5 m=5 seed=8 test_acc=0.4890
+M4_mrf_gcn-988574ead4 sbm M4_mrf_gcn beta=1.0 m=5 seed=8 test_acc=0.8030
+M4_mrf_mlp-2d580f8300 sbm M4_mrf_mlp beta=1.0 m=5 seed=8 test_acc=0.5790
+M4_mrf_gcn-d08d00b938 sbm M4_mrf_gcn beta=2.0 m=5 seed=8 test_acc=0.7690
+M4_mrf_mlp-c89456de86 sbm M4_mrf_mlp beta=2.0 m=5 seed=8 test_acc=0.1530
+M0_mlp-55c9f63a4a sbm M0_mlp m=20 seed=8 test_acc=0.6140
+M1_gcn-034f9dc071 sbm M1_gcn m=20 seed=8 test_acc=0.8510
+M2_lap-4e6ae0d53e sbm M2_lap m=20 seed=8 test_acc=0.8510
+M2_lap-a709c9d011 sbm M2_lap m=20 seed=8 test_acc=0.8510
+M2_lap-397c797224 sbm M2_lap m=20 seed=8 test_acc=0.8480
+M2_lap-026f265104 sbm M2_lap m=20 seed=8 test_acc=0.8510
+M2_lap-a339a55d06 sbm M2_lap m=20 seed=8 test_acc=0.8490
+M2_lap-9ed6c98015 sbm M2_lap m=20 seed=8 test_acc=0.8430
+M4_mrf_gcn-6d6aab5cc7 sbm M4_mrf_gcn beta=0.05 m=20 seed=8 test_acc=0.8520
+M4_mrf_mlp-d116ba1f47 sbm M4_mrf_mlp beta=0.05 m=20 seed=8 test_acc=0.6260
+M4_mrf_gcn-758e081585 sbm M4_mrf_gcn beta=0.1 m=20 seed=8 test_acc=0.8550
+M4_mrf_mlp-3582aa40c3 sbm M4_mrf_mlp beta=0.1 m=20 seed=8 test_acc=0.6390
+M4_mrf_gcn-7946eac8af sbm M4_mrf_gcn beta=0.25 m=20 seed=8 test_acc=0.8590
+M4_mrf_mlp-b0316cff7b sbm M4_mrf_mlp beta=0.25 m=20 seed=8 test_acc=0.6790
+M4_mrf_gcn-6596fec823 sbm M4_mrf_gcn beta=0.5 m=20 seed=8 test_acc=0.8590
+M4_mrf_mlp-f0f0517585 sbm M4_mrf_mlp beta=0.5 m=20 seed=8 test_acc=0.7800
+M4_mrf_gcn-128a4a5902 sbm M4_mrf_gcn beta=1.0 m=20 seed=8 test_acc=0.8500
+M4_mrf_mlp-2aa81f98e7 sbm M4_mrf_mlp beta=1.0 m=20 seed=8 test_acc=0.8680
+M4_mrf_gcn-1b3bbd6292 sbm M4_mrf_gcn beta=2.0 m=20 seed=8 test_acc=0.8280
+M4_mrf_mlp-79012269e4 sbm M4_mrf_mlp beta=2.0 m=20 seed=8 test_acc=0.8580
+M0_mlp-3b34df4794 sbm M0_mlp m=1 seed=9 test_acc=0.2670
+M1_gcn-4fb6aff363 sbm M1_gcn m=1 seed=9 test_acc=0.5870
+M2_lap-52d6de281d sbm M2_lap m=1 seed=9 test_acc=0.5870
+M2_lap-50a6f2a3d7 sbm M2_lap m=1 seed=9 test_acc=0.5850
+M2_lap-c1806cb667 sbm M2_lap m=1 seed=9 test_acc=0.5720
+M2_lap-c94dd85c4f sbm M2_lap m=1 seed=9 test_acc=0.5440
+M2_lap-52ea8a57c1 sbm M2_lap m=1 seed=9 test_acc=0.5380
+M2_lap-37801b20cd sbm M2_lap m=1 seed=9 test_acc=0.5240
+M4_mrf_gcn-0762540a31 sbm M4_mrf_gcn beta=0.05 m=1 seed=9 test_acc=0.5880
+M4_mrf_mlp-94cea88239 sbm M4_mrf_mlp beta=0.05 m=1 seed=9 test_acc=0.2660
+M4_mrf_gcn-a9e16cc2fb sbm M4_mrf_gcn beta=0.1 m=1 seed=9 test_acc=0.5910
+M4_mrf_mlp-3622123010 sbm M4_mrf_mlp beta=0.1 m=1 seed=9 test_acc=0.2660
+M4_mrf_gcn-4fd9dfa838 sbm M4_mrf_gcn beta=0.25 m=1 seed=9 test_acc=0.5940
+M4_mrf_mlp-5572ba5f52 sbm M4_mrf_mlp beta=0.25 m=1 seed=9 test_acc=0.2760
+M4_mrf_gcn-f6a0ac77fb sbm M4_mrf_gcn beta=0.5 m=1 seed=9 test_acc=0.6000
+M4_mrf_mlp-066b89891c sbm M4_mrf_mlp beta=0.5 m=1 seed=9 test_acc=0.2860
+M4_mrf_gcn-53abf46200 sbm M4_mrf_gcn beta=1.0 m=1 seed=9 test_acc=0.1670
+M4_mrf_mlp-e917e070b7 sbm M4_mrf_mlp beta=1.0 m=1 seed=9 test_acc=0.1490
+M4_mrf_gcn-82c58ed93f sbm M4_mrf_gcn beta=2.0 m=1 seed=9 test_acc=0.1480
+M4_mrf_mlp-eb5d6bbffc sbm M4_mrf_mlp beta=2.0 m=1 seed=9 test_acc=0.1450
+M0_mlp-e89a8908d2 sbm M0_mlp m=5 seed=9 test_acc=0.4010
+M1_gcn-04150c1b93 sbm M1_gcn m=5 seed=9 test_acc=0.7700
+M2_lap-810b0e305d sbm M2_lap m=5 seed=9 test_acc=0.7700
+M2_lap-c6d79a814f sbm M2_lap m=5 seed=9 test_acc=0.7700
+M2_lap-58e0f26c7c sbm M2_lap m=5 seed=9 test_acc=0.7680
+M2_lap-0b6f4c3848 sbm M2_lap m=5 seed=9 test_acc=0.7650
+M2_lap-c93ea053db sbm M2_lap m=5 seed=9 test_acc=0.7610
+M2_lap-6b9ba7d4b4 sbm M2_lap m=5 seed=9 test_acc=0.7470
+M4_mrf_gcn-33b73f5161 sbm M4_mrf_gcn beta=0.05 m=5 seed=9 test_acc=0.7720
+M4_mrf_mlp-b12676805c sbm M4_mrf_mlp beta=0.05 m=5 seed=9 test_acc=0.4060
+M4_mrf_gcn-07b1c285ee sbm M4_mrf_gcn beta=0.1 m=5 seed=9 test_acc=0.7740
+M4_mrf_mlp-849260bfe7 sbm M4_mrf_mlp beta=0.1 m=5 seed=9 test_acc=0.4110
+M4_mrf_gcn-9c5d151a2d sbm M4_mrf_gcn beta=0.25 m=5 seed=9 test_acc=0.7820
+M4_mrf_mlp-83310de8e5 sbm M4_mrf_mlp beta=0.25 m=5 seed=9 test_acc=0.4340
+M4_mrf_gcn-847fe7564e sbm M4_mrf_gcn beta=0.5 m=5 seed=9 test_acc=0.7860
+M4_mrf_mlp-cfbe599c80 sbm M4_mrf_mlp beta=0.5 m=5 seed=9 test_acc=0.4950
+M4_mrf_gcn-e2e7b95106 sbm M4_mrf_gcn beta=1.0 m=5 seed=9 test_acc=0.8140
+M4_mrf_mlp-4098117a24 sbm M4_mrf_mlp beta=1.0 m=5 seed=9 test_acc=0.1410
+M4_mrf_gcn-4cec1b834b sbm M4_mrf_gcn beta=2.0 m=5 seed=9 test_acc=0.7850
+M4_mrf_mlp-64ea3a4461 sbm M4_mrf_mlp beta=2.0 m=5 seed=9 test_acc=0.1320
+M0_mlp-6b18ced465 sbm M0_mlp m=20 seed=9 test_acc=0.6080
+M1_gcn-0f9855820f sbm M1_gcn m=20 seed=9 test_acc=0.8540
+M2_lap-52de4dd995 sbm M2_lap m=20 seed=9 test_acc=0.8540
+M2_lap-5d1c97aa1c sbm M2_lap m=20 seed=9 test_acc=0.8540
+M2_lap-295149d7bd sbm M2_lap m=20 seed=9 test_acc=0.8540
+M2_lap-eab72b630d sbm M2_lap m=20 seed=9 test_acc=0.8400
+M2_lap-631396a5b0 sbm M2_lap m=20 seed=9 test_acc=0.8310
+M2_lap-2d9a3be279 sbm M2_lap m=20 seed=9 test_acc=0.8300
+M4_mrf_gcn-f71b360db1 sbm M4_mrf_gcn beta=0.05 m=20 seed=9 test_acc=0.8570
+M4_mrf_mlp-36e0ead0d8 sbm M4_mrf_mlp beta=0.05 m=20 seed=9 test_acc=0.6150
+M4_mrf_gcn-2cf4cd356f sbm M4_mrf_gcn beta=0.1 m=20 seed=9 test_acc=0.8560
+M4_mrf_mlp-182f36ae6e sbm M4_mrf_mlp beta=0.1 m=20 seed=9 test_acc=0.6210
+M4_mrf_gcn-6914958ddd sbm M4_mrf_gcn beta=0.25 m=20 seed=9 test_acc=0.8610
+M4_mrf_mlp-3f7c7b1120 sbm M4_mrf_mlp beta=0.25 m=20 seed=9 test_acc=0.6540
+M4_mrf_gcn-af8219470d sbm M4_mrf_gcn beta=0.5 m=20 seed=9 test_acc=0.8680
+M4_mrf_mlp-ed4bcdb2e3 sbm M4_mrf_mlp beta=0.5 m=20 seed=9 test_acc=0.6940
+M4_mrf_gcn-af86d0c91a sbm M4_mrf_gcn beta=1.0 m=20 seed=9 test_acc=0.8580
+M4_mrf_mlp-44d885ffd4 sbm M4_mrf_mlp beta=1.0 m=20 seed=9 test_acc=0.7840
+M4_mrf_gcn-42054080d9 sbm M4_mrf_gcn beta=2.0 m=20 seed=9 test_acc=0.8460
+M4_mrf_mlp-2ec9cf409a sbm M4_mrf_mlp beta=2.0 m=20 seed=9 test_acc=0.8590

@@ -1,0 +1,47 @@
+
+Stage-1 tuning: cora (m=5, seeds [0, 1, 2, 3, 4])
+ arch      lr       wd  mean val acc
+  mlp    0.01   0.0005        0.4336
+  mlp    0.01    0.001        0.4376
+  mlp   0.005   0.0005        0.4152
+  mlp   0.005    0.001        0.4260
+  -> mlp: lr=0.01 wd=0.001 (val 0.4376)
+  gcn    0.01   0.0005        0.6636
+  gcn    0.01    0.001        0.6692
+  gcn   0.005   0.0005        0.6680
+  gcn   0.005    0.001        0.6644
+  -> gcn: lr=0.01 wd=0.001 (val 0.6692)
+
+Stage-1 tuning: citeseer (m=5, seeds [0, 1, 2, 3, 4])
+ arch      lr       wd  mean val acc
+  mlp    0.01   0.0005        0.4512
+  mlp    0.01    0.001        0.4544
+  mlp   0.005   0.0005        0.4424
+  mlp   0.005    0.001        0.4460
+  -> mlp: lr=0.01 wd=0.001 (val 0.4544)
+  gcn    0.01   0.0005        0.6144
+  gcn    0.01    0.001        0.6116
+  gcn   0.005   0.0005        0.6020
+  gcn   0.005    0.001        0.6112
+  -> gcn: lr=0.01 wd=0.0005 (val 0.6144)
+
+Stage-1 tuning: CSBM h=0.50 (m=5)
+ arch      lr       wd  mean val acc
+  mlp    0.01   0.0005        0.4676
+  mlp    0.01    0.001        0.4672
+  mlp   0.005   0.0005        0.4656
+  mlp   0.005    0.001        0.4660
+  -> mlp: lr=0.01 wd=0.0005 (val 0.4676)
+  gcn    0.01   0.0005        0.7920
+  gcn    0.01    0.001        0.7924
+  gcn   0.005   0.0005        0.7936
+  gcn   0.005    0.001        0.7940
+  -> gcn: lr=0.005 wd=0.001 (val 0.7940)
+
+FROZEN Stage-1 hyperparameters (record in CHANGELOG addendum M3):
+       cora  mlp: lr=0.01 weight_decay=0.001
+       cora  gcn: lr=0.01 weight_decay=0.001
+   citeseer  mlp: lr=0.01 weight_decay=0.001
+   citeseer  gcn: lr=0.01 weight_decay=0.0005
+        sbm  mlp: lr=0.01 weight_decay=0.0005
+        sbm  gcn: lr=0.005 weight_decay=0.001
