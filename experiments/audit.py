@@ -159,7 +159,7 @@ def c_sigma(runs, fid):
 @check("Every reported figure/table is regenerable from raw CSVs")
 def c_regen(runs, fid):
     tabs = list((ROOT / "tables").glob("*.csv"))
-    figs = list((ROOT / "figures").glob("*.pdf"))
+    figs = list((ROOT / "paper" / "figures").glob("*.pdf"))
     raw = list((ROOT / "results" / "raw").glob("*.csv"))
     return len(raw) > 0 and len(tabs) > 0, (f"{len(raw)} raw shards -> {len(tabs)} tables, "
                                             f"{len(figs)} figures")

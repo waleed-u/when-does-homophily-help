@@ -57,7 +57,7 @@
   {
     "check": "Every reported figure/table is regenerable from raw CSVs",
     "status": "PASS",
-    "detail": "32 raw shards -> 7 tables, 6 figures"
+    "detail": "32 raw shards -> 7 tables, 7 figures"
   },
   {
     "check": "Clamped (collective-classification) variant kept out of headline comparisons",

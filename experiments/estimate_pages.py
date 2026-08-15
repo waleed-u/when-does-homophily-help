@@ -76,7 +76,7 @@ def measure(tex):
 
 
 if __name__ == "__main__":
-    tex = Path(sys.argv[1] if len(sys.argv) > 1 else "report/report.tex").read_text()
+    tex = Path(sys.argv[1] if len(sys.argv) > 1 else "paper/final_report_WaleedAhmed_ICLR2026.tex").read_text()
     main = tex[:tex.index(r"\appendix")]
     total = measure(main)
     print(f"main-text lines  : {total:.0f}")

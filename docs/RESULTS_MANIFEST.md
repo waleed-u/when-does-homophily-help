@@ -9,7 +9,7 @@ Traceability map: every figure and table in the report comes from a script readi
 experiments/run_*.py  ->  results/raw/{runs_*,fidelity_*}.csv   (append-only, one row per run)
                       ->  experiments/analyze.py                 (selection + statistics)
                       ->  tables/*.csv|.tex, results/processed/analysis.json
-                      ->  experiments/make_figures.py            (figures)
+                      ->  experiments/make_paper_figures.py      (figures)
                       ->  figures/*.pdf|.png
 ```
 
@@ -45,12 +45,12 @@ Supporting records: `results/final_eval_audit.log` (one line per test evaluation
 
 | File | Content | Built by |
 |---|---|---|
-| `figures/F2_low_label_cora.pdf` | accuracy vs label budget + paired Δ with CIs | `make_figures.fig_low_label` |
-| `figures/F3_sbm_heatmap.pdf` | Δ over (h, m): dogmatic vs tuned prior | `make_figures.fig_sbm_heatmap` |
-| `figures/F3b_sbm_curve_and_beta.pdf` | Δ vs h with crossover; β* vs β_gen | same |
-| `figures/F4_sensitivity.pdf` | λ/β sensitivity; consistency ≠ accuracy | `make_figures.fig_sensitivity` |
-| `figures/F5_fidelity.pdf` | TV to exact marginals per structure | `make_figures.fig_fidelity` |
-| `figures/F6_bias_variance.pdf` | Gibbs variance decay vs MF/LBP bias floors | same |
+| `paper/figures/fig2_low_label.pdf` | accuracy vs label budget + paired Δ with CIs | `make_paper_figures.fig2_low_label` |
+| `paper/figures/fig3_sbm_heatmap.pdf` | Δ over (h, m): dogmatic vs tuned prior | `make_paper_figures.fig3_heatmap` |
+| `paper/figures/fig4_crossover_beta.pdf` | Δ vs h with crossover; β* vs β_gen | same |
+| `paper/figures/fig5_sensitivity.pdf` | λ/β sensitivity; consistency ≠ accuracy | `make_paper_figures.fig5_sensitivity` |
+| `paper/figures/fig6_fidelity.pdf` | TV to exact marginals per structure | `make_paper_figures.fig6_fidelity` |
+| `paper/figures/fig7_bias_variance.pdf` | Gibbs variance decay vs MF/LBP bias floors | same |
 
 ## Tables
 

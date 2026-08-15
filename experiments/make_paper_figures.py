@@ -1,10 +1,9 @@
 """Figures sized for the ICLR 2026 text block (5.5 inch line width).
 
-The exploratory figures in make_figures.py are laid out for screen reading; these are the
-versions that go in the report, drawn at final size so fonts render at their intended point
-size rather than being shrunk by \\includegraphics.
+Figures are drawn at final size so fonts render at their intended point size rather than
+being shrunk by \\includegraphics.
 
-Outputs to report_figures/ as PDF (vector) for direct upload to Overleaf.
+Outputs to paper/figures/ as PDF (vector, used by the LaTeX) and PNG (for GitHub).
 """
 from pathlib import Path
 
@@ -19,7 +18,7 @@ from src.config import BETA_GRID
 from src.plotstyle import ENGINE_COLOR, ENGINE_LABEL, MODEL_COLOR, MODEL_LABEL, MODEL_MARKER
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "report_figures"
+OUT = ROOT / "paper" / "figures"
 OUT.mkdir(exist_ok=True)
 W = 5.5   # ICLR text width in inches
 
@@ -39,7 +38,7 @@ def save(fig, name):
     fig.savefig(OUT / f"{name}.pdf")
     fig.savefig(OUT / f"{name}.png", dpi=200)
     plt.close(fig)
-    print(f"  report_figures/{name}.pdf")
+    print(f"  paper/figures/{name}.pdf")
 
 
 # ------------------------------------------------------------------ Fig 1: method schematic

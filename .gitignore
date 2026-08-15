@@ -1,16 +1,35 @@
+# --- environment ---
 .venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# --- datasets: downloaded automatically by PyTorch Geometric on first run ---
 data/
+
+# --- large regenerable artifacts ---
+# per-run logits (~47 MB). Saved so post-hoc inference can be re-run without retraining;
+# regenerate with experiments/run_real.py and run_sbm.py.
 results/logits/
 results/predictions/
 results/checkpoints/
 *.npz
+
+# --- LaTeX build products ---
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.toc
+
+# --- local copies / editor / OS ---
+iclr2026.zip
+final_report_WaleedAhmed_ICLR2026.zip
 .DS_Store
-paper/*.aux
-paper/*.log
-paper/*.out
-paper/*.bbl
-paper/*.blg
-paper/*.synctex.gz
+.claude/
+.idea/
+.vscode/
